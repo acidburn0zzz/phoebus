@@ -14,7 +14,8 @@
 		'{a53af763-1a44-4820-b98e-98e62085837f}' => 'pm-126',
 		'{87a59598-d2b6-45ba-b98e-98e62085837f}' => 'pm-127',
 		'{bbee9373-4135-47cb-b98e-98e62085837f}' => 'pm-128',
-		'aviary-addons-manager@addons.palemoon.org' => 'pm-129'
+		'aviary-addons-manager@addons.palemoon.org' => 'pm-129',
+		'noia-theme@addons.palemoon.org' => 'pm-132'
 	);
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
