@@ -27,7 +27,7 @@ function funcCheckAddonID() {
 	$varRequest_addonID = $_GET['id'];
 	
 	// Include the databases
-	include './databse.php';
+	include './database.php';
 	
 	// Check if the Add-on ID matches any of the databases or if we should send it off to AMO
 	if (array_key_exists($varRequest_addonID, $arrayAddonDB)){
