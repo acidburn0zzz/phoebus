@@ -10,7 +10,7 @@ funcCheckClientID();
 // Currently this is ONLY Pale Moon 25+
 function funcCheckClientID() {
 	//Get Client ID from the url request
-	$varRequest_clientID = isset($_GET['appID']);
+	$varRequest_clientID = $_GET['appID'];
 	
 	// Actually do the check
 	if ($varRequest_clientID == '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}') {
@@ -24,7 +24,7 @@ function funcCheckClientID() {
 // This function is what checks the ID against what we actually know
 function funcCheckAddonID() {
 	// Get Add-on ID from the url request
-	$varRequest_addonID = isset($_GET['id']);
+	$varRequest_addonID = $_GET['id'];
 	
 	// Include the databases
 	include './database.php';
@@ -59,9 +59,9 @@ function funcPass2External($varExternalURL) {
 // This function is very important as it allows us to pass any unknown add-ons on to AMO
 function funcPass2AMO() {
 	// Get argument values that AMO cares about from the request and set them to vars
-	$varRequest_addonID = isset($_GET['id']); 
-	$varRequest_reqVersion = isset($_GET['reqVersion']); // This seems to always be '2'
-	$varRequest_addonCompatMode = isset($_GET['compatMode']); // This is almost always 'normal' but it can be 'strict' for things like langpacks
+	$varRequest_addonID = $_GET['id']; 
+	$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
+	$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
 
 	// We send Firefox GUID and a specific version number to AMO which is 24.9
 	// $varRequest_clientID = $_GET['appID'];
