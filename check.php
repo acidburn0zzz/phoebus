@@ -26,19 +26,8 @@ function funcCheckAddonID() {
 	// Get Add-on ID from the url request
 	$varRequest_addonID = $_GET['id'];
 	
-	// Setup an array of add-on ids corresponding to their site ids
-	// This and the second array will be replaced with sql calls in the fullness of time
-	$arrayAddonDB = array(
-		'{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'pm-118',
-		'bluemoonlinux@addons.palemoon.org' => 'pm-119',
-		'aviary-addons-manager@addons.palemoon.org' => 'pm-129'
-	);
-	
-	// Setup an array of add-on ids corresponding to location of the external update xml url
-	$arrayExternalsDB = array(
-		'commander@palemoon.org' => 'https://www.palemoon.org/extensions/pmc-update.xml',
-		'firefox-tabgroups@mozilla.com' => 'https://www.palemoon.org/extensions/tabgroups-update.xml'
-	);
+	// Include the databases
+	include './databse.php';
 	
 	// Check if the Add-on ID matches any of the databases or if we should send it off to AMO
 	if (array_key_exists($varRequest_addonID, $arrayAddonDB)){
