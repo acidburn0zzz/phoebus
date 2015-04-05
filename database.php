@@ -6,6 +6,11 @@
 		'{03c2ba51-52c3-4cb1-9309-229eb4bc8948}' => 'pm-101',
 		'{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'pm-118',
 		'bluemoonlinux@addons.palemoon.org' => 'pm-119',
+		'{81c983b9-ebe4-4b2e-b98e-98e62085837f}' => 'pm-124',
+		'{0c44653b-8ca4-4125-b98e-98e62085837f}' => 'pm-125',
+		'{a53af763-1a44-4820-b98e-98e62085837f}' => 'pm-126',
+		'{87a59598-d2b6-45ba-b98e-98e62085837f}' => 'pm-127',
+		'{bbee9373-4135-47cb-b98e-98e62085837f}' => 'pm-128',
 		'aviary-addons-manager@addons.palemoon.org' => 'pm-129'
 	);
 	
