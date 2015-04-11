@@ -15,6 +15,8 @@
 		'{87a59598-d2b6-45ba-b98e-98e62085837f}' => 'pm-127',
 		'{bbee9373-4135-47cb-b98e-98e62085837f}' => 'pm-128',
 		'aviary-addons-manager@addons.palemoon.org' => 'pm-129',
+		'{669920c8-3426-4071-b98e-98e62085837f}' => 'pm-130',
+		'{d2da57e2-a0d3-4b59-b98e-98e62085837f}' => 'pm-131',
 		'noia-theme@addons.palemoon.org' => 'pm-132'
 	);
 	
