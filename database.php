@@ -4,7 +4,7 @@
 	// This and the second array will be replaced with sql calls in the fullness of time
 	$arrayAddonDB = array(
 		'{03c2ba51-52c3-4cb1-9309-229eb4bc8948}' => 'pm-101',
-		'{adblocklatitude@addons.palemoon.org}' => 'pm-102',
+		'adblocklatitude@addons.palemoon.org' => 'pm-102',
 		'{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'pm-118',
 		'bluemoonlinux@addons.palemoon.org' => 'pm-119',
 		'{410b6160-ff00-11dc-95ff-0800200c9a66}' => 'pm-121',
