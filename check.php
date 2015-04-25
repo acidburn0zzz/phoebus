@@ -58,29 +58,29 @@ function funcPass2External($varExternalURL) {
 
 // This function is very important as it allows us to pass any unknown add-ons on to AMO
 function funcPass2AMO() {
-	// Get argument values that AMO cares about from the request and set them to vars
-	$varRequest_addonID = $_GET['id']; 
-	$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
-	$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
+	// Get our current client version
+	$varRequest_clientVersion = $_GET['appVersion'];
+	if (($varRequest_clientVersion == '25.3.2') || ($varRequest_clientVersion == '25.4.0b3') || ($varRequest_clientVersion == '99.9.9')) {
+		// Get argument values that AMO cares about from the request and set them to vars
+		$varRequest_addonID = $_GET['id']; 
+		$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
+		$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
 
-	// We send Firefox GUID and a specific version number to AMO which is 24.9
-	// $varRequest_clientID = $_GET['appID'];
-	// $varRequest_clientVersion = $_GET['appVersion'];
-	$varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
-	$varHardcode_firefoxVersion = '24.9';
-
-	// *** These vars do not have any material effect on the generated update xml file from AMO so we are no longer passing them ***
-	// $varRequest_updateType = $_GET['updateType']; // This seems to always be 112
-	// $varRequest_addonVersion = $_GET['version'];
-	// $varRequest_addonMaxVersion = $_GET['maxAppVersion'];
-	// $varRequest_clientOS = $_GET['appOS'];
-	// $varRequest_clientABI = $_GET['appABI'];
-	// $varRequest_clientLocale = $_GET['locale'];
-	// $varRequest_addonStatus = $_GET['status']; // This can be 'userEnabled' or 'userDisabled'
-	// $varRequest_clientCurrentVersion = $_GET['currentAppVersion'];
+		// We send Firefox GUID and a specific version number to AMO which is 24.9
+		$varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
+		$varHardcode_firefoxVersion = '24.9';
 	
-	// Build and redirect the url
-	header('Location: https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode, true, 302);
+		// Build and redirect the url
+		header('Location: https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode, true, 302);
+	}
+	else {
+		$updateWriteOut ='<?xml version="1.0"?>
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+</RDF:RDF>';	
+		header('Content-Type: text/xml');
+		print($updateWriteOut);
+	}
 }
 
 ?>
