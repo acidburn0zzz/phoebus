@@ -33,8 +33,8 @@
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
 	$arrayExternalsDB = array(
-		'commander@palemoon.org' => 'https://www.palemoon.org/extensions/pmc-update.xml',
-		'firefox-tabgroups@mozilla.com' => 'https://www.palemoon.org/extensions/tabgroups-update.xml'
+		'commander@palemoon.org' => 'https://www.palemoon.org/extensions/pmc-update.xml',					// Extension: Pale Moon Commander
+		'firefox-tabgroups@mozilla.com' => 'https://www.palemoon.org/extensions/tabgroups-update.xml'		// Extension: Pale Moon Tab Groups
 	);
 	
 ?>
