@@ -13,13 +13,10 @@ ID
 # Vim swap files.
 .*.sw[a-z]
 
-# Build directories
+# Directories
 /obj*/
 /build-*/
-
-# Build directories for js shell
-*/_DBG.OBJ/
-*/_OPT.OBJ/
+/datastore/
 
 # Ignore misc files that need not be in the repo
 
