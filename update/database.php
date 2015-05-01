@@ -28,7 +28,8 @@
 		'{8a13d488-8657-4dab-b98e-98e62085837f}' => 'pm-139',		// Theme: Qute Legacy
 		'{4d457603-1613-4177-b98e-98e62085837f}' => 'pm-140',		// Theme: reinheit
 		'{60e12e8a-8197-4391-b98e-98e62085837f}' => 'pm-141',		// Theme: XMoon
-		'imagetoolbox@addons.palemoon.org' => 'pm-142'				// Extension: Image Toolbox
+		'imagetoolbox@addons.palemoon.org' => 'pm-142',				// Extension: Image Toolbox
+		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'pm-143'		// Extension: Encrypted Web
 	);
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
