@@ -60,7 +60,7 @@ function funcPass2External($varExternalURL) {
 function funcPass2AMO() {
 	// Get our current client version
 	$varRequest_clientVersion = $_GET['appVersion'];
-	if (($varRequest_clientVersion == '25.3.2') || ($varRequest_clientVersion == '25.4.0b3') || ($varRequest_clientVersion == '99.9.9')) {
+	if (($varRequest_clientVersion == '25.3.2') || ($varRequest_clientVersion == '25.4.0') || ($varRequest_clientVersion == '99.9.9')) {
 		// Get argument values that AMO cares about from the request and set them to vars
 		$varRequest_addonID = $_GET['id']; 
 		$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
