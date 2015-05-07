@@ -1,12 +1,17 @@
 <?php
+error_reporting(E_ERROR);
 if(isset($_GET['apmoID'])) {
 	$addonID = $_GET['apmoID'];
 }
 else {
-	die();
+	die('Error: You need to specify an id');
 }
 
 $addon_manifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/' . $addonID . '/manifest.ini');
+if ($addon_manifest == false) {
+die('Error: Unable to read manifest ini file');
+}
+else {
 $xpiHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/' . $addon_manifest["id"] . '/' . $addon_manifest["xpi"]);
 
 $updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
@@ -38,4 +43,5 @@ $updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
 
 header('Content-Type: text/xml');
 echo($updateWriteOut);
+}
 ?>
