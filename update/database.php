@@ -41,7 +41,7 @@
 	// Setup a multidimensional array to deal with all data regarding language packs
 	$arrayLangPackDB = array(
 		'langpack-en-GB@palemoon.org' => array( 'locale' => 'en-GB', 'version' => '25.4', 'hash' => '5272da545642770ee81f0b653fc1a94d40434a54c01fa62133aded388a0a7acf' ),
-		'langpack-de@palemoon.org' => array( 'locale' => 'de', 'version' => '25.4', 'hash' => 'fc63a7b865c5a3cc27bb9e3ff77e31453344a45f4342cce04d1b24ba7ca983be' )
+		'langpack-de@palemoon.org' => array( 'locale' => 'de', 'version' => '25.4', 'hash' => '66aff2925a9cd7b3b3c0689ca62e33b65c8d113dede8b51deff41828abbfd7be' )
 	);
 	
 ?>
