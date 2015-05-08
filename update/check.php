@@ -60,7 +60,7 @@ function funcCheckAddonID() {
       <RDF:Seq>
         <RDF:li>
           <RDF:Description>
-            <em:version>' . $varLangPackVersion . '</em:version>
+            <em:version>' . $arrayLangPackDB[$varRequest_addonID]['version'] . '</em:version>
             <em:targetApplication>
               <RDF:Description>
                 <em:id>' . $varClientGUID . '</em:id>
