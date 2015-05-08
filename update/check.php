@@ -30,13 +30,55 @@ function funcCheckAddonID() {
 	include './database.php';
 	
 	// Check if the Add-on ID matches any of the databases or if we should send it off to AMO
-	if (array_key_exists($varRequest_addonID, $arrayAddonDB)){
+	if (array_key_exists($varRequest_addonID, $arrayAddonDB)) {
 		// Pass the Add-ons Site ID to build the url and redirect 
 		funcPass2UpdateXML($arrayAddonDB[$varRequest_addonID]);
 	}
-	elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)){
+	elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)) {
 		// Pass the URL and redirect
 		funcPass2External($arrayExternalsDB[$varRequest_addonID]);
+	}
+	elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
+		// Can't be bothered to send everything through a function right now.. So just do it here!
+		
+		// Set some static vars
+		$varLangPackVersion = '25.4';
+		$varMinVersion = '25.4.0a1';
+		$varMaxVersion = '25.*';
+		$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.4/';
+		$varXPIextension = '.xpi';
+		$varClientGUID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
+		
+		// Generate Update XML on the fly for Langpacks
+		$updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <RDF:Description about="urn:mozilla:item:langpack-' . $arrayLangPackDB[$varRequest_addonID]['locale'] . '@palemoon.org">
+    <em:updates>
+      <RDF:Seq>
+        <RDF:li>
+          <RDF:Description>
+            <em:version>' . $varLangPackVersion . '</em:version>
+            <em:targetApplication>
+              <RDF:Description>
+                <em:id>' . $varClientGUID . '</em:id>
+                <em:minVersion>' . $varMinVersion . '</em:minVersion>
+                <em:maxVersion>' . $varMaxVersion . '</em:maxVersion>
+                <em:updateLink>' . $varBaseURL . $arrayLangPackDB[$varRequest_addonID]['locale'] . $varXPIextension . '</em:updateLink>
+                <em:updateHash>sha256:' . $arrayLangPackDB[$varRequest_addonID]['hash'] . '</em:updateHash>
+              </RDF:Description>
+            </em:targetApplication>
+          </RDF:Description>
+        </RDF:li>
+      </RDF:Seq>
+    </em:updates>
+  </RDF:Description>
+</RDF:RDF>';
+
+		header('Content-Type: text/xml');
+		echo($updateWriteOut);
 	}
 	else {
 		// Since the add-on ID does not match either list of known add-ons we send it off to AMO
@@ -60,7 +102,10 @@ function funcPass2External($varExternalURL) {
 function funcPass2AMO() {
 	// Get our current client version
 	$varRequest_clientVersion = $_GET['appVersion'];
-	if (($varRequest_clientVersion == '25.3.2') || ($varRequest_clientVersion == '25.4.0') || ($varRequest_clientVersion == '99.9.9')) {
+	if (($varRequest_clientVersion == '25.3.2') ||
+	($varRequest_clientVersion == '25.4.0') ||
+	($varRequest_clientVersion == '99.9.9')
+	) {
 		// Get argument values that AMO cares about from the request and set them to vars
 		$varRequest_addonID = $_GET['id']; 
 		$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
@@ -76,7 +121,7 @@ function funcPass2AMO() {
 	else {
 		$updateWriteOut ='<?xml version="1.0"?>
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 </RDF:RDF>';	
 		header('Content-Type: text/xml');
 		print($updateWriteOut);
