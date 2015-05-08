@@ -29,7 +29,9 @@
 		'{4d457603-1613-4177-b98e-98e62085837f}' => 'pm-140',		// Theme: reinheit
 		'{60e12e8a-8197-4391-b98e-98e62085837f}' => 'pm-141',		// Theme: XMoon
 		'imagetoolbox@addons.palemoon.org' => 'pm-142',				// Extension: Image Toolbox
-		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'pm-143'		// Extension: Encrypted Web
+		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'pm-143',		// Extension: Encrypted Web
+		'past-modern-revisited@lootyhoof-pm' => 'pm-144',		// Theme: Past Modern Revisited
+		'{626cf6f3-deae-4cf8-b98e-98e62085837f}' => 'pm-145'		// Theme: Opresto
 	);
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
