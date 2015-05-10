@@ -104,6 +104,7 @@ function funcPass2AMO() {
 	$varRequest_clientVersion = $_GET['appVersion'];
 	if (($varRequest_clientVersion == '25.3.2') ||
 	($varRequest_clientVersion == '25.4.0') ||
+	($varRequest_clientVersion == '25.4.1') ||
 	($varRequest_clientVersion == '99.9.9')
 	) {
 		// Get argument values that AMO cares about from the request and set them to vars
