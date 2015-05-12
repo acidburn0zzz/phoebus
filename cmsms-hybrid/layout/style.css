@@ -7,19 +7,21 @@ body {
 	margin-top: 8px;
 	margin-right: 0px;
 	margin-bottom: 46px;
-  font-family: "Museo300Regular","Times New Roman",Times,serif;
+  font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-style: normal;
   font-size: 12pt;
+  letter-spacing: 0.3px;
   background-color: #d4d9f7;
   background: linear-gradient(to bottom, #d4d9f7 0%, #abafea 31%, #999ee8 93%, #d4d9f7 100%);
   background: -moz-linear-gradient(top, #d4d9f7 0%, #abafea 31%, #999ee8 93%, #d4d9f7 100%);
 }
 
 body,td,th {
-  font-family: "Museo300Regular","Times New Roman",Times,serif;
+  font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-style: normal;
   font-size: 12pt;
-	color: #000000;
+  color: #000000;
+  letter-spacing: 0.3px;
 }
 /* 
 @media all and (min-width: 820px)  {
@@ -78,9 +80,11 @@ height: 29px;
 #PM-Content {
 	width: 100%;
 	display: table;
-  font-family: "Museo300Regular","Times New Roman",Times,serif;
+  font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-style: normal;
   font-size: 12pt;
+  letter-spacing: 0.3px;
+  
 vertical-align: top;
 }
 
@@ -104,9 +108,10 @@ background: linear-gradient(to right, rgba(240,240,240,1) 50%,rgba(255,255,255,0
 }
 
 h1 {
-  font-family: "Museo300Regular","Times New Roman",Times,serif;
+  font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-size: 20.5pt;
   color: #000066;
+  letter-spacing: 0.3px;
 }
 
 h2.faq {
@@ -118,17 +123,19 @@ margin-bottom: 18px !important;
 }
 
 .rssincl-itemtitle a{
-  font-family: "Museo300Regular","Times New Roman",Times,serif !important;
+  font-family: "Museo500Regular","Times New Roman",Times,serif !important;
   font-size: 14pt !important;
+  letter-spacing: 0.3px;
   color: #000000 !important;
   text-decoration: none !important;
 }
 
 .rssincl-itemdesc {
-  font-family: "Museo300Regular","Times New Roman",Times,serif !important;
+  font-family: "Museo500Regular","Times New Roman",Times,serif !important;
   font-style: normal !important;
   font-size: 12pt !important;
   color: #000000 !important;
+  letter-spacing: 0.3px;
 margin-bottom: 25px !important;
 }
 
@@ -213,6 +220,8 @@ z-index:999;
 	color: #FFFFFF;
 	text-decoration: none;
 	padding: 7px 16px;
+	letter-spacing: 0.4px;
+	opacity: 0.99;
 
 }
 .mainmenu ul ul a{
