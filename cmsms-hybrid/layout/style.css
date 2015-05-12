@@ -10,7 +10,7 @@ body {
   font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-style: normal;
   font-size: 12pt;
-  l
+  letter-spacing: 0.3px;
   background-color: #d4d9f7;
   background: linear-gradient(to bottom, #d4d9f7 0%, #abafea 31%, #999ee8 93%, #d4d9f7 100%);
   background: -moz-linear-gradient(top, #d4d9f7 0%, #abafea 31%, #999ee8 93%, #d4d9f7 100%);
@@ -20,9 +20,8 @@ body,td,th {
   font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-style: normal;
   font-size: 12pt;
-etter-spacing: 0.3px;
   color: #000000;
-
+  letter-spacing: 0.3px;
 }
 /* 
 @media all and (min-width: 820px)  {
@@ -109,7 +108,7 @@ background: linear-gradient(to right, rgba(240,240,240,1) 50%,rgba(255,255,255,0
 }
 
 h1 {
-  font-family: "Museo300Regular","Times New Roman",Times,serif;
+  font-family: "Museo500Regular","Times New Roman",Times,serif;
   font-size: 20.5pt;
   color: #000066;
   letter-spacing: 0.3px;
