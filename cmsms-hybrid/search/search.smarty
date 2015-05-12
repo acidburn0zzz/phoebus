@@ -1,0 +1,9 @@
+{$startform}
+<label for="{$search_actionid}searchinput"></label><input type="text" class="search-input" id="{$search_actionid}searchinput" name="{$search_actionid}searchinput" size="20" maxlength="50" value="Search Add-ons" {$hogan}/>
+{*
+<br/>
+<input type="checkbox" name="{$search_actionid}use_or" value="1"/>
+*}
+<input class="search-button" name="submit" value="->" type="submit" />
+{if isset($hidden)}{$hidden}{/if}
+{$endform}

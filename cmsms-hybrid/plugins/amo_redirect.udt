@@ -1,0 +1,11 @@
+$redirect='
+<h3>We are redirecting you to get this add-on.</h3>
+<script type="text/javascript">
+function amo_redirect() { window.location = "' . $params['link'] . '" }
+
+setTimeout(\'amo_redirect()\',2000);
+
+</script>
+';
+
+print ($redirect);
