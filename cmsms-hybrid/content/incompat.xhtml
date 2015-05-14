@@ -1,0 +1,213 @@
+<h1>{title}</h1>
+
+<h3>Why aren&rsquo;t all Firefox add-ons compatible with Pale Moon?</h3>
+
+<p>While we have strived for near 1:1 compatibility with Firefox in regards to add-ons, Pale Moon and Firefox are separate products. There are many possible reasons why an add-on is or has become incompatible with Pale Moon:</p>
+
+<ul>
+	<li><strong>The change in the Pale Moon globally unique identifier (GUID)</strong>
+
+	<ul>
+		<li>In Pale Moon 25, the GUID was changed to reflect the continuing divergence between the browser and its sibling.</li>
+		<li>Most of the time a modification to chrome.manifest or bootstrap.js to add/change the hardcoded GUID is a simple solution to issues with add-ons.
+		<ul>
+			<li>This will be done for many of the most used add-ons where a developer has chosen not to support Pale Moon or the add-on has been abandoned. Creating a pseudo-static version of the add-on as a Pale Moon specific one.</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+	<li><strong>Australis</strong>
+	<ul>
+		<li>In Firefox 29, Mozilla adopted a nearly completely rewritten user interface and theme as well as some technologies that Pale Moon has chosen not to implement. Add-ons targeting these features without fallbacks to the more time-tested and more commonly used features in all Mozilla-based programs will not be supported.</li>
+	</ul>
+	</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h3>I found an add-on that has issues, where can I report it?</h3>
+
+<p>We have setup a <a href="https://forum.palemoon.org/viewtopic.php?f=44&amp;t=5883">thread</a> on the Pale Moon forums where you can report it. This will allow us to at the very least identify it and add it to this page. As well as, determine the cause and a course of action so that we can resolve the incompatibility.</p>
+
+<h3>List of add-ons with known compatibility issues (in no particular order)</h3>
+
+<p><strong>Last updated: 2015-02-04</strong></p>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<td style="vertical-align:top; width:33%">
+			<p><strong>TBD</strong></p>
+
+			<ul>
+				<li>Eraser</li>
+				<li>Omnibar</li>
+				<li>Disconnect Search</li>
+				<li>EPUBReader</li>
+				<li>IDM CC (Internet Download Manager)</li>
+				<li>Simple Clocks</li>
+				<li>Simple Timer</li>
+				<li>infoRSS</li>
+				<li>Facebook Phishing Protector</li>
+				<li>Flash Killer</li>
+				<li>Auto-Sort Bookmarks</li>
+				<li>RefControl</li>
+				<li>Fastest Search</li>
+				<li>Shorten URL (Bit.ly)</li>
+				<li>Simple Currency Converter</li>
+				<li>Who Stole My Pictures</li>
+				<li>Roboform</li>
+				<li>Pushbullet</li>
+				<li>BugMeNot</li>
+				<li>Secret Agent</li>
+				<li>Find In Numbers</li>
+				<li>Redirect Cleaner</li>
+				<li>AutoPager</li>
+				<li>YesScript</li>
+				<li>PrefBar</li>
+				<li>Blacken</li>
+				<li>ToggleDocumentColors</li>
+				<li>Yet Another Remove It Permanently</li>
+				<li>Document Font Toggle</li>
+				<li>HttpFox</li>
+				<li>Copy goo.gl URL</li>
+				<li>ShowIP</li>
+				<li>Pure URL</li>
+				<li>BarTab Heavy</li>
+				<li>Lucifox</li>
+				<li>Multiple Tab Handler</li>
+				<li>OmniSidebar</li>
+				<li>F.B. (Fluff Busting) Purity</li>
+				<li>cliget</li>
+			</ul>
+			</td>
+			<td style="vertical-align:top; width:33%">
+			<p><strong>PENDING</strong></p>
+
+			<ul>
+				<li>Add to Search Bar</li>
+				<li>Greasemonkey</li>
+				<li>Scriptish</li>
+				<li>Stylish</li>
+				<li>Date Picker</li>
+				<li>Snap Links Plus</li>
+				<li>Personas Plus</li>
+				<li>MinimizeToTray revived</li>
+				<li>DuckDuckGo Plus</li>
+				<li>PasswordMaker</li>
+				<li>TabMixPlus</li>
+				<li>FireFTP</li>
+				<li>Unplug</li>
+				<li>Extension Options Menu</li>
+				<li>Google Privacy</li>
+				<li>HTTPS Everywhere</li>
+				<li>iMacros for Firefox</li>
+				<li>Pentadactyl</li>
+				<li>Feedly Notifier</li>
+				<li>Random Agent Spoofer</li>
+				<li>Image Toolbar</li>
+				<li>Stay-Open Menu</li>
+			</ul>
+
+			<p><strong>WORKAROUNDS</strong></p>
+
+			<ul>
+				<li>External Application Buttons<br />
+				<small>(use version 0.11)</small></li>
+				<li>Add Bookmark Here &sup2;<br />
+				<small>(use version 23.0.20140225)</small></li>
+				<li>Informational Tab<br />
+				<small>(use version 0.4.2013053001)</small></li>
+				<li>Firebug<br />
+				<small>(use last 2.x version)</small></li>
+				<li><small>TweetRight<br />
+				(use version 0.43.1)</small></li>
+			</ul>
+
+			<p><strong>PSEUDO-STATIC&#39;D</strong></p>
+
+			<ul>
+				<li><a href="/extensions/feeds-news-and-blogging/forecastfox/">ForecastFox</a></li>
+				<li><a href="/extensions/social-and-communication/chatzilla/">ChatZilla</a></li>
+				<li><a href="/extensions/other/foxclocks/">FoxClocks</a></li>
+				<li><a href="/extensions/web-development/screengrab/">ScreenGrab (fe)</a></li>
+				<li><a href="/extensions/social-and-communication/quick_translator/">Quick Translator</a></li>
+			</ul>
+			</td>
+			<td style="vertical-align:top; width:33%">
+			<p><strong>FIXED</strong></p>
+
+			<ul>
+				<li>Dom Inspector</li>
+				<li>Self-Destructing Cookies</li>
+				<li>Personas Rotator</li>
+				<li>Privacy Badger</li>
+				<li>Bamboo Feed Reader</li>
+				<li>Fastest Search</li>
+				<li>FoxyProxy (All SKUs)</li>
+				<li>NewsFox</li>
+				<li>CookieKeeper</li>
+				<li>Context Search X</li>
+				<li>Fire IE</li>
+			</ul>
+
+			<p><strong>FORKED</strong></p>
+
+			<ul>
+				<li>Adblock Plus<br />
+				<small>(as <a href="/extensions/privacy-and-security/adblock-latitude/">Adblock Latitude</a>)</small></li>
+				<li>FindBar Tweak<br />
+				<small>(as <a href="/extensions/search-tools/finderbar-tweak/">FinderbarTweak</a>)</small></li>
+				<li><a href="/extensions/privacy-and-security/change-referer-button/">Change Referer Button</a></li>
+			</ul>
+
+			<p><strong>WONTFIX</strong></p>
+
+			<ul>
+				<li>Adblock Edge<br />
+				<small>(Not needed because of <a href="/extensions/privacy-and-security/adblock-latitude/">ABL</a>)</small></li>
+				<li>Classic Theme Restorer<br />
+				<small>(There is no Australis to change)</small></li>
+				<li>Add-on Update Checker<br />
+				<small>(We have this functionality built in, so does Firefox)</small></li>
+				<li>Toggle Javascript<br />
+				<small>(Use about:config pref or toggle with Pale Moon Commander)</small></li>
+				<li>Nightly Tester Tools<br />
+				<small>(We are not Firefox and we do not offer &quot;Nightlies&quot;)</small></li>
+				<li>Space Next<br />
+				<small>(We have this functionality built in)</small></li>
+				<li>Flash Video Downloader</li>
+				<li>S3 Download Manager</li>
+				<li>Fasterfox Lite<br />
+				<small>(This is considered harmful to Pale Moon)</small></li>
+				<li>Flash and Video Download</li>
+				<li>DVD Video Soft YouTube Downloader</li>
+				<li>Nimbus Screen Capture<br />
+				<small>(Use Psuedo-Static&#39;d ScreenGrab)</small></li>
+				<li>Search by Image for Google</li>
+				<li>Mouse Gestures Redox<br />
+				<small>(Doesn&#39;t exsist anymore)</small></li>
+				<li>Blender</li>
+				<li>Lightbeam<br />
+				<small>(Mozilla Service Experaments are not supported on Pale Moon)</small></li>
+				<li>UnPlug</li>
+				<li>gTranslate<br />
+				<small>(Use Pseudo-Static&#39;d Quick Translate)</small></li>
+				<li>Bookmark Favicon Changer<br />
+				<small>(Doesn&#39;t exsist anymore)</small></li>
+				<li>Strict Pop-up Blocker<br />
+				<small>(Australis Only add-on - Never supported Pale Moon)</small></li>
+				<li>Youtube Unblocker</li>
+				<li>Compact Menu 2<br />
+				<small>(Virtually identical to Tiny menu)</small></li>
+				<li>Text2Link<br />
+				<small>(Duplicates built in functionality - Highlight any link -&gt; Right Click -&gt; Open Link)</small></li>
+				<li>Bazzacuda Image Saver Plus<br />
+				<small>(Use Psuedo-Static&#39;d ScreenGrab)</small></li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
