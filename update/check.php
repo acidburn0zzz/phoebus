@@ -1,73 +1,139 @@
 <?php
-// Debugging.. uncomment to enable it
-// error_reporting(E_ALL);
-// ini_set("display_errors", "on");
+// == | Debug |================================================================
 
-// Essentially main()
-funcCheckClientID();
+// Uncomment to enable
+error_reporting(E_ALL);
+ini_set("display_errors", "on");
 
-// This function is a sanity and pseudo-security check to make sure that we only process requests from a particular client ID
-// Currently this is ONLY Pale Moon 25+
-function funcCheckClientID() {
-	//Get Client ID from the url request
+// ============================================================================
+
+// == | Vars |=================================================================
+
+$varHardcode_palemoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
+$varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
+$varHardcode_firefoxVersion = '24.9';
+
+// ============================================================================
+
+// == | Sanity Checks |========================================================
+
+// Client ID Check
+if (array_key_exists('appID', $_GET)) {
 	$varRequest_clientID = $_GET['appID'];
-	
-	// Actually do the check
-	if ($varRequest_clientID == '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}') {
-		funcCheckAddonID();
+	if ($varRequest_clientID != $varHardcode_palemoonID) {
+		die('Invalid Client ID');
+	}
+}
+else {
+	die('Client ID not set');
+}
+
+// Client Version Check
+if (array_key_exists('appVersion', $_GET)) {
+	$varRequest_clientVersion = $_GET['appVersion'];
+}
+else {
+	die('Client Version not set');
+}
+
+// Add-on ID Check
+if (array_key_exists('id', $_GET)) {
+	$varRequest_addonID = $_GET['id'];
+}
+else {
+	die('Add-on ID not set');
+}
+
+// ============================================================================
+
+// == | Main |=================================================================
+
+// Include the databases
+include_once './database.php';
+
+// Check if the Add-on ID matches any of the databases or if we should send it off to AMO
+if (array_key_exists($varRequest_addonID, $arrayAddonDB)) {
+	funcRedirect2UpdateXML('internal', $arrayAddonDB[$varRequest_addonID]);
+}
+elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)) {
+	funcRedirect2UpdateXML('external', $arrayExternalsDB[$varRequest_addonID]);
+}
+elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
+	funcGenerateUpdateXML(
+		'langpack',
+		$varRequest_clientID,
+		$varRequest_addonID,
+		$arrayLangPackDB[$varRequest_addonID]['version'],
+		$arrayLangPackDB[$varRequest_addonID]['hash'],
+		$arrayLangPackDB[$varRequest_addonID]['locale']
+	);
+}
+else {
+	$arrayAllowedAMOVersionDB = array( '25.3.2', '25.4.0', '25.4.1', '99.9.9');
+	if ($varRequest_clientID == $varHardcode_palemoonID) {
+		if (in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true) {
+			$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
+			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
+
+			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode;
+			
+			funcRedirect2UpdateXML('external', $varAMOLink);
+		}
+		else {
+			funcGenerateUpdateXML('bad', null, null, null, null, null);
+		}
 	}
 	else {
-		print('Unknown Client ID');
+		die('How did you even make it this far?!');
+	}
+    
+}
+// ============================================================================
+
+// == | Redirect to Update XML |===============================================
+
+function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
+	if ($varXMLType == 'internal') {
+		header('Location: https://addons.palemoon.org/phoebus/datastore/' . $varAddonData . '/update.xml', true, 302);
+	}
+	elseif ($varXMLType == 'external') {
+		header('Location: ' . $varAddonData , true, 302);
+	}
+	else {
+		die('funcRedirect2UpdateXML: Unknown XML type');
 	}
 }
 
-// This function is what checks the ID against what we actually know
-function funcCheckAddonID() {
-	// Get Add-on ID from the url request
-	$varRequest_addonID = $_GET['id'];
-	
-	// Include the databases
-	include './database.php';
-	
-	// Check if the Add-on ID matches any of the databases or if we should send it off to AMO
-	if (array_key_exists($varRequest_addonID, $arrayAddonDB)) {
-		// Pass the Add-ons Site ID to build the url and redirect 
-		funcPass2UpdateXML($arrayAddonDB[$varRequest_addonID]);
-	}
-	elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)) {
-		// Pass the URL and redirect
-		funcPass2External($arrayExternalsDB[$varRequest_addonID]);
-	}
-	elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
-		// Can't be bothered to send everything through a function right now.. So just do it here!
-		
-		// Set some static vars
-		$varLangPackVersion = '25.4';
+// ============================================================================
+
+// == | Generate Update XML |==================================================
+
+function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddonVersion, $varAddonHash, $varAddonData) {
+	if ($varXMLType == 'langpack') {
 		$varMinVersion = '25.4.0a1';
 		$varMaxVersion = '25.*';
 		$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.4/';
 		$varXPIextension = '.xpi';
-		$varClientGUID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 		
 		// Generate Update XML on the fly for Langpacks
-		$updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
+		$updateWriteOutLangpack ='<?xml version="1.0" encoding="UTF-8"?>
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
-  <RDF:Description about="urn:mozilla:item:langpack-' . $arrayLangPackDB[$varRequest_addonID]['locale'] . '@palemoon.org">
+  <RDF:Description about="urn:mozilla:item:' . $varAddonID . '">
     <em:updates>
       <RDF:Seq>
         <RDF:li>
           <RDF:Description>
-            <em:version>' . $arrayLangPackDB[$varRequest_addonID]['version'] . '</em:version>
+            <em:version>' . $varAddonVersion . '</em:version>
             <em:targetApplication>
               <RDF:Description>
-                <em:id>' . $varClientGUID . '</em:id>
+                <em:id>' . $varClientID . '</em:id>
                 <em:minVersion>' . $varMinVersion . '</em:minVersion>
                 <em:maxVersion>' . $varMaxVersion . '</em:maxVersion>
-                <em:updateLink>' . $varBaseURL . $arrayLangPackDB[$varRequest_addonID]['locale'] . $varXPIextension . '</em:updateLink>
-                <em:updateHash>sha256:' . $arrayLangPackDB[$varRequest_addonID]['hash'] . '</em:updateHash>
+                <em:updateLink>' . $varBaseURL . $varAddonData . $varXPIextension . '</em:updateLink>
+                <em:updateHash>sha256:' . $varAddonHash . '</em:updateHash>
               </RDF:Description>
             </em:targetApplication>
           </RDF:Description>
@@ -76,57 +142,21 @@ function funcCheckAddonID() {
     </em:updates>
   </RDF:Description>
 </RDF:RDF>';
-
 		header('Content-Type: text/xml');
-		echo($updateWriteOut);
+		print($updateWriteOutLangpack);
 	}
-	else {
-		// Since the add-on ID does not match either list of known add-ons we send it off to AMO
-		funcPass2AMO();
-	}
-}
-
-// This function simply 302s to an update.xml file on the local server
-function funcPass2UpdateXML($varAddonID) {
-	// Build and redirect the url
-	header('Location: https://addons.palemoon.org/phoebus/datastore/' . $varAddonID . '/update.xml', true, 302);
-}
-
-// This function simply 302s to an external's update.xml
-function funcPass2External($varExternalURL) {
-	// Redirect the url
-	header('Location: ' . $varExternalURL , true, 302);
-}
-
-// This function is very important as it allows us to pass any unknown add-ons on to AMO
-function funcPass2AMO() {
-	// Get our current client version
-	$varRequest_clientVersion = $_GET['appVersion'];
-	if (($varRequest_clientVersion == '25.3.2') ||
-	($varRequest_clientVersion == '25.4.0') ||
-	($varRequest_clientVersion == '25.4.1') ||
-	($varRequest_clientVersion == '99.9.9')
-	) {
-		// Get argument values that AMO cares about from the request and set them to vars
-		$varRequest_addonID = $_GET['id']; 
-		$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
-		$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
-
-		// We send Firefox GUID and a specific version number to AMO which is 24.9
-		$varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
-		$varHardcode_firefoxVersion = '24.9';
-	
-		// Build and redirect the url
-		header('Location: https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode, true, 302);
-	}
-	else {
-		$updateWriteOut ='<?xml version="1.0"?>
+	elseif ($varXMLType == 'bad') {
+		$updateWriteOutBad ='<?xml version="1.0"?>
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 </RDF:RDF>';	
 		header('Content-Type: text/xml');
-		print($updateWriteOut);
+		print($updateWriteOutBad);
+	}
+	else {
+		die('funcGenerateUpdateXML: Unknown XML type');
 	}
 }
 
+// ============================================================================
 ?>
