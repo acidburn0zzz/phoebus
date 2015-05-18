@@ -70,8 +70,7 @@ elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
 }
 else {
 	$arrayAllowedAMOVersionDB = array( '25.3.2', '25.4.0', '25.4.1', '99.9.9');
-	$varAMOKillSwitch = false
-	if ($varRequest_clientID == $varHardcode_palemoonID && $varAMOKillSwitch == false) {
+	if ($varRequest_clientID == $varHardcode_palemoonID) {
 		if (in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true) {
 			$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
 			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
