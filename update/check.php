@@ -2,8 +2,8 @@
 // == | Debug |================================================================
 
 // Uncomment to enable
-error_reporting(E_ALL);
-ini_set("display_errors", "on");
+// error_reporting(E_ALL);
+// ini_set("display_errors", "on");
 
 // ============================================================================
 
@@ -12,6 +12,7 @@ ini_set("display_errors", "on");
 $varHardcode_palemoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 $varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
 $varHardcode_firefoxVersion = '24.9';
+$varAMOKillSwitch = false;
 
 // ============================================================================
 
@@ -71,7 +72,7 @@ elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
 else {
 	$arrayAllowedAMOVersionDB = array( '25.3.2', '25.4.0', '25.4.1', '99.9.9');
 	if ($varRequest_clientID == $varHardcode_palemoonID) {
-		if (in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true) {
+		if ((in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true) && ($varAMOKillSwitch == false)) {
 			$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
 			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
 			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode;
