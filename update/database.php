@@ -23,7 +23,7 @@
 		'{4b13c0da-55d5-44ce-b98e-98e62085837f}' => 'pm-134',		// Theme: DarkPitch
 		'{cbb923ca-2954-426b-b98e-98e62085837f}' => 'pm-135',		// Theme: Maxi3
 		'{20c00d0d-79a4-4af5-b98e-98e62085837f}' => 'pm-136',		// Theme: Maxi4
-		'{0ed852bb-a216-42e9-b98e-98e62085837f' => 'pm-137',		// Theme: Moonfox3
+		'{0ed852bb-a216-42e9-b98e-98e62085837f}' => 'pm-137',		// Theme: Moonfox3
 		'{a3056aed-a93d-4c22-b98e-98e62085837f}' => 'pm-138',		// Theme: Qute Large
 		'{8a13d488-8657-4dab-b98e-98e62085837f}' => 'pm-139',		// Theme: Qute Legacy
 		'{4d457603-1613-4177-b98e-98e62085837f}' => 'pm-140',		// Theme: reinheit
