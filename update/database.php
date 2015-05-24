@@ -5,6 +5,7 @@
 	$arrayAddonDB = array(
 		'{03c2ba51-52c3-4cb1-9309-229eb4bc8948}' => 'pm-101',		// Theme: Kempelton Reloaded
 		'adblocklatitude@addons.palemoon.org' => 'pm-102',			// Extension: ABP Pseudo-Static / ABL Next Gen
+		'commander@palemoon.org' => 'pm-113',						// Extension: Pale Moon Commander
 		'{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'pm-118',		// Extension: Adblock Latitude
 		'bluemoonlinux@addons.palemoon.org' => 'pm-119',			// Extension: Blue Moon Linux
 		'{410b6160-ff00-11dc-95ff-0800200c9a66}' => 'pm-121',		// Theme: Winstripe Classic
@@ -36,7 +37,6 @@
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
 	$arrayExternalsDB = array(
-		'commander@palemoon.org' => 'https://www.palemoon.org/extensions/pmc-update.xml',					// Extension: Pale Moon Commander
 		'firefox-tabgroups@mozilla.com' => 'https://www.palemoon.org/extensions/tabgroups-update.xml'		// Extension: Pale Moon Tab Groups
 	);
 	
