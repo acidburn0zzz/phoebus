@@ -12,7 +12,7 @@
 $varHardcode_palemoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 $varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
 $varHardcode_firefoxVersion = '24.9';
-$varAMOKillSwitch = false;
+$varAMOKillSwitch = true;
 
 // ============================================================================
 
