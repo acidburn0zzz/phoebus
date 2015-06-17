@@ -36,7 +36,8 @@
 		'noia-options@addons.palemoon.org' => 'pm-146',			// Extension: Noia Moon (Options)
 		'{6e1d3ac8-6069-4b8a-b98e-98e62085837f}' => 'pm-147',		// Theme: Compact Moon
 		'{ff497972-c067-44d8-b98e-98e62085837f}' => 'pm-148',		// Extension: Compact Moon (Options)
-		'{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'pm-149'		// Theme: Moonola
+		'{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'pm-149',		// Theme: Moonola
+		'macmoon@lootyhoof-pm' => 'pm-150'				// Theme: MacMoon
 	);
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
