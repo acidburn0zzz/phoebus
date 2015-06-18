@@ -31,13 +31,13 @@
 		'{60e12e8a-8197-4391-b98e-98e62085837f}' => 'pm-141',		// Theme: XMoon
 		'imagetoolbox@addons.palemoon.org' => 'pm-142',				// Extension: Image Toolbox
 		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'pm-143',		// Extension: Encrypted Web
-		'past-modern-revisited@lootyhoof-pm' => 'pm-144',		// Theme: Past Modern Revisited
+		'past-modern-revisited@lootyhoof-pm' => 'pm-144',			// Theme: Past Modern Revisited
 		'{626cf6f3-deae-4cf8-b98e-98e62085837f}' => 'pm-145',		// Theme: Opresto
-		'noia-options@addons.palemoon.org' => 'pm-146',			// Extension: Noia Moon (Options)
+		'noia-options@addons.palemoon.org' => 'pm-146',				// Extension: Noia Moon (Options)
 		'{6e1d3ac8-6069-4b8a-b98e-98e62085837f}' => 'pm-147',		// Theme: Compact Moon
 		'{ff497972-c067-44d8-b98e-98e62085837f}' => 'pm-148',		// Extension: Compact Moon (Options)
 		'{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'pm-149',		// Theme: Moonola
-		'macmoon@lootyhoof-pm' => 'pm-150'				// Theme: MacMoon
+		'macmoon@lootyhoof-pm' => 'pm-150'							// Theme: MacMoon
 	);
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
