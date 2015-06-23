@@ -14,6 +14,7 @@ $varHardcode_firefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
 $varHardcode_firefoxVersion = '24.9';
 $varAMOKillSwitch = false;
 $varAMOWhitelist = false;
+$varCollectAMORequests = true;
 
 // ============================================================================
 
@@ -77,6 +78,13 @@ else {
 			$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
 			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
 			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode;
+			
+			if ($varCollectAMORequests == true) {
+				if (!file_exists($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/pm-admin/amo/' . $varRequest_addonID)) {
+					$myfile = fopen($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/pm-admin/amo/' . $varRequest_addonID, 'w');
+					fclose($myfile);
+				}
+			}
 			
 			funcRedirect2UpdateXML('external', $varAMOLink);
 		}
