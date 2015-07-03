@@ -79,10 +79,9 @@ else {
 			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
 			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode;
 			
-			$varRequest_itemStatus = $_GET['status'];
 			if ($varCollectAMORequests == true) {
-				if ((!file_exists($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/pm-admin/amo2/' . $varRequest_addonID)) && (strstr($varRequest_itemStatus, 'userEnabled') == true)) {
-					$myfile = fopen($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/pm-admin/amo2/' . $varRequest_addonID, 'w');
+				if (!file_exists($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/pm-admin/amo/' . $varRequest_addonID)) {
+					$myfile = fopen($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/pm-admin/amo/' . $varRequest_addonID, 'w');
 					fclose($myfile);
 				}
 			}
@@ -104,7 +103,6 @@ else {
 
 function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
 	if ($varXMLType == 'internal') {
-		header('Location: https://addons.palemoon.org/phoebus/datastore/' . $varAddonData . '/update.xml', true, 302);
 		header('Location: https://addons.palemoon.org/phoebus/datastore/' . $varAddonData . '/update.xml', true, 302);
 	}
 	elseif ($varXMLType == 'external') {
