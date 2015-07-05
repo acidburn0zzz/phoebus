@@ -1,0 +1,22 @@
+{assign var='number_of_levels' value=1}
+{if isset($menuparams.number_of_levels)}
+  {assign var='number_of_levels' value=$menuparams.number_of_levels}
+{/if}
+<div style="width: 100%;">
+{if $count > 0}
+
+{foreach from=$nodelist item=node}
+<a class="PM-addon fake-table-row" href="{$node->url}" target="{$node->target}" style=" width: 95%;height: 70px; display: inline-block; margin-left: 15px; margin-right: 20px; text-align: left; vertical-align: top; align: left; padding: 4px 8px; text-decoration: none; color: black;">
+
+<img src="/phoebus/datastore/{$node->extra2}/icon.png" style="padding-top: 8px; padding-bottom: 16px;" class="alignleft" width="32px" height="32px">
+
+<div class="alignright" style="background-image:url('/phoebus/datastore/{$node->extra2}/preview.png'); background-repeat: no-repeat; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa;"></div>
+<p style="margin-top: 6px;"><strong>{$node->menutext}</strong>
+<br /><small>{$node->titleattribute}</small></p>
+
+
+
+</a>
+{/foreach}
+</div>
+{/if}
