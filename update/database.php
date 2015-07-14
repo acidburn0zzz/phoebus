@@ -39,7 +39,8 @@
 		'{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'pm-149',		// Theme: Moonola
 		'macmoon@lootyhoof-pm' => 'pm-150',							// Theme: MacMoon
 		'{854a7ddc-f008-4263-b98e-98e62085837f}' => 'pm-151',		// Theme: LittleMoon
-		'{6a2ffbbc-4f20-42f0-b98e-98e62085837f}' => 'pm-152'		// Theme: Australium
+		'{6a2ffbbc-4f20-42f0-b98e-98e62085837f}' => 'pm-152',		// Theme: Australium
+        'mozext_zinglocale@gooeysoftware.com' => 'pm-156'		    // Extension: Zing! Locale Switcher
 	);
 	
 	// Setup an array of add-on ids corresponding to location of the external update xml url
