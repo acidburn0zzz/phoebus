@@ -111,7 +111,7 @@ function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
 
 function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddonVersion, $varAddonHash, $varAddonData) {
 	if ($varXMLType == 'langpack') {
-		$varMinVersion = '25.4.0a1';
+		$varMinVersion = '25.6.0a1';
 		$varMaxVersion = '25.*';
 		$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.4/';
 		$varXPIextension = '.xpi';
