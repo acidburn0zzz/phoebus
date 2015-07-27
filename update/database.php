@@ -40,6 +40,7 @@
 		'macmoon@lootyhoof-pm' => 'pm-150',							// Theme: MacMoon
 		'{854a7ddc-f008-4263-b98e-98e62085837f}' => 'pm-151',		// Theme: LittleMoon
 		'{6a2ffbbc-4f20-42f0-b98e-98e62085837f}' => 'pm-152',		// Theme: Australium
+		'modoki@lootyhoof-pm' => 'pm-153',							// Theme: Modoki Moon
         'mozext_zinglocale@gooeysoftware.com' => 'pm-156'		    // Extension: Zing! Locale Switcher
 	);
 	
