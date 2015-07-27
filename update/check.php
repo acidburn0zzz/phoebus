@@ -113,7 +113,7 @@ function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddon
 	if ($varXMLType == 'langpack') {
 		$varMinVersion = '25.6.0a1';
 		$varMaxVersion = '25.*';
-		$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.4/';
+		$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.6/';
 		$varXPIextension = '.xpi';
 		
 		// Generate Update XML on the fly for Langpacks
