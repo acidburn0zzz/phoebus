@@ -54,8 +54,11 @@ else {
 include_once './database.php';
 
 // Check if the Add-on ID matches any of the databases or if we should send it off to AMO
-if (array_key_exists($varRequest_addonID, $arrayAddonDB)) {
-	funcRedirect2UpdateXML('internal', $arrayAddonDB[$varRequest_addonID]);
+if (array_key_exists($varRequest_addonID, $arrayExtensionsDB)) {
+	funcRedirect2UpdateXML('extension', $arrayExtensionsDB[$varRequest_addonID]);
+}
+if (array_key_exists($varRequest_addonID, $arrayThemesDB)) {
+	funcRedirect2UpdateXML('theme', $arrayThemesDB[$varRequest_addonID]);
 }
 elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)) {
 	funcRedirect2UpdateXML('external', $arrayExternalsDB[$varRequest_addonID]);
@@ -94,8 +97,11 @@ else {
 // == | Redirect to Update XML |===============================================
 
 function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
-	if ($varXMLType == 'internal') {
-		header('Location: https://addons.palemoon.org/phoebus/datastore/' . $varAddonData . '/update.xml', true, 302);
+	if ($varXMLType == 'extension') {
+		header('Location: https://addons.palemoon.org/phoebus/datastore/extensions/' . $varAddonData . '/update.xml', true, 302);
+	}
+	if ($varXMLType == 'theme') {
+		header('Location: https://addons.palemoon.org/phoebus/datastore/themes/' . $varAddonData . '/update.xml', true, 302);
 	}
 	elseif ($varXMLType == 'external') {
 		header('Location: ' . $varAddonData , true, 302);

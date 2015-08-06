@@ -2,48 +2,48 @@
 	
 	// Setup an array of add-on ids corresponding to their site ids
 	// This and the second array will be replaced with sql calls in the fullness of time
-	$arrayAddonDB = array(
-		'{03c2ba51-52c3-4cb1-9309-229eb4bc8948}' => 'pm-101',		// Theme: Kempelton Reloaded
-		'adblocklatitude@addons.palemoon.org' => 'pm-102',			// Extension: ABP Pseudo-Static / ABL Next Gen
-		'commander@palemoon.org' => 'pm-113',						// Extension: Pale Moon Commander
-		'{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'pm-118',		// Extension: Adblock Latitude
-		'bluemoonlinux@addons.palemoon.org' => 'pm-119',			// Extension: Blue Moon Linux
-		'{410b6160-ff00-11dc-95ff-0800200c9a66}' => 'pm-121',		// Theme: Winstripe Classic
-		'{1ebc69c0-92ff-11dc-8314-0800200c9a66}' => 'pm-122',		// Theme: Gnome Classic
-		'{1fa04079-1a64-4676-96b6-4222176d7a27}' => 'pm-123',		// Theme: Nautical Classic
-		'{81c983b9-ebe4-4b2e-b98e-98e62085837f}' => 'pm-124',		// Theme: White Moon
-		'{0c44653b-8ca4-4125-b98e-98e62085837f}' => 'pm-125',		// Theme: Qute 4 PM
-		'{a53af763-1a44-4820-b98e-98e62085837f}' => 'pm-126',		// Theme: PMOpera
-		'{87a59598-d2b6-45ba-b98e-98e62085837f}' => 'pm-127',		// Theme: PMChrome
-		'{bbee9373-4135-47cb-b98e-98e62085837f}' => 'pm-128',		// Theme: Fox 2 The Moon
-		'aviary-addons-manager@addons.palemoon.org' => 'pm-129',	// Extension: Aviary Add-ons Manager
-		'{669920c8-3426-4071-b98e-98e62085837f}' => 'pm-130',		// Theme: Tangerinemoon
-		'{d2da57e2-a0d3-4b59-b98e-98e62085837f}' => 'pm-131',		// Theme: Tangomoon
-		'noia-theme@addons.palemoon.org' => 'pm-132',				// Theme: Noia Moon (Theme)
-		'{434de990-fa69-4811-b98e-98e62085837f}' => 'pm-133',		// Theme: Darkness
-		'{4b13c0da-55d5-44ce-b98e-98e62085837f}' => 'pm-134',		// Theme: DarkPitch
-		'{cbb923ca-2954-426b-b98e-98e62085837f}' => 'pm-135',		// Theme: Maxi3
-		'{20c00d0d-79a4-4af5-b98e-98e62085837f}' => 'pm-136',		// Theme: Maxi4
-		'{0ed852bb-a216-42e9-b98e-98e62085837f}' => 'pm-137',		// Theme: Moonfox3
-		'{a3056aed-a93d-4c22-b98e-98e62085837f}' => 'pm-138',		// Theme: Qute Large
-		'{8a13d488-8657-4dab-b98e-98e62085837f}' => 'pm-139',		// Theme: Qute Legacy
-		'{4d457603-1613-4177-b98e-98e62085837f}' => 'pm-140',		// Theme: reinheit
-		'{60e12e8a-8197-4391-b98e-98e62085837f}' => 'pm-141',		// Theme: XMoon
-		'imagetoolbox@addons.palemoon.org' => 'pm-142',				// Extension: Image Toolbox
-		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'pm-143',		// Extension: Encrypted Web
-		'past-modern-revisited@lootyhoof-pm' => 'pm-144',			// Theme: Past Modern Revisited
-		'{626cf6f3-deae-4cf8-b98e-98e62085837f}' => 'pm-145',		// Theme: Opresto
-		'noia-options@addons.palemoon.org' => 'pm-146',				// Extension: Noia Moon (Options)
-		'{6e1d3ac8-6069-4b8a-b98e-98e62085837f}' => 'pm-147',		// Theme: Compact Moon
-		'{ff497972-c067-44d8-b98e-98e62085837f}' => 'pm-148',		// Extension: Compact Moon (Options)
-		'{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'pm-149',		// Theme: Moonola
-		'macmoon@lootyhoof-pm' => 'pm-150',							// Theme: MacMoon
-		'{854a7ddc-f008-4263-b98e-98e62085837f}' => 'pm-151',		// Theme: LittleMoon
-		'{6a2ffbbc-4f20-42f0-b98e-98e62085837f}' => 'pm-152',		// Theme: Australium
-		'modoki@lootyhoof-pm' => 'pm-153',							// Theme: Modoki Moon
-        'mozext_zinglocale@gooeysoftware.com' => 'pm-156'		    // Extension: Zing! Locale Switcher
+	$arrayExtensionsDB = array(
+		'adblocklatitude@addons.palemoon.org' => 'adblock-latitude-nextgen',	// Extension: ABP Pseudo-Static / ABL Next Gen
+		'commander@palemoon.org' => 'pm-commander',								// Extension: Pale Moon Commander
+		'{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude',			// Extension: Adblock Latitude
+		'bluemoonlinux@addons.palemoon.org' => 'blue-moon-linux',				// Extension: Blue Moon Linux
+		'aviary-addons-manager@addons.palemoon.org' => 'aviary-addons-manager',	// Extension: Aviary Add-ons Manager
+		'imagetoolbox@addons.palemoon.org' => 'image-toolbox',					// Extension: Image Toolbox
+		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'encrypted-web',			// Extension: Encrypted Web
+		'noia-options@addons.palemoon.org' => 'noia-moon-options',				// Extension: Noia Moon (Options)
+		'{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',		// Extension: Compact Moon (Options)
+        'mozext_zinglocale@gooeysoftware.com' => 'zing-locale-switcher'			// Extension: Zing! Locale Switcher
 	);
 	
+	$arrayThemesDB = array(
+		'{03c2ba51-52c3-4cb1-9309-229eb4bc8948}' => 'kempelton-reloaded',		// Theme: Kempelton Reloaded
+		'{81c983b9-ebe4-4b2e-b98e-98e62085837f}' => 'white-moon',				// Theme: White Moon
+		'{0c44653b-8ca4-4125-b98e-98e62085837f}' => 'qute-4-pm',				// Theme: Qute 4 PM
+		'{a53af763-1a44-4820-b98e-98e62085837f}' => 'pmopera',					// Theme: PMOpera
+		'{87a59598-d2b6-45ba-b98e-98e62085837f}' => 'pmchrome',					// Theme: PMChrome
+		'{bbee9373-4135-47cb-b98e-98e62085837f}' => 'fox-2-the-moon',			// Theme: Fox 2 The Moon
+		'{669920c8-3426-4071-b98e-98e62085837f}' => 'tangerinemoon',			// Theme: Tangerinemoon
+		'{d2da57e2-a0d3-4b59-b98e-98e62085837f}' => 'tangomoon',				// Theme: Tangomoon
+		'noia-theme@addons.palemoon.org' => 'noia-moon-theme',					// Theme: Noia Moon (Theme)
+		'{434de990-fa69-4811-b98e-98e62085837f}' => 'darkness',					// Theme: Darkness
+		'{4b13c0da-55d5-44ce-b98e-98e62085837f}' => 'darkpitch',				// Theme: DarkPitch
+		'{cbb923ca-2954-426b-b98e-98e62085837f}' => 'maxi3',					// Theme: Maxi3
+		'{20c00d0d-79a4-4af5-b98e-98e62085837f}' => 'maxi4',					// Theme: Maxi4
+		'{0ed852bb-a216-42e9-b98e-98e62085837f}' => 'moonfox3',					// Theme: Moonfox3
+		'{a3056aed-a93d-4c22-b98e-98e62085837f}' => 'qute-large',				// Theme: Qute Large
+		'{8a13d488-8657-4dab-b98e-98e62085837f}' => 'qute-legacy',				// Theme: Qute Legacy
+		'{4d457603-1613-4177-b98e-98e62085837f}' => 'reinheit',					// Theme: reinheit
+		'{60e12e8a-8197-4391-b98e-98e62085837f}' => 'xmoon',					// Theme: XMoon	
+		'{626cf6f3-deae-4cf8-b98e-98e62085837f}' => 'opresto',					// Theme: Opresto
+		'past-modern-revisited@lootyhoof-pm' => 'past-modern-revisited',		// Theme: Past Modern Revisited
+		'{6e1d3ac8-6069-4b8a-b98e-98e62085837f}' => 'compact-moon-theme',		// Theme: Compact Moon
+		'{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'moonola',					// Theme: Moonola
+		'macmoon@lootyhoof-pm' => 'macmoon',									// Theme: MacMoon
+		'{854a7ddc-f008-4263-b98e-98e62085837f}' => 'littlemoon',				// Theme: LittleMoon
+		'{6a2ffbbc-4f20-42f0-b98e-98e62085837f}' => 'australium',				// Theme: Australium
+		'modoki@lootyhoof-pm' => 'modoki-moon',									// Theme: Modoki Moon
+	);
+    
 	// Setup an array of add-on ids corresponding to location of the external update xml url
 	$arrayExternalsDB = array(
 		'firefox-tabgroups@mozilla.com' => 'https://www.palemoon.org/extensions/tabgroups-update.xml'		// Extension: Pale Moon Tab Groups
