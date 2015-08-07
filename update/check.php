@@ -98,10 +98,13 @@ else {
 
 function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
 	if ($varXMLType == 'extension') {
-		header('Location: https://addons.palemoon.org/phoebus/datastore/extensions/' . $varAddonData . '/update.xml', true, 302);
+		//header('Location: https://addons.palemoon.org/phoebus/datastore/extensions/' . $varAddonData . '/update.xml', true, 302);
+		header('Location: https://addons.palemoon.org/phoebus/tools/genupdatexml.php?type=extension&slug=' . $varAddonData, true, 302);
+		
 	}
 	if ($varXMLType == 'theme') {
-		header('Location: https://addons.palemoon.org/phoebus/datastore/themes/' . $varAddonData . '/update.xml', true, 302);
+		//header('Location: https://addons.palemoon.org/phoebus/datastore/themes/' . $varAddonData . '/update.xml', true, 302);
+		header('Location: https://addons.palemoon.org/phoebus/tools/genupdatexml.php?type=theme&slug=' . $varAddonData, true, 302);
 	}
 	elseif ($varXMLType == 'external') {
 		header('Location: ' . $varAddonData , true, 302);
