@@ -42,7 +42,8 @@
 		'{854a7ddc-f008-4263-b98e-98e62085837f}' => 'littlemoon',				// Theme: LittleMoon
 		'{6a2ffbbc-4f20-42f0-b98e-98e62085837f}' => 'australium',				// Theme: Australium
 		'modoki@lootyhoof-pm' => 'modoki-moon',									// Theme: Modoki Moon
-		'{edbb972f-e557-4870-b98e-98e62085837f}' => 'aeromoon'					// Theme: Aeromoon
+		'{edbb972f-e557-4870-b98e-98e62085837f}' => 'aeromoon',					// Theme: Aeromoon
+		'{e3e77d59-b01e-4381-b98e-98e62085837f}' => 'nauticalia'				// Theme: Nauticalia
 	);
     
 	// Setup an array of add-on ids corresponding to location of the external update xml url
