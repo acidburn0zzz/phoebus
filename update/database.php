@@ -12,7 +12,8 @@
 		'{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'encrypted-web',			// Extension: Encrypted Web
 		'noia-options@addons.palemoon.org' => 'noia-moon-options',				// Extension: Noia Moon (Options)
 		'{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',		// Extension: Compact Moon (Options)
-        'mozext_zinglocale@gooeysoftware.com' => 'zing-locale-switcher'			// Extension: Zing! Locale Switcher
+        'mozext_zinglocale@gooeysoftware.com' => 'zing-locale-switcher',		// Extension: Zing! Locale Switcher
+		'guerilla@ketmar.no-ip.org' => 'guerilla-scripting'						// Extension: Guerilla Scripting
 	);
 	
 	$arrayThemesDB = array(
