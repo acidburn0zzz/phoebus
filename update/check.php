@@ -55,23 +55,16 @@ include_once './database.php';
 
 // Check if the Add-on ID matches any of the databases or if we should send it off to AMO
 if (array_key_exists($varRequest_addonID, $arrayExtensionsDB)) {
-	funcRedirect2UpdateXML('extension', $arrayExtensionsDB[$varRequest_addonID]);
+	funcGenerateUpdateXML('extension', $varRequest_clientID, $varRequest_addonID, null,	null, $arrayExtensionsDB[$varRequest_addonID]);
 }
-if (array_key_exists($varRequest_addonID, $arrayThemesDB)) {
-	funcRedirect2UpdateXML('theme', $arrayThemesDB[$varRequest_addonID]);
+elseif (array_key_exists($varRequest_addonID, $arrayThemesDB)) {
+	funcGenerateUpdateXML('theme', $varRequest_clientID, $varRequest_addonID, null,	null, $arrayThemesDB[$varRequest_addonID]);
 }
 elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)) {
 	funcRedirect2UpdateXML('external', $arrayExternalsDB[$varRequest_addonID]);
 }
 elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
-	funcGenerateUpdateXML(
-		'langpack',
-		$varRequest_clientID,
-		$varRequest_addonID,
-		$arrayLangPackDB[$varRequest_addonID]['version'],
-		$arrayLangPackDB[$varRequest_addonID]['hash'],
-		$arrayLangPackDB[$varRequest_addonID]['locale']
-	);
+	funcGenerateUpdateXML( 'langpack', $varRequest_clientID, $varRequest_addonID, $arrayLangPackDB[$varRequest_addonID]['version'], $arrayLangPackDB[$varRequest_addonID]['hash'], $arrayLangPackDB[$varRequest_addonID]['locale']);
 }
 else {
 	$arrayAllowedAMOVersionDB = array( '25.3.2', '25.4.0', '25.4.1', '99.9.9');
@@ -97,16 +90,7 @@ else {
 // == | Redirect to Update XML |===============================================
 
 function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
-	if ($varXMLType == 'extension') {
-		//header('Location: https://addons.palemoon.org/phoebus/datastore/extensions/' . $varAddonData . '/update.xml', true, 302);
-		header('Location: https://addons.palemoon.org/phoebus/tools/genupdatexml.php?type=extension&slug=' . $varAddonData, true, 302);
-		
-	}
-	if ($varXMLType == 'theme') {
-		//header('Location: https://addons.palemoon.org/phoebus/datastore/themes/' . $varAddonData . '/update.xml', true, 302);
-		header('Location: https://addons.palemoon.org/phoebus/tools/genupdatexml.php?type=theme&slug=' . $varAddonData, true, 302);
-	}
-	elseif ($varXMLType == 'external') {
+	if ($varXMLType == 'external') {
 		header('Location: ' . $varAddonData , true, 302);
 	}
 	else {
@@ -119,19 +103,54 @@ function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
 // == | Generate Update XML |==================================================
 
 function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddonVersion, $varAddonHash, $varAddonData) {
-	if ($varXMLType == 'langpack') {
-		$varMinVersion = '25.6.0a1';
-		$varMaxVersion = '25.*';
-		$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.6/';
-		$varXPIextension = '.xpi';
 		
-		// Generate Update XML on the fly for Langpacks
-		$updateWriteOutLangpack ='<?xml version="1.0" encoding="UTF-8"?>
+	if (($varXMLType == 'extension') || ($varXMLType == 'theme') || ($varXMLType == 'langpack')) {
+		
+		if ($varXMLType == 'extension') {
+			$addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/manifest.ini');
+			if ($addonManifest == false) {
+				die('Error: Unable to read manifest ini file');
+			}
+			else {
+				$varAddonHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/' . $addonManifest["xpi"]);
+			}
+			$varAddonVersion = $addonManifest["version"];
+			$varMinVersion = $addonManifest["minVer"];
+			$varMaxVersion = $addonManifest["maxVer"];
+			$varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/extensions/';
+			$varUpdateLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
+			$varAddonType = 'extension';
+		}
+		elseif ($varXMLType == 'theme') {
+			$addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/manifest.ini');
+			if ($addonManifest == false) {
+				die('Error: Unable to read manifest ini file');
+			}
+			else {
+				$varAddonHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/' . $addonManifest["xpi"]);
+			}
+			$varAddonVersion = $addonManifest["version"];
+			$varMinVersion = $addonManifest["minVer"];
+			$varMaxVersion = $addonManifest["maxVer"];
+			$varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/themes/';
+			$varUpdateLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
+			$varAddonType = 'theme';
+		}
+		elseif ($varXMLType == 'langpack') {
+			$varMinVersion = '25.6.0a1';
+			$varMaxVersion = '25.*';
+			$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.6/';
+			$varXPIextension = '.xpi';
+			$varUpdateLink = $varBaseURL . $varAddonData . '.xpi';
+			$varAddonType = 'item';
+		}
+	
+		$updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
-  <RDF:Description about="urn:mozilla:item:' . $varAddonID . '">
+  <RDF:Description about="urn:mozilla:' . $varAddonType . ':' . $varAddonID . '">
     <em:updates>
       <RDF:Seq>
         <RDF:li>
@@ -142,7 +161,7 @@ function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddon
                 <em:id>' . $varClientID . '</em:id>
                 <em:minVersion>' . $varMinVersion . '</em:minVersion>
                 <em:maxVersion>' . $varMaxVersion . '</em:maxVersion>
-                <em:updateLink>' . $varBaseURL . $varAddonData . $varXPIextension . '</em:updateLink>
+                <em:updateLink>' . $varUpdateLink . '</em:updateLink>
                 <em:updateHash>sha256:' . $varAddonHash . '</em:updateHash>
               </RDF:Description>
             </em:targetApplication>
@@ -153,7 +172,7 @@ function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddon
   </RDF:Description>
 </RDF:RDF>';
 		header('Content-Type: text/xml');
-		print($updateWriteOutLangpack);
+		print($updateWriteOut);
 	}
 	elseif ($varXMLType == 'bad') {
 		$updateWriteOutBad ='<?xml version="1.0"?>
