@@ -1,0 +1,22 @@
+{* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. *}
+
+{assign var='number_of_levels' value=1}
+{if isset($menuparams.number_of_levels)}
+  {assign var='number_of_levels' value=$menuparams.number_of_levels}
+{/if}
+<div style="width: 100%; ">
+{if $count > 0}
+
+{foreach from=$nodelist item=node}
+<a class="PM-addon" href="{$node->url}" target="{$node->target}" style="width: 240px; height: 40px; display: inline-block; text-align: left; vertical-align: top; align: left; padding: 4px 8px; text-decoration: none; color: black;">
+
+<img src="/phoebus/datastore/{$node->extra2}/icon.png" style="" class="alignleft" width="32px" height="32px">
+
+<p style="margin-top: 6px;"><strong>{$node->menutext}</strong>{if $node->target == "_blank"} <small>[External]</small>{/if}</p>
+
+</a>
+{/foreach}
+</div>
+{/if}

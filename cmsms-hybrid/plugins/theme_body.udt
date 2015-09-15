@@ -1,9 +1,13 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
 $addon_cms_type = $smarty->fetch("eval:{page_attr key='extra1'}");
-$addon_cms_id = $smarty->fetch("eval:{page_attr key='extra2'}");
+$addon_cms_id = $smarty->get_template_vars('page_alias');
 
-$addon_manifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . "/phoebus/datastore/" . $addon_cms_id . "/manifest.ini");
+$addon_manifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . "/phoebus/datastore/themes/" . $addon_cms_id . "/manifest.ini");
 
-$addon_path = "/phoebus/datastore/" . $addon_manifest["id"] . "/";
+$addon_path = "/phoebus/datastore/themes/" . $addon_cms_id . "/";
 $addon_preview = $addon_path . "preview.png";
 $addon_xpi = $addon_path . $addon_manifest["xpi"];
 
@@ -17,7 +21,7 @@ $output = '
 <img src="' . $addon_preview . '" class="aligncenter"/>
 
 <h3>Compatibility</h3>
-<p>' . $addon_manifest["name"] . ' version ' . $addon_manifest["version"] . ' works with Pale Moon ' . $addon_manifest["compat"] . '</p>
+<p>' . $addon_manifest["name"] . ' version ' . $addon_manifest["version"] . ' works with Pale Moon ' . $addon_manifest["minVer"] . ' to ' . $addon_manifest["maxVer"] . '</p>
 
 
 <p style="text-align: center; padding: 10px;"><a class="dllink_green" href="' . $addon_xpi . '"><img border="0" src="/media/img/layout/download.png" alt="" style="width: 24px; height: 24px; position: relative; top: 7px; right: 4px;"></img>Download ' . $addon_manifest["name"] . '</a></p>

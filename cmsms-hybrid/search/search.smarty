@@ -1,3 +1,7 @@
+{* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. *}
+
 {$startform}
 <label for="{$search_actionid}searchinput"></label><input type="text" class="search-input" id="{$search_actionid}searchinput" name="{$search_actionid}searchinput" size="20" maxlength="50" value="Search Add-ons" {$hogan}/>
 {*

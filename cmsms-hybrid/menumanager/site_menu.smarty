@@ -1,3 +1,7 @@
+{* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. *}
+
 {* CSS classes used in this template:
 .activeparent - The top level parent when a child is the active/current page
 li.active0n h3 - n is the depth/level of the node. To style the active page for each level separately. The active page is not clickable.
