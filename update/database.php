@@ -16,7 +16,8 @@
 		'noia-options@addons.palemoon.org' => 'noia-moon-options',				// Extension: Noia Moon (Options)
 		'{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',		// Extension: Compact Moon (Options)
         'mozext_zinglocale@gooeysoftware.com' => 'zing-locale-switcher',		// Extension: Zing! Locale Switcher
-		'guerilla@ketmar.no-ip.org' => 'guerilla-scripting'						// Extension: Guerilla Scripting
+		'guerilla@ketmar.no-ip.org' => 'guerilla-scripting',					// Extension: Guerilla Scripting
+		'colormytabs@jetpack' => 'color-my-tabs'								// Extension: Color My Tabs
 	);
 	
 	$arrayThemesDB = array(
