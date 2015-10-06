@@ -69,7 +69,7 @@
 		'langpack-es-ES@palemoon.org' => array( 'locale' => 'es-ES', 'version' => '25.6', 'hash' => '11ffa1ae89a68c27ee7b9688bbff0ed1e33c1fba2f04e117b887620a7827861c'),
 		'langpack-es-MX@palemoon.org' => array( 'locale' => 'es-MX', 'version' => '25.6', 'hash' => '0a745b8bf9221129b296169c9a56355344adf394a0035a3608feaea070681b84'),
 		'langpack-fi@palemoon.org' => array( 'locale' => 'fi', 'version' => '25.6', 'hash' => '58032224fa99d5a6458b3fd8668e51909698a6da53b970add35a612539de3398'),
-		'langpack-fr@palemoon.org' => array( 'locale' => 'fr', 'version' => '25.6', 'hash' => '4097d448876144e4e930b2f74c0724e5cbba8481999764fafe73a32ef027a794'),
+		'langpack-fr@palemoon.org' => array( 'locale' => 'fr', 'version' => '25.7', 'hash' => 'f4127669c04828c366b00de9ea93360b57439cd4e9b3f553c2e1f5b5b5da7648'),
 		'langpack-gl-ES@palemoon.org' => array( 'locale' => 'gl-ES', 'version' => '25.6', 'hash' => 'b7a2e2e48e78369b234549d37dd49fe73845112811fb64242a0d8947af5822d2'),
 		'langpack-hr@palemoon.org' => array( 'locale' => 'hr', 'version' => '25.6', 'hash' => '3282728293155a8b72c0bccda1872f5c5e50f90137d3713e22a946fa20304d17'),
 		'langpack-hu@palemoon.org' => array( 'locale' => 'hu', 'version' => '25.6', 'hash' => '614e2ded6ff59514517ff801d0f08a39885a010dcacfd6909c4464f3b3819f41'),
