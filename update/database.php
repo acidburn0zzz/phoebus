@@ -49,7 +49,8 @@
 		'modoki@lootyhoof-pm' => 'modoki-moon',									// Theme: Modoki Moon
 		'{edbb972f-e557-4870-b98e-98e62085837f}' => 'aeromoon',					// Theme: Aeromoon
 		'{e3e77d59-b01e-4381-b98e-98e62085837f}' => 'nauticalia',				// Theme: Nauticalia
-		'camimoon@lootyhoof-pm' => 'camimoon'									// Theme: Camimoon
+		'camimoon@lootyhoof-pm' => 'camimoon',									// Theme: Camimoon
+		'{03e0a23d-1be6-4040-b98e-98e62085837f}' => 'micromoon'					// Theme: MicroMoon
 	);
     
 	// Setup an array of add-on ids corresponding to location of the external update xml url
