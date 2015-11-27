@@ -52,7 +52,8 @@
 		'{e3e77d59-b01e-4381-b98e-98e62085837f}' => 'nauticalia',									// Theme: Nauticalia
 		'camimoon@lootyhoof-pm' => 'camimoon',																		// Theme: Camimoon
 		'{03e0a23d-1be6-4040-b98e-98e62085837f}' => 'micromoon',										// Theme: MicroMoon
-		'darkmoon@lootyhoof-pm' => 'darkmoon'																		// Theme: Dark Moon
+		'darkmoon@lootyhoof-pm' => 'darkmoon',																		// Theme: Dark Moon
+		'phoenity-rebirth@lootyhoof-pm' => 'phoenity-rebirth'										// Theme: Phoenity Rebirth
 	);
     
 	// Setup an array of add-on ids corresponding to location of the external update xml url
