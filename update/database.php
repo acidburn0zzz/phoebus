@@ -19,7 +19,7 @@
 		'guerilla@ketmar.no-ip.org' => 'guerilla-scripting',											// Extension: Guerilla Scripting
 		'colormytabs@jetpack' => 'color-my-tabs',																	// Extension: Color My Tabs
 		'{d49bc111-8359-4a82-8738-db3f9a411f58}' => 'history-menu-button',					// Extension: History Menu Button
-		'{302dd086-df72-4fbf-835f-dc1f296049eb}' => 'extension-preferences-menu'	// Extension: History Menu Button
+		'{302dd086-df72-4fbf-835f-dc1f296049eb}' => 'extension-preferences-menu'	// Extension: Extension Preferences Menu
 	);
 	
 	$arrayThemesDB = array(
