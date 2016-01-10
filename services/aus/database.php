@@ -20,7 +20,8 @@
 		'colormytabs@jetpack' => 'color-my-tabs',																	// Extension: Color My Tabs
 		'{d49bc111-8359-4a82-8738-db3f9a411f58}' => 'history-menu-button',					// Extension: History Menu Button
 		'{302dd086-df72-4fbf-835f-dc1f296049eb}' => 'extension-preferences-menu',	// Extension: Extension Preferences Menu
-		'{2db74bf0-e2ce-4412-a47c-ec6de1449db1}' => 'space-advance'					// Extension: Space Advance
+		'{2db74bf0-e2ce-4412-a47c-ec6de1449db1}' => 'space-advance',					// Extension: Space Advance
+		'{f60dcfb5-358d-498e-9f2e-1b53eba4dde7}' => 'searchload-options-revived'			// Extension: SearchLoad Options Revived
 	);
 	
 	$arrayThemesDB = array(
