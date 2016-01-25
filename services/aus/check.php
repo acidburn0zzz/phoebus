@@ -141,9 +141,9 @@ function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddon
 			$varAddonType = 'theme';
 		}
 		elseif ($varXMLType == 'langpack') {
-			$varMinVersion = '25.6.0a1';
-			$varMaxVersion = '25.*';
-			$varBaseURL = 'http://relmirror.palemoon.org/langpacks/25.6/';
+			$varMinVersion = '26.0.0a1';
+			$varMaxVersion = '26.*';
+			$varBaseURL = 'http://relmirror.palemoon.org/langpacks/26.x/';
 			$varXPIextension = '.xpi';
 			$varUpdateLink = $varBaseURL . $varAddonData . '.xpi';
 			$varAddonType = 'item';
