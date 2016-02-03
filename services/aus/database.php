@@ -22,7 +22,8 @@
 		'{302dd086-df72-4fbf-835f-dc1f296049eb}' => 'extension-preferences-menu',
 		'{2db74bf0-e2ce-4412-a47c-ec6de1449db1}' => 'space-advance',
 		'{f60dcfb5-358d-498e-9f2e-1b53eba4dde7}' => 'searchload-options-revived',
-		'jid1-IDCACPalemoon@jetpack' => 'i-dont-care-about-cookies'
+		'jid1-IDCACPalemoon@jetpack' => 'i-dont-care-about-cookies',
+		'mozarchiver@lootyhoof-pm' => 'mozarchiver'
 	);
 	
 	$arrayThemesDB = array(
