@@ -34,7 +34,7 @@ else {
 
 if (array_key_exists('scope', $_GET)) {
 	$varRequest_scope = $_GET['scope'];
-	if (($varRequest_scope != 'internal') || ($varRequest_scope != 'external')) {
+	if (($varRequest_scope == 'internal') || ($varRequest_scope == 'external')) {
 		die('Invalid Scope');
 	}
 }
@@ -44,7 +44,7 @@ else {
 
 if (array_key_exists('request', $_GET)) {
 	$varRequest_req = $_GET['request'];
-	if (($varRequest_req != 'get') || ($varRequest_req != 'search') || ($varRequest_reqq != 'recommended') || ($varRequest_rwq != 'themes')) {
+	if (($varRequest_req == 'get') || ($varRequest_req == 'search') || ($varRequest_reqq == 'recommended') || ($varRequest_rwq == 'themes')) {
 		die('Invalid request');
 	}
 }
