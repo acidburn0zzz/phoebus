@@ -34,20 +34,21 @@ else {
 
 if (array_key_exists('scope', $_GET)) {
 	$varRequest_scope = $_GET['scope'];
-
-}
-else {
-	die('Scope not set');
-}
-
-if (array_key_exists('request', $_GET)) {
-	$varRequest_req = $_GET['request'];
-	if (($varRequest_req != 'get') || ($varRequest_req != 'search') || ($varRequest_reqq != 'recommended') || ($varRequest_req != 'themes')) {
-		die('Invalid request');
+	if (($varRequest_scope != 'internal') && ($varRequest_scope != 'external')) {
+		die('Invalid Scope: ' . $varRequest_scope);
 	}
 }
 else {
-	die('request not set');
+die('Scope not set');
+}
+if (array_key_exists('request', $_GET)) {
+$varRequest_req = $_GET['request'];
+	if (($varRequest_req != 'get') && ($varRequest_req != 'search') && ($varRequest_req != 'recommended') && ($varRequest_req != 'themes')) {
+		die('Invalid request: ' . $varRequest_req);
+	}
+}
+else {
+	die('Request not set');
 }
 // ============================================================================
 
