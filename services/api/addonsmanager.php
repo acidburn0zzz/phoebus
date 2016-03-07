@@ -44,7 +44,7 @@ else {
 
 if (array_key_exists('request', $_GET)) {
 	$varRequest_req = $_GET['request'];
-	if (($varRequest_req != 'get') || ($varRequest_req != 'search') || ($varRequest_reqq != 'recommended')) ($varRequest_rwq != 'themes')) {
+	if (($varRequest_req != 'get') || ($varRequest_req != 'search') || ($varRequest_reqq != 'recommended') || ($varRequest_rwq != 'themes')) {
 		die('Invalid request');
 	}
 }
@@ -77,7 +77,7 @@ if ($varRequest_scope == 'internal') {
 		die('An unknown error has occurred');
 	}
 }
-elseif ($varRequest_scope == 'external')
+elseif ($varRequest_scope == 'external') {
 	if ($varRequest_req == 'search') {
 		$varRequest_SearchQuery = $_GET['q'];
 		funcRedirect('https://addons.mozilla.org/firefox/search?q=' . $varRequest_SearchQuery);
