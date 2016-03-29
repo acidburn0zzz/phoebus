@@ -25,7 +25,8 @@
 		'jid1-IDCACPalemoon@jetpack' => 'i-dont-care-about-cookies',
 		'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies',
 		'mozarchiver@lootyhoof-pm' => 'mozarchiver',
-		'{98a2ae55-3a75-4354-a460-9176594d05c3}' => 'open-about-config'
+		'{98a2ae55-3a75-4354-a460-9176594d05c3}' => 'open-about-config',
+		'printPages2Pdf@reinhold.ripper' => 'print-pages-to-pdf'
 	);
 	
 	$arrayThemesDB = array(
