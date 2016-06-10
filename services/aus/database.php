@@ -29,7 +29,8 @@
         'printPages2Pdf@reinhold.ripper' => 'print-pages-to-pdf',
         'printPages2Pdf4AtomWinXP@reinhold.ripper' => 'print-pages-to-pdf-for-atom-winxp',
         'jid1-BoFifL9Vbdl2zQ@jetpack' => 'decentraleyes',
-        'base64encoder@srazzano.com' => 'base64-encoder'
+        'base64encoder@srazzano.com' => 'base64-encoder',
+        'addonsmanagerfix@sonco.com' => 'addons-manager-fix'
     );
     
     $arrayThemesDB = array(
