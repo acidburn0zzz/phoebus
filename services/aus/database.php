@@ -31,7 +31,8 @@
         'jid1-BoFifL9Vbdl2zQ@jetpack' => 'decentraleyes',
         'base64encoder@srazzano.com' => 'base64-encoder',
         'addonsmanagerfix@sonco.com' => 'addons-manager-fix',
-        'customtoolbarsplus@srazzano.com' => 'custom-toolbars-plus'
+        'customtoolbarsplus@srazzano.com' => 'custom-toolbars-plus',
+        'stylisheditormodified@sonco.com' => 'stylish-editor-modified'
     );
     
     $arrayThemesDB = array(
