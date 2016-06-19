@@ -17,13 +17,13 @@
                 
                 $vcResult = ToolkitVersionComparator::compare($_POST['currVersion'], $_POST['compVersion']);
                 
-                if ($vcResult = 0) {
+                if ($vcResult == 0) {
                     $htmlWriteOut = '<p>' . $_POST['compVersion'] . ' is the same version</p>';
                 }
-                elseif ($vcResult = 1) {
+                elseif ($vcResult == 1) {
                     $htmlWriteOut = '<p>' . $_POST['compVersion'] . ' is a newer version</p>';
                 }
-                elseif ($vcResult = -1) {
+                elseif ($vcResult == -1) {
                     $htmlWriteOut = '<p>' . $_POST['compVersion'] . ' is an older version</p>';
                 }
                 print($htmlWriteOut);
