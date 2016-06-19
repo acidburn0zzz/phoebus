@@ -12,9 +12,8 @@
         </form>
         <hr>
         <?php
-            require_once('../lib/vc/nsIVersionComparator.php'
+            require_once('../lib/vc/nsIVersionComparator.php');
             if (isset($_POST[currVersion]) && isset($_POST[compVersion])) {
-                require_once('../lib/vc/nsIVersionComparator.php')
                 
                 $vcResult = ToolkitVersionComparator::compare($_POST[currVersion], $_POST[compVersion]);
                 
