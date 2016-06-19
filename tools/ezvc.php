@@ -15,16 +15,16 @@
             require_once('../lib/vc/nsIVersionComparator.php');
             if (array_key_exists('currVersion', $_POST) && array_key_exists('compVersion', $_POST)) {
                 
-                $vcResult = ToolkitVersionComparator::compare($_POST[currVersion], $_POST[compVersion]);
+                $vcResult = ToolkitVersionComparator::compare($_POST['currVersion'], $_POST['compVersion']);
                 
                 if ($vcResult = 0) {
-                    $htmlWriteOut = '<p>Compare version ' . $_POST[compVersion] . ' is the same as current version ' . $_POST[currVersion] . '</p>';
+                    $htmlWriteOut = '<p>Compare version ' . $_POST['compVersion'] . ' is the same as current version ' . $_POST['currVersion'] . '</p>';
                 }
                 elseif ($vcResult = 1) {
-                    $htmlWriteOut = '<p>Compare version' . $_POST[compVersion] . ' is newer than current version ' . $_POST[currVersion] . '</p>';
+                    $htmlWriteOut = '<p>Compare version' . $_POST['compVersion'] . ' is newer than current version ' . $_POST['currVersion'] . '</p>';
                 }
                 elseif ($vcResult = -1) {
-                    $htmlWriteOut = '<p>Compare version' . $_POST[compVersion] . ' is older than current version ' . $_POST[currVersion] . '</p>';
+                    $htmlWriteOut = '<p>Compare version' . $_POST['compVersion'] . ' is older than current version ' . $_POST['currVersion'] . '</p>';
                 }
                 print($htmlWriteOut);
             }
