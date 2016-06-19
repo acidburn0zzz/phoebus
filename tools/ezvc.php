@@ -13,7 +13,7 @@
         <hr>
         <?php
             require_once('../lib/vc/nsIVersionComparator.php');
-            if (array_key_exists($_POST[currVersion]) && array_key_exists($_POST[compVersion])) {
+            if (array_key_exists('currVersion', $_POST) && array_key_exists('compVersion', $_POST)) {
                 
                 $vcResult = ToolkitVersionComparator::compare($_POST[currVersion], $_POST[compVersion]);
                 
