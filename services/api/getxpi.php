@@ -41,7 +41,7 @@ else {
 
 // == | Main |=================================================================
 
-include_once{'../aus/database.php');
+include_once('../aus/database.php');
 
 if ($varRequest_scope == 'download') {
     die('Not yet implemented!');
