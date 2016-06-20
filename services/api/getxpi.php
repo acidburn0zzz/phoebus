@@ -96,7 +96,7 @@ function funcGetXPI($varAddonType, $varAddonData) {
 			$varDownloadLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
 		}
         
-        funcRedirect($varDownloadLink)
+        funcRedirect($varDownloadLink);
     }
 }
 
