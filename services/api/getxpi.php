@@ -23,7 +23,7 @@ $varAMOServicesAPIPath = '/firefox/api/1.5/';
 
 if (array_key_exists('scope', $_GET)) {
     $varRequest_scope = $_GET['scope'];
-    if (($varRequest_scope != 'download') && ($varRequest_scope != 'permaxi')) {
+    if (($varRequest_scope != 'download') && ($varRequest_scope != 'permaxpi')) {
         die('Invalid Scope: ' . $varRequest_scope);
     }
 }
