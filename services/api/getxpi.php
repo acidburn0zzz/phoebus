@@ -60,10 +60,10 @@ elseif ($varRequest_scope == 'permaxpi') {
     
     if ($varSearchID != NULL) {
 
-        if (array_key_exists($varRequest_addonID, $arrayExtensionsDB)) {
+        if (array_key_exists($varSearchID, $arrayExtensionsDB)) {
             funcGetXPI('extension', $arrayExtensionsDB[$varSearchID]);
         }
-        elseif (array_key_exists($varRequest_addonID, $arrayThemesDB)) {
+        elseif (array_key_exists($varSearchID, $arrayThemesDB)) {
             funcGetXPI('theme', $arrayThemesDB[$varSearchID]);
         }
     }
