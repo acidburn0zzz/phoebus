@@ -51,7 +51,7 @@ elseif ($varRequest_scope == 'permaxpi') {
         'abl' => '{016acf6d-e5c0-4768-9376-3763d1ad1978}'
     );
     
-    if (array_key_exists($varRequest_id, $arrayPermaXPI) {
+    if (array_key_exists($varRequest_id, $arrayPermaXPI)) {
        $varSearchID = $arrayPermaXPI[$varRequest_id];
     }
     else {
