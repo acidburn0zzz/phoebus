@@ -27,7 +27,6 @@
         'mozarchiver@lootyhoof-pm' => 'mozarchiver',
         '{98a2ae55-3a75-4354-a460-9176594d05c3}' => 'open-about-config',
         'printPages2Pdf@reinhold.ripper' => 'print-pages-to-pdf',
-        'printPages2Pdf4AtomWinXP@reinhold.ripper' => 'print-pages-to-pdf-for-atom-winxp',
         'jid1-BoFifL9Vbdl2zQ@jetpack' => 'decentraleyes',
         'base64encoder@srazzano.com' => 'base64-encoder',
         'addonsmanagerfix@sonco.com' => 'addons-manager-fix',
