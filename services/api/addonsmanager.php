@@ -43,7 +43,7 @@ die('Scope not set');
 }
 if (array_key_exists('request', $_GET)) {
 $varRequest_req = $_GET['request'];
-	if (($varRequest_req != 'get') && ($varRequest_req != 'search') && ($varRequest_req != 'recommended') && ($varRequest_req != 'themes')) {
+	if (($varRequest_req != 'get') && ($varRequest_req != 'search') && ($varRequest_req != 'recommended') && ($varRequest_req != 'themes') && ($varRequest_req != 'searchplugins')) {
 		die('Invalid request: ' . $varRequest_req);
 	}
 }
@@ -86,6 +86,9 @@ elseif ($varRequest_scope == 'external') {
 	}
 	elseif ($varRequest_req == 'themes') {
 		funcRedirect('https://addons.palemoon.org/themes/complete/');
+	}
+	elseif ($varRequest_req == 'searchplugins') {
+		funcRedirect('https://addons.palemoon.org/more/search-plugins/');
 	}
 	else {
 		die('An unknown error has occurred');
