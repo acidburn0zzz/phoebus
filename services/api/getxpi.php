@@ -14,8 +14,6 @@
 // == | Vars |=================================================================
 
 $varHardcode_palemoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
-$varAMOServicesURL = 'https://services.addons.mozilla.org/';
-$varAMOServicesAPIPath = '/firefox/api/1.5/';
 
 // ============================================================================
 
@@ -77,26 +75,38 @@ else {
 
 function funcGetXPI($varAddonType, $varAddonData) {
 		
-	if (($varAddonType == 'extension') || ($varAddonType == 'theme')) {
-		
-		if ($varAddonType == 'extension') {
-			$addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/manifest.ini');
-			if ($addonManifest == false) {
-				die('Error: Unable to read manifest ini file');
-			}
-			$varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/extensions/';
-			$varDownloadLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
-		}
-		elseif ($varAddonType == 'theme') {
-			$addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/manifest.ini');
-			if ($addonManifest == false) {
-				die('Error: Unable to read manifest ini file');
-			}
-			$varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/themes/';
-			$varDownloadLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
-		}
+    if (($varAddonType == 'extension') || ($varAddonType == 'theme')) {
+    
+        if ($varAddonType == 'extension') {
+            $_varAddonType == 'extensions';
+        }
+        elseif ($varAddonType == 'theme') {
+            $_varAddonType == 'themes';
+        }
         
-        funcRedirect($varDownloadLink);
+        $addonPathPrefix = '../../datastore/' . $_varAddonType . '/' . $varAddonData . '/'
+        $addonManifestFile = $addonPathPrefix . 'manifest.ini';
+        
+        $addonManifest = parse_ini_file($addonManifestFile);
+        if (!$addonManifest) {
+            die('Error: Unable to read manifest ini file');
+        }
+        
+        if (file_exists($addonPathPrefix . $addonManifest["xpi"])) {
+            header('Content-Description: Install Add-on');
+            header('Content-Type: application/x-xpinstall');
+            header('Content-Disposition: attachment; filename="' . $addonManifest["xpi"] . '"');
+            header('Cache-Control: no-cache');
+            
+            readfile($addonPathPrefix . $addonManifest["xpi"]);
+        }
+        else {
+            die('Error: File not found');
+        }
+        
+        // $varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/extensions/';
+        // $varDownloadLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];   
+        // funcRedirect($varDownloadLink);
     }
 }
 
