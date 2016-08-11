@@ -53,7 +53,7 @@ function funcPrintSearchPlugin($_varID) {
             die('The file could not be read properly');
         }
         
-        header('Content-Type: application/opensearchdescription+xml');
+        header('Content-Type: text/xml');
         print($_stringSearchPlugin);
     }
     else {
