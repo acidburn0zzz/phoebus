@@ -86,12 +86,16 @@ function funcGetXPI($varAddonType, $varAddonData) {
         if (!$addonManifest) {
             die('Error: Unable to read manifest ini file');
         }
+        else {
+            $addonFile = $addonPathPrefix . $addonManifest["xpi"];
+        }
         
-        if (file_exists($addonPathPrefix . $addonManifest["xpi"])) {
+        if (file_exists($addonFile)) {
             header('Content-Type: application/x-xpinstall');
+            header('Content-Length: ' . filesize($addonFile));
             header('Cache-Control: no-cache');
             
-            readfile($addonPathPrefix . $addonManifest["xpi"]);
+            readfile($addonFile);
         }
         else {
             die('Error: File not found');
