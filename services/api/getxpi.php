@@ -78,10 +78,10 @@ function funcGetXPI($varAddonType, $varAddonData) {
     if (($varAddonType == 'extension') || ($varAddonType == 'theme')) {
     
         if ($varAddonType == 'extension') {
-            $_varAddonType == 'extensions';
+            $_varAddonType = 'extensions';
         }
         elseif ($varAddonType == 'theme') {
-            $_varAddonType == 'themes';
+            $_varAddonType = 'themes';
         }
         
         $addonPathPrefix = '../../datastore/' . $_varAddonType . '/' . $varAddonData . '/';
