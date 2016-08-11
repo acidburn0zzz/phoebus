@@ -7,7 +7,7 @@
 
 // Uncomment to enable
  error_reporting(E_ALL);
- ini_set("display_errors", "on");
+ ini_set("display_errors", "off");
 
 // ============================================================================
 
@@ -42,7 +42,12 @@ else {
 include_once('../aus/database.php');
 
 if ($varRequest_scope == 'download') {
-    die('Not yet implemented!');
+    if (array_key_exists($varRequest_id, $arrayExtensionsDB)) {
+        funcGetXPI('extension', $arrayExtensionsDB[$varRequest_id]);
+    }
+    elseif (array_key_exists($varRequest_id, $arrayThemesDB)) {
+        funcGetXPI('theme', $arrayThemesDB[$varRequest_id]);
+    }
 }
 elseif ($varRequest_scope == 'permaxpi') {
     $arrayPermaXPI = array(
@@ -53,17 +58,7 @@ elseif ($varRequest_scope == 'permaxpi') {
        $varSearchID = $arrayPermaXPI[$varRequest_id];
     }
     else {
-        die('We cannot find ' . $varRequest_id);
-    }
-    
-    if ($varSearchID != NULL) {
-
-        if (array_key_exists($varSearchID, $arrayExtensionsDB)) {
-            funcGetXPI('extension', $arrayExtensionsDB[$varSearchID]);
-        }
-        elseif (array_key_exists($varSearchID, $arrayThemesDB)) {
-            funcGetXPI('theme', $arrayThemesDB[$varSearchID]);
-        }
+        die('We cannot find permaxpi ' . $varRequest_id);
     }
 }
 else {
@@ -93,9 +88,7 @@ function funcGetXPI($varAddonType, $varAddonData) {
         }
         
         if (file_exists($addonPathPrefix . $addonManifest["xpi"])) {
-//            header('Content-Description: Install Add-on');
             header('Content-Type: application/x-xpinstall');
-//            header('Content-Disposition: attachment; filename="' . $addonManifest["xpi"] . '"');
             header('Cache-Control: no-cache');
             
             readfile($addonPathPrefix . $addonManifest["xpi"]);
@@ -103,19 +96,7 @@ function funcGetXPI($varAddonType, $varAddonData) {
         else {
             die('Error: File not found');
         }
-        
-        // $varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/extensions/';
-        // $varDownloadLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];   
-        // funcRedirect($varDownloadLink);
     }
-}
-
-// ============================================================================
-
-// == | Redirect to URL |======================================================
-
-function funcRedirect($varURL) {
-    header('Location: ' . $varURL , true, 302);
 }
 
 // ============================================================================
