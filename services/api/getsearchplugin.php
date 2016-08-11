@@ -34,7 +34,7 @@ else {
 // == | Main |=================================================================
 
 if (array_key_exists($varRequest_id, $arraySearchPlugins)) {
-    funcPrintSearchPlugin($arraySearchPlugins[$varRequest_id];
+    funcPrintSearchPlugin($arraySearchPlugins[$varRequest_id]);
 }
 
 // ============================================================================
