@@ -84,7 +84,7 @@ function funcGetXPI($varAddonType, $varAddonData) {
             $_varAddonType == 'themes';
         }
         
-        $addonPathPrefix = '../../datastore/' . $_varAddonType . '/' . $varAddonData . '/'
+        $addonPathPrefix = '../../datastore/' . $_varAddonType . '/' . $varAddonData . '/';
         $addonManifestFile = $addonPathPrefix . 'manifest.ini';
         
         $addonManifest = parse_ini_file($addonManifestFile);
