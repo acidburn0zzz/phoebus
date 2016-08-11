@@ -93,9 +93,9 @@ function funcGetXPI($varAddonType, $varAddonData) {
         }
         
         if (file_exists($addonPathPrefix . $addonManifest["xpi"])) {
-            header('Content-Description: Install Add-on');
+//            header('Content-Description: Install Add-on');
             header('Content-Type: application/x-xpinstall');
-            header('Content-Disposition: attachment; filename="' . $addonManifest["xpi"] . '"');
+//            header('Content-Disposition: attachment; filename="' . $addonManifest["xpi"] . '"');
             header('Cache-Control: no-cache');
             
             readfile($addonPathPrefix . $addonManifest["xpi"]);
