@@ -31,7 +31,18 @@
         'base64encoder@srazzano.com' => 'base64-encoder',
         'addonsmanagerfix@sonco.com' => 'addons-manager-fix',
         'customtoolbarsplus@srazzano.com' => 'custom-toolbars-plus',
-        'stylisheditormodified@sonco.com' => 'stylish-editor-modified'
+        'stylisheditormodified@sonco.com' => 'stylish-editor-modified',
+        '{e178eb56-1085-4a1f-9376-3763d1ad1978}' => 'add-to-search-bar',
+        '{8eb2e77d-73aa-4620-a9dd-9ddae0602172}' => 'change-referer-button',
+        '{4523665a-317f-4a66-9376-3763d1ad1978}' => 'chatzilla',
+        'cipherfox@mkfly' => 'cipherfox',
+        '{0c901354-1fc1-4941-9376-3763d1ad1978}' => 'date-picker',
+        '{05b2e82d-b047-4d00-a9dd-9ddae0602172}' => 'finderbar-tweak',
+        '{91228860-d602-45c4-9376-3763d1ad1978}' => 'foxclocks',
+        'pentadactyl@addons.palemoon.org' => 'pentadactyl',
+        'ext-promises@palemoon.org' => 'pm-promises',
+        '{a8d39d11-bb4d-4f0a-a9dd-9ddae0602172}' => 'show-my-password',
+        '{6075f33c-14bf-48b3-9aa0-aa0e607640b9}' => 'tiny-menu'
     );
     
     $arrayThemesDB = array(
