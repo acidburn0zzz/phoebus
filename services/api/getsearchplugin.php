@@ -16,7 +16,11 @@
 $varHardcode_palemoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 
 $arraySearchPlugins = array(
-    '100' => 'google'
+    '100' => 'google',
+    '101' => 'youtube',
+    '102' => 'google-play',
+    '103' => 'ask',
+    '104' => 'merriam-webster'
 );
 
 // ============================================================================
