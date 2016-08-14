@@ -20,7 +20,8 @@ $arraySearchPlugins = array(
     '101' => 'youtube',
     '102' => 'google-play',
     '103' => 'ask',
-    '104' => 'merriam-webster'
+    '104' => 'merriam-webster',
+    '105' => 'facebook'
 );
 
 // ============================================================================
