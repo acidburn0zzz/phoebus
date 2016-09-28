@@ -18,6 +18,7 @@
         'mozext_zinglocale@gooeysoftware.com' => 'zing-locale-switcher',
         'guerilla@ketmar.no-ip.org' => 'guerilla-scripting',
         'colormytabs@jetpack' => 'color-my-tabs',
+        'color-my-tabs@wsdfhjxc' => 'color-my-tabs',
         '{d49bc111-8359-4a82-8738-db3f9a411f58}' => 'history-menu-button',
         '{302dd086-df72-4fbf-835f-dc1f296049eb}' => 'extension-preferences-menu',
         '{2db74bf0-e2ce-4412-a47c-ec6de1449db1}' => 'space-advance',
