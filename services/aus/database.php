@@ -46,7 +46,8 @@
         'ext-promises@palemoon.org' => 'pm-promises',
         '{a8d39d11-bb4d-4f0a-a9dd-9ddae0602172}' => 'show-my-password',
         '{6075f33c-14bf-48b3-9aa0-aa0e607640b9}' => 'tiny-menu',
-        'devtools@addons.palemoon.org' => 'devtools'
+        'devtools@addons.palemoon.org' => 'devtools',
+        '{AF445D67-154C-4c69-A17B-7F392BCC36A3}' => 'complete-yt-saver'
     );
     
     $arrayThemesDB = array(
