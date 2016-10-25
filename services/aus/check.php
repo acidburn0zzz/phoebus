@@ -25,29 +25,29 @@ $varAMOWhitelist = false;
 
 // Client ID Check
 if (array_key_exists('appID', $_GET)) {
-	$varRequest_clientID = $_GET['appID'];
-	if ($varRequest_clientID != $varHardcode_palemoonID) {
-		die('Invalid Client ID');
-	}
+    $varRequest_clientID = $_GET['appID'];
+    if ($varRequest_clientID != $varHardcode_palemoonID) {
+        die('Invalid Client ID');
+    }
 }
 else {
-	die('Client ID not set');
+    die('Client ID not set');
 }
 
 // Client Version Check
 if (array_key_exists('appVersion', $_GET)) {
-	$varRequest_clientVersion = $_GET['appVersion'];
+    $varRequest_clientVersion = $_GET['appVersion'];
 }
 else {
-	die('Client Version not set');
+    die('Client Version not set');
 }
 
 // Add-on ID Check
 if (array_key_exists('id', $_GET)) {
-	$varRequest_addonID = $_GET['id'];
+    $varRequest_addonID = $_GET['id'];
 }
 else {
-	die('Add-on ID not set');
+    die('Add-on ID not set');
 }
 
 // ============================================================================
@@ -59,41 +59,41 @@ include_once './database.php';
 
 // Check if the Add-on ID matches any of the databases or if we should send it off to AMO
 if (array_key_exists($varRequest_addonID, $arrayExtensionsDB)) {
-	funcGenerateUpdateXML('extension', $varRequest_clientID, $varRequest_addonID, null,	null, $arrayExtensionsDB[$varRequest_addonID]);
+    funcGenerateUpdateXML('extension', $varRequest_clientID, $varRequest_addonID, null, null, $arrayExtensionsDB[$varRequest_addonID]);
 }
 elseif (array_key_exists($varRequest_addonID, $arrayThemesDB)) {
-	funcGenerateUpdateXML('theme', $varRequest_clientID, $varRequest_addonID, null,	null, $arrayThemesDB[$varRequest_addonID]);
+    funcGenerateUpdateXML('theme', $varRequest_clientID, $varRequest_addonID, null, null, $arrayThemesDB[$varRequest_addonID]);
 }
 elseif (array_key_exists($varRequest_addonID, $arrayExternalsDB)) {
-	funcRedirect2UpdateXML('external', $arrayExternalsDB[$varRequest_addonID]);
+    funcRedirect2UpdateXML('external', $arrayExternalsDB[$varRequest_addonID]);
 }
 elseif (array_key_exists($varRequest_addonID, $arrayLangPackDB)) {
-	funcGenerateUpdateXML( 'langpack', $varRequest_clientID, $varRequest_addonID, $arrayLangPackDB[$varRequest_addonID]['version'], $arrayLangPackDB[$varRequest_addonID]['hash'], $arrayLangPackDB[$varRequest_addonID]['locale']);
+    funcGenerateUpdateXML( 'langpack', $varRequest_clientID, $varRequest_addonID, $arrayLangPackDB[$varRequest_addonID]['version'], $arrayLangPackDB[$varRequest_addonID]['hash'], $arrayLangPackDB[$varRequest_addonID]['locale']);
 }
 else {
-	$arrayAllowedAMOVersionDB = array( '25.3.2', '25.4.0', '25.4.1', '99.9.9');
-	if ($varRequest_clientID == $varHardcode_palemoonID) {
-		if (($varAMOKillSwitch == false) && ($varAMOWhitelist == false || in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true)) {
-			$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
-      $varRequest_addonVersion = $_GET['version']; // Add-on Version is required for possible beta channel
-			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
+    $arrayAllowedAMOVersionDB = array( '25.3.2', '25.4.0', '25.4.1', '99.9.9');
+    if ($varRequest_clientID == $varHardcode_palemoonID) {
+        if (($varAMOKillSwitch == false) && ($varAMOWhitelist == false || in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true)) {
+            $varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
+            $varRequest_addonVersion = $_GET['version']; // Add-on Version is required for possible beta channel
+            $varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
             
-			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion .
+            $varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion .
                 '&id=' . $varRequest_addonID .
                 '&version=' . $varRequest_addonVersion  .
                 '&appID=' . $varHardcode_firefoxID .
                 '&appVersion=' . $varHardcode_firefoxVersion .
                 '&compatMode=' . $varRequest_addonCompatMode;
-			
-			funcRedirect2UpdateXML('external', $varAMOLink);
-		}
-		else {
-			funcGenerateUpdateXML('bad', null, null, null, null, null);
-		}
-	}
-	else {
-		die('How did you even make it this far?!');
-	}
+            
+            funcRedirect2UpdateXML('external', $varAMOLink);
+        }
+        else {
+            funcGenerateUpdateXML('bad', null, null, null, null, null);
+        }
+    }
+    else {
+        die('How did you even make it this far?!');
+    }
     
 }
 // ============================================================================
@@ -101,12 +101,12 @@ else {
 // == | Redirect to Update XML |===============================================
 
 function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
-	if ($varXMLType == 'external') {
-		header('Location: ' . $varAddonData , true, 302);
-	}
-	else {
-		die('funcRedirect2UpdateXML: Unknown XML type');
-	}
+    if ($varXMLType == 'external') {
+        header('Location: ' . $varAddonData , true, 302);
+    }
+    else {
+        die('funcRedirect2UpdateXML: Unknown XML type');
+    }
 }
 
 // ============================================================================
@@ -114,49 +114,49 @@ function funcRedirect2UpdateXML($varXMLType, $varAddonData) {
 // == | Generate Update XML |==================================================
 
 function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddonVersion, $varAddonHash, $varAddonData) {
-		
-	if (($varXMLType == 'extension') || ($varXMLType == 'theme') || ($varXMLType == 'langpack')) {
-		
-		if ($varXMLType == 'extension') {
-			$addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/manifest.ini');
-			if ($addonManifest == false) {
-				die('Error: Unable to read manifest ini file');
-			}
-			else {
-				$varAddonHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/' . $addonManifest["xpi"]);
-			}
-			$varAddonVersion = $addonManifest["version"];
-			$varMinVersion = $addonManifest["minVer"];
-			$varMaxVersion = $addonManifest["maxVer"];
-			$varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/extensions/';
-			$varUpdateLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
-			$varAddonType = 'extension';
-		}
-		elseif ($varXMLType == 'theme') {
-			$addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/manifest.ini');
-			if ($addonManifest == false) {
-				die('Error: Unable to read manifest ini file');
-			}
-			else {
-				$varAddonHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/' . $addonManifest["xpi"]);
-			}
-			$varAddonVersion = $addonManifest["version"];
-			$varMinVersion = $addonManifest["minVer"];
-			$varMaxVersion = $addonManifest["maxVer"];
-			$varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/themes/';
-			$varUpdateLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
-			$varAddonType = 'theme';
-		}
-		elseif ($varXMLType == 'langpack') {
-			$varMinVersion = '26.0.0a1';
-			$varMaxVersion = '26.*';
-			$varBaseURL = 'http://relmirror.palemoon.org/langpacks/26.x/';
-			$varXPIextension = '.xpi';
-			$varUpdateLink = $varBaseURL . $varAddonData . '.xpi';
-			$varAddonType = 'item';
-		}
-	
-		$updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
+        
+    if (($varXMLType == 'extension') || ($varXMLType == 'theme') || ($varXMLType == 'langpack')) {
+        
+        if ($varXMLType == 'extension') {
+            $addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/manifest.ini');
+            if ($addonManifest == false) {
+                die('Error: Unable to read manifest ini file');
+            }
+            else {
+                $varAddonHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/extensions/' . $varAddonData . '/' . $addonManifest["xpi"]);
+            }
+            $varAddonVersion = $addonManifest["version"];
+            $varMinVersion = $addonManifest["minVer"];
+            $varMaxVersion = $addonManifest["maxVer"];
+            $varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/extensions/';
+            $varUpdateLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
+            $varAddonType = 'extension';
+        }
+        elseif ($varXMLType == 'theme') {
+            $addonManifest = parse_ini_file($_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/manifest.ini');
+            if ($addonManifest == false) {
+                die('Error: Unable to read manifest ini file');
+            }
+            else {
+                $varAddonHash = hash_file('sha256', $_SERVER["DOCUMENT_ROOT"] . '/phoebus/datastore/themes/' . $varAddonData . '/' . $addonManifest["xpi"]);
+            }
+            $varAddonVersion = $addonManifest["version"];
+            $varMinVersion = $addonManifest["minVer"];
+            $varMaxVersion = $addonManifest["maxVer"];
+            $varBaseURL = 'https://addons.palemoon.org/phoebus/datastore/themes/';
+            $varUpdateLink = $varBaseURL . $varAddonData . '/' . $addonManifest["xpi"];
+            $varAddonType = 'theme';
+        }
+        elseif ($varXMLType == 'langpack') {
+            $varMinVersion = '26.0.0a1';
+            $varMaxVersion = '26.*';
+            $varBaseURL = 'http://relmirror.palemoon.org/langpacks/26.x/';
+            $varXPIextension = '.xpi';
+            $varUpdateLink = $varBaseURL . $varAddonData . '.xpi';
+            $varAddonType = 'item';
+        }
+    
+        $updateWriteOut ='<?xml version="1.0" encoding="UTF-8"?>
 
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:em="http://www.mozilla.org/2004/em-rdf#">
@@ -182,20 +182,20 @@ function funcGenerateUpdateXML($varXMLType, $varClientID, $varAddonID, $varAddon
     </em:updates>
   </RDF:Description>
 </RDF:RDF>';
-		header('Content-Type: text/xml');
-		print($updateWriteOut);
-	}
-	elseif ($varXMLType == 'bad') {
-		$updateWriteOutBad ='<?xml version="1.0"?>
+        header('Content-Type: text/xml');
+        print($updateWriteOut);
+    }
+    elseif ($varXMLType == 'bad') {
+        $updateWriteOutBad ='<?xml version="1.0"?>
 <RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 xmlns:em="http://www.mozilla.org/2004/em-rdf#">
-</RDF:RDF>';	
-		header('Content-Type: text/xml');
-		print($updateWriteOutBad);
-	}
-	else {
-		die('funcGenerateUpdateXML: Unknown XML type');
-	}
+</RDF:RDF>';    
+        header('Content-Type: text/xml');
+        print($updateWriteOutBad);
+    }
+    else {
+        die('funcGenerateUpdateXML: Unknown XML type');
+    }
 }
 
 // ============================================================================
