@@ -75,8 +75,15 @@ else {
 	if ($varRequest_clientID == $varHardcode_palemoonID) {
 		if (($varAMOKillSwitch == false) && ($varAMOWhitelist == false || in_array($varRequest_clientVersion, $arrayAllowedAMOVersionDB) == true)) {
 			$varRequest_reqVersion = $_GET['reqVersion']; // This seems to always be '2'
+      $varRequest_addonVersion = $_GET['version']; // Add-on Version is required for possible beta channel
 			$varRequest_addonCompatMode = $_GET['compatMode']; // This is almost always 'normal' but it can be 'strict' for things like langpacks
-			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion . '&id=' . $varRequest_addonID . '&appID=' . $varHardcode_firefoxID . '&appVersion=' . $varHardcode_firefoxVersion . '&compatMode=' . $varRequest_addonCompatMode;
+            
+			$varAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=' . $varRequest_reqVersion .
+                '&id=' . $varRequest_addonID .
+                '&version=' . $varRequest_addonVersion  .
+                '&appID=' . $varHardcode_firefoxID .
+                '&appVersion=' . $varHardcode_firefoxVersion .
+                '&compatMode=' . $varRequest_addonCompatMode;
 			
 			funcRedirect2UpdateXML('external', $varAMOLink);
 		}
