@@ -15,8 +15,6 @@
         '{4bf973fe-f2b7-43e1-b2ca-52f9c6f6fddf}' => 'encrypted-web',
         'noia-options@addons.palemoon.org' => 'noia-moon-options',
         '{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',
-        'mozext_zinglocale@gooeysoftware.com' => 'zing-locale-switcher',
-        'mozext_encodr@gooeysoftware.com' => 'encodr',
         'guerilla@ketmar.no-ip.org' => 'guerilla-scripting',
         'colormytabs@jetpack' => 'color-my-tabs',
         'color-my-tabs@wsdfhjxc' => 'color-my-tabs',
