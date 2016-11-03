@@ -56,7 +56,7 @@ else {
 
 if ($varRequest_scope == 'internal') {
 	if ($varRequest_req == 'get') {
-		$varRequest_locale = $_GET['locale'];
+		$varRequest_locale = '/en-US/';
 		$varRequest_addonID = $_GET['addonguid'];
 		$varRequest_OS = $_GET['os'];
 		//funcRedirect($varAMOServicesURL . $varRequest_locale . $varAMOServicesAPIPath . 'search/guid:' . $varRequest_addonID . '?src=firefox&appOS=' . $varRequest_OS . '&appVersion=24.9');
