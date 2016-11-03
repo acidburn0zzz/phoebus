@@ -59,7 +59,10 @@ if ($varRequest_scope == 'internal') {
 		$varRequest_locale = $_GET['locale'];
 		$varRequest_addonID = $_GET['addonguid'];
 		$varRequest_OS = $_GET['os'];
-		funcRedirect($varAMOServicesURL . $varRequest_locale . $varAMOServicesAPIPath . 'search/guid:' . $varRequest_addonID . '?src=firefox&appOS=' . $varRequest_OS . '&appVersion=24.9');
+		//funcRedirect($varAMOServicesURL . $varRequest_locale . $varAMOServicesAPIPath . 'search/guid:' . $varRequest_addonID . '?src=firefox&appOS=' . $varRequest_OS . '&appVersion=24.9');
+        header("Content-type: text/xml");
+        print('<?xml version="1.0" encoding="utf-8" ?>' . "\n" . '<searchresults total_results="0">' . "\n" . '</searchresults>');
+        exit();
 	}
 	elseif ($varRequest_req == 'search') {
 		$varRequest_locale = $_GET['locale'];
