@@ -27,6 +27,10 @@ $arrayStaticPages = array(
         'title' => 'Known Incompatible Add-ons',
         'contentFile' => $strContentBasePath . 'pages/incompatible.xhtml',
     ),
+    '/roadmap/' => array(
+        'title' => 'Add-ons Site and Project Phoebus Roadmap',
+        'contentFile' => $strContentBasePath . 'pages/roadmap.xhtml',
+    ),
 );
 
 // ============================================================================
