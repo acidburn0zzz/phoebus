@@ -63,11 +63,11 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
 
         // assign the baseURL to the add-on manifest array
         if ($_addonBaseURL == true) {
-            if ($_SERVER["HTTP_X_FORWARDED_HOST"] = 'dev.addons.palemoon.org') {
+            if ($_SERVER["HTTP_X_FORWARDED_HOST"] == 'dev.addons.palemoon.org') {
                 $_addonManifest['addon']["baseURL"] = 'http://dev.addons.palemoon.org/datastore/' . $_addonDirectory;
             }
             else {
-                $_addonManifest['addon']["baseURL"] = 'https://addons.palemoon.org/phoebus/datastore/' . $_addonDirectory;
+                $_addonManifest['addon']["baseURL"] = 'https://addons.palemoon.org/datastore/' . $_addonDirectory;
             }
         }
 
