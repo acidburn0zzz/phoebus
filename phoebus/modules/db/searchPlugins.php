@@ -10,7 +10,7 @@ $arraySearchPluginsDB = array(
     ),
     'search-101' => array(
         'slug' => 'youtube',
-        'name' => 'YouYube'
+        'name' => 'YouTube'
     ),
     'search-102' => array(
         'slug' => 'google-play',
