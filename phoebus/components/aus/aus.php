@@ -123,7 +123,7 @@ elseif (array_key_exists($strRequestAddonID, $arrayExternalsDB)) {
 // Unknown - Send to AMO or to 'bad' update xml
 else {
     if ($boolAMOKillSwitch == false) {
-        $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, '27.0.0b3');
+        $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, '27.0.0');
         $_strFirefoxVersion = $strFirefoxVersion;
         
         if ($intVcResult < 0) {

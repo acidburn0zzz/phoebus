@@ -7,7 +7,7 @@
 
 $strPaleMoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 $strFirefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
-$strFirefoxVersion = '24.9';
+$strFirefoxVersion = '27.9';
 
 $strRequestComponent = funcHTTPGetValue('component');
 $arrayArgsComponent = preg_grep('/^component=(.*)/', explode('&', parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY)));
