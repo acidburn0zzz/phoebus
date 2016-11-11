@@ -73,7 +73,14 @@ function funcGeneratePage($_arrayPage) {
     if (array_key_exists('subContent', $_arrayPage)) {
         $_strHTMLPage = str_replace('@PAGE_SUBCONTENT@', $_arrayPage['subContent'], $_strHTMLPage);
     }
-    
+
+    if ($_SERVER["HTTP_X_FORWARDED_HOST"] == 'dev.addons.palemoon.org') {
+        $_strHTMLPage = str_replace('@SITE_DOMAIN@', 'http://dev.addons.palemoon.org', $_strHTMLPage);
+    }
+    else {
+        $_strHTMLPage = str_replace('@SITE_DOMAIN@', 'https://addons.palemoon.org', $_strHTMLPage);
+    }
+
     funcSendHeader('html');
     print($_strHTMLPage);
     
