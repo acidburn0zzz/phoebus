@@ -47,7 +47,7 @@ $arrayExtensionsDB = array(
 // We put this in a separate array to prevent duplicate entries
 // in the main array.. Always with the developer's permission
 $arrayExtensionsOverrideDB = array(
-    '{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude',
+    '{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude-update',
     'colormytabs@jetpack' => 'color-my-tabs',
     'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies'
 );
