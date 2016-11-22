@@ -165,7 +165,6 @@ $arrayExCat04 = array(
 $arrayExCat05 = array(
     'title' => 'Privacy & Security',
     'adblock-latitude',
-    'adblock-latitude-nextgen',
     'change-referer-button',
     'cipherfox',
     'crush-those-cookies',
