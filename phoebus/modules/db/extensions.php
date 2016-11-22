@@ -4,9 +4,8 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 $arrayExtensionsDB = array(
-    'adblocklatitude@addons.palemoon.org' => 'adblock-latitude-nextgen',
+    'adblocklatitude@addons.palemoon.org' => 'adblock-latitude',
     'commander@palemoon.org' => 'pm-commander',
-    '{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude',
     'bluemoonlinux@addons.palemoon.org' => 'blue-moon-linux',
     'aviary-addons-manager@addons.palemoon.org' => 'aviary-addons-manager',
     'imagetoolbox@addons.palemoon.org' => 'image-toolbox',
@@ -48,6 +47,7 @@ $arrayExtensionsDB = array(
 // We put this in a separate array to prevent duplicate entries
 // in the main array.. Always with the developer's permission
 $arrayExtensionsOverrideDB = array(
+    '{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude',
     'colormytabs@jetpack' => 'color-my-tabs',
     'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies'
 );
