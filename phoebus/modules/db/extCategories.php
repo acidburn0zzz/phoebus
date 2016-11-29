@@ -302,7 +302,7 @@ $arrayExCat09 = array(
             'id' => 'default',
             'name' => 'Element Inspector',
             'shortDescription' => 'Shift-right-click any element to open it in DOM Inspector.',
-            'url' => '"https://addons.mozilla.org/firefox/addon/element-inspector/'
+            'url' => 'https://addons.mozilla.org/firefox/addon/element-inspector/'
         ),
         'screengrab' => array(
             'id' => 'fx-355813',
