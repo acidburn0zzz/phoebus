@@ -5,6 +5,7 @@
 
 $arrayExCat01 = array(
     'title' => 'Alerts & Updates',
+    'expose-noisy-tabs',
     'externals' => array(
         'flagfox' => array(
             'id' => 'fx-5791',
