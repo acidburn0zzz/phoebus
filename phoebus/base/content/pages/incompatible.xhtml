@@ -2,11 +2,12 @@
 
 <h3>Why aren&rsquo;t all Firefox add-ons compatible with Pale Moon?</h3>
 
-<p>While we have strived for near 1:1 compatibility with Firefox regarding add-ons, Pale Moon and Firefox are separate products. There are many possible reasons why an add-on is or has become incompatible with Pale Moon:</p>
+<p>While we have strived for compatibility with Firefox add-ons, Pale Moon and Firefox are separate products. There are many possible reasons why an add-on is or has become incompatible with Pale Moon:</p>
 
 <ul>
     <li><strong>The change in the Pale Moon globally unique identifier (GUID)</strong><br />In Pale Moon 25, the GUID was changed to reflect the continuing divergence between the browser and its sibling. Most of the time a modification to chrome.manifest or bootstrap.js to add/change the hard-coded GUID is a simple solution to issues with add-ons. The Pale Moon add-ons team will do this for some of the most used add-ons where a developer has chosen not to support Pale Moon, thus creating a pseudo-static version of the add-on as a Pale Moon-specific one.</li>
     <li><strong>Australis</strong><br />In Firefox 29, Mozilla adopted a nearly completely rewritten user interface and theme as well as some technologies that Pale Moon has chosen not to implement. Add-ons targeting these features without fall-backs to the more time-tested and more commonly used features in all Mozilla-based programs will not be supported.</li>
+    <li><strong>Jetpack/SDK</strong><br />In Pale Moon 27, we've been forced to drop support for the Add-On SDK (AKA Jetpack) as a supported framework for extensions. This means that a number of Firefox extensions that build on this abstraction framework will no longer work in Pale Moon. If this is the case, then the Add-On Manager inside the browser will inform you of it with an explanatory text.</li>
 </ul>
 
 <h3>I found an add-on that has issues, where can I report it?</h3>
