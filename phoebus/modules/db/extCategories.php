@@ -53,7 +53,6 @@ $arrayExCat02 = array(
     'pentadactyl',
     'stylish-editor-modified',
     'tiny-menu',
-    'test-extension',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
