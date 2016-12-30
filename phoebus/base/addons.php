@@ -42,6 +42,28 @@ function funcGenAddonContent($_isTheme, $_arrayAddonMetadata) {
 
 // ============================================================================
 
+// == | funcGenAllExtensions | ================================================
+
+function funcGenAllExtensions($_array) {
+    $_strFinalSubContent = '';
+    
+    foreach ($_array as $_key => $_value) {
+        $_arrayReturn = funcGenExtensionsCategoryContent($_value);
+        $_strFinalSubContent = $_strFinalSubContent . '<h3>' . $_arrayReturn['title'] . '</h3>' .
+            "\n" . $_arrayReturn['subContent'] . "\n";
+    }
+    
+    $arrayPage = array(
+        'title' => 'All Extensions',
+        'contentFile' => $GLOBALS['strContentBasePath'] . 'addons/category-page-extensions.xhtml',
+        'subContent' => $_strFinalSubContent
+    );
+    
+    return $arrayPage;
+}
+
+// ============================================================================
+
 // == | funcGenExtensionsCategoryContent | ====================================
 
 function funcGenExtensionsCategoryContent($_array) {
@@ -158,6 +180,10 @@ if (startsWith($strRequestPath, '/extensions/')) {
     include_once($arrayModules['dbExtensions']);
     if ($strRequestPath == '/extensions/') {
         funcSendHeader('404');
+    }
+    elseif ($strRequestPath == '/extensions/category/all/') {
+        include_once($arrayModules['dbExtCategories']);
+        funcGeneratePage(funcGenAllExtensions($arrayExtensionCategoriesDB));
     }
     elseif (startsWith($strRequestPath, '/extensions/category/')) {
         include_once($arrayModules['dbExtCategories']);
