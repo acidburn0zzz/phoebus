@@ -255,6 +255,7 @@ $arrayExCat08 = array(
     'pm-commander',
     'print-pages-to-pdf',
     'pm-promises',
+    'isadmin',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
