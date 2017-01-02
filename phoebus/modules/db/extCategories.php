@@ -173,6 +173,7 @@ $arrayExCat05 = array(
     'encrypted-web',
     'i-dont-care-about-cookies',
     'show-my-password',
+    'isadmin',
     'externals' => array(
         'clean-links' => array(
             'id' => 'fx-317263',
@@ -255,7 +256,6 @@ $arrayExCat08 = array(
     'pm-commander',
     'print-pages-to-pdf',
     'pm-promises',
-    'isadmin',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
