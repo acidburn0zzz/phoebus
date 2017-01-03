@@ -105,13 +105,13 @@ elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
                     'type' => 'item',
                     'id' => $strRequestAddonID,
                     'release' => $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi',
-                    'baseURL' => 'http://relmirror.palemoon.org/langpacks/26.x/',
+                    'baseURL' => 'http://relmirror.palemoon.org/langpacks/27.x/',
                     'hash' => $arrayLangPackDB[$strRequestAddonID]['hash']),
         'xpi' => array(
                     $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi' => array(
                         'version' => $arrayLangPackDB[$strRequestAddonID]['version'],
-                        'minAppVersion' => '26.0.0a1',
-                        'maxAppVersion' => '26.*'))
+                        'minAppVersion' => '27.0.0a1',
+                        'maxAppVersion' => '27.*'))
     );
     
     funcGenerateUpdateXML($arrayLangPack);
