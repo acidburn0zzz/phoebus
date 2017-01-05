@@ -256,6 +256,7 @@ $arrayExCat08 = array(
     'print-pages-to-pdf',
     'pm-promises',
     'isadmin',
+    'locale-switcher',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
