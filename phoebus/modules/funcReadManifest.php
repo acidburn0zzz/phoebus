@@ -34,7 +34,7 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
             $_addonManifest['metadata']['shortDescription'] = htmlentities($_addonManifest['metadata']['shortDescription'], ENT_XHTML);
             $_addonFullShortDesc = $_addonManifest['metadata']['shortDescription'];
             if (strlen($_addonManifest['metadata']['shortDescription']) >= 103) {
-                $_addonManifest['metadata']['shortDescription'] = substr($_addonManifest['metadata']['shortDescription'], 0, 100) . '...';
+                $_addonManifest['metadata']['shortDescription'] = substr($_addonManifest['metadata']['shortDescription'], 0, 102) . '...';
             }
         }
         else {
