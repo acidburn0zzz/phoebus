@@ -32,6 +32,10 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
         if ($_addonMetadata == true) {
             // shortDescription should be html entity'd
             $_addonManifest['metadata']['shortDescription'] = htmlentities($_addonManifest['metadata']['shortDescription'], ENT_XHTML);
+            $_addonFullShortDesc = $_addonManifest['metadata']['shortDescription'];
+            if (strlen($_addonManifest['metadata']['shortDescription']) >= 103) {
+                $_addonManifest['metadata']['shortDescription'] = substr($_addonManifest['metadata']['shortDescription'], 0, 98) . '...';
+            }
         }
         else {
             unset($_addonManifest['metadata']);
@@ -48,7 +52,7 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
             }
             else {
                 // Since there is no phoebus.content use the short description
-                $_addonManifest['metadata']['longDescription'] = $_addonManifest['metadata']['shortDescription'];
+                $_addonManifest['metadata']['longDescription'] = $_addonFullShortDesc;
             }
         }
         // Generate a sha256 hash on the fly for the add-on
