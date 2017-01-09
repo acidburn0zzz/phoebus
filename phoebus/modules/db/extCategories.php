@@ -53,6 +53,7 @@ $arrayExCat02 = array(
     'pentadactyl',
     'stylish-editor-modified',
     'tiny-menu',
+    'themetool',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
@@ -173,6 +174,7 @@ $arrayExCat05 = array(
     'encrypted-web',
     'i-dont-care-about-cookies',
     'show-my-password',
+    'isadmin',
     'externals' => array(
         'clean-links' => array(
             'id' => 'fx-317263',
@@ -255,7 +257,6 @@ $arrayExCat08 = array(
     'pm-commander',
     'print-pages-to-pdf',
     'pm-promises',
-    'isadmin',
     'locale-switcher',
     'externals' => array(
         'history-submenus-2' => array(
