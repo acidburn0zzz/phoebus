@@ -44,7 +44,8 @@ $arrayExtensionsDB = array(
     '{AF445D67-154C-4c69-A17B-7F392BCC36A3}' => 'complete-yt-saver',
     '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}' => 'isadmin',
     'pm-localeswitch@palemoon.org' => 'locale-switcher',
-    '{0daf556d-70de-4b15-a90f-b30395bd9c22}' => 'themetool'
+    '{0daf556d-70de-4b15-a90f-b30395bd9c22}' => 'themetool',
+    '{0b7fb85d-4837-4c73-88bb-0d6b538a2011}' => 'rosetta-qls'
 );
 
 // Override for Firefox Specific IDs or Changed IDs

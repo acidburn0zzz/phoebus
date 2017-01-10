@@ -258,6 +258,7 @@ $arrayExCat08 = array(
     'print-pages-to-pdf',
     'pm-promises',
     'locale-switcher',
+    'rosetta-qls',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
