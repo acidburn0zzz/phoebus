@@ -135,7 +135,7 @@ background: linear-gradient(to right, rgba(240,240,240,1) 50%,rgba(255,255,255,0
     color: black;
 }
 
-.fake-table-row-search-plugin a, .fake-table-row-search-plugin a:hover {
+.fake-table-row-search-plugin:hover {
     color: #004B97;
 }
 
