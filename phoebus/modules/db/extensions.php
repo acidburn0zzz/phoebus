@@ -48,8 +48,8 @@ $arrayExtensionsDB = array(
     '{0b7fb85d-4837-4c73-88bb-0d6b538a2011}' => 'rosetta-qls',
     'ErrorConsole2@Off.JustOff' => 'error-console2',
     'h5vtuner@Off.JustOff' => 'html5-video-tuner',
-    'MoonPDFViewer@Off.JustOff' => 'Moon PDF Viewer',
-    'moonttool@Off.JustOff' => 'Moon Tester Tool'
+    'MoonPDFViewer@Off.JustOff' => 'moon-pdf-viewer',
+    'moonttool@Off.JustOff' => 'moon-tester-tool'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
