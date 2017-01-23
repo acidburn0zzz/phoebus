@@ -218,6 +218,18 @@ $arrayExCat05 = array(
             'shortDescription' => 'YesScript lets you make a blacklist of sites that aren&amp;t allowed to run JavaScript.',
             'url' => 'https://addons.mozilla.org/firefox/addon/yesscript/'
         ),
+        'cookies-exterminator' => array(
+            'id' => 'ex-008',
+            'name' => 'Cookies Exterminator',
+            'shortDescription' => 'Auto delete cookies and localStorage objects as soon as they become unused.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/cookies-exterminator/'
+        ),
+        'modify-http-response' => array(
+            'id' => 'ex-009',
+            'name' => 'Modify HTTP Response',
+            'shortDescription' => 'Rewrite HTTP response body using search & replace patterns.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/modify-http-response/'
+        ),
     ),
 );
 
@@ -355,6 +367,12 @@ $arrayExCat10 = array(
             'name' => 'Thumbnail Zoom Plus',
             'shortDescription' => 'Shows the full image when you hover over a thumbnail.',
             'url' => 'https://addons.mozilla.org/firefox/addon/thumbnail-zoom-plus/'
+        ),
+        'speed-start' => array(
+            'id' => 'ex-010',
+            'name' => 'Speed Start',
+            'shortDescription' => 'Speed Dial & Start Page with flexible layout for fast access to sites via visual bookmarks.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/speed-start/'
         ),
     ),
 );
