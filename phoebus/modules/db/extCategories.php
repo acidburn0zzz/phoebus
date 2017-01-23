@@ -259,6 +259,8 @@ $arrayExCat08 = array(
     'pm-promises',
     'locale-switcher',
     'rosetta-qls',
+    'html5-video-tuner',
+    'moon-tester-tool',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
@@ -290,6 +292,7 @@ $arrayExCat08 = array(
 $arrayExCat09 = array(
     'title' => 'Web Development',
     'devtools',
+    'error-console2',
     'externals' => array(
         'alertip' => array(
             'id' => 'default',
@@ -321,6 +324,7 @@ $arrayExCat09 = array(
 $arrayExCat10 = array(
     'title' => 'Other',
     'space-advance',
+    'moon-pdf-viewer',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
