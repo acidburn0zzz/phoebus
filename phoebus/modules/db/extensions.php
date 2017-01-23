@@ -45,7 +45,11 @@ $arrayExtensionsDB = array(
     '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}' => 'isadmin',
     'pm-localeswitch@palemoon.org' => 'locale-switcher',
     '{0daf556d-70de-4b15-a90f-b30395bd9c22}' => 'themetool',
-    '{0b7fb85d-4837-4c73-88bb-0d6b538a2011}' => 'rosetta-qls'
+    '{0b7fb85d-4837-4c73-88bb-0d6b538a2011}' => 'rosetta-qls',
+    'ErrorConsole2@Off.JustOff' => 'error-console2',
+    'h5vtuner@Off.JustOff' => 'html5-video-tuner',
+    'MoonPDFViewer@Off.JustOff' => 'moon-pdf-viewer',
+    'moonttool@Off.JustOff' => 'moon-tester-tool'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
