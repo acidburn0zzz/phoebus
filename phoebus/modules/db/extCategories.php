@@ -230,6 +230,12 @@ $arrayExCat05 = array(
             'shortDescription' => 'Rewrite HTTP response body using search & replace patterns.',
             'url' => 'https://addons.mozilla.org/firefox/addon/modify-http-response/'
         ),
+        'proxy-privacy-ruler' => array(
+            'id' => 'ex-011',
+            'name' => 'Proxy Privacy Ruler',
+            'shortDescription' => 'Restrict Proxy by Private Windows, Tabs and Domain List.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/proxy-privacy-ruler/'
+        ),
     ),
 );
 
@@ -337,6 +343,7 @@ $arrayExCat10 = array(
     'title' => 'Other',
     'space-advance',
     'moon-pdf-viewer',
+    'add-bookmark-here-2-me',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
