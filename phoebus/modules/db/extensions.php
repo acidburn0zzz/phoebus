@@ -49,7 +49,8 @@ $arrayExtensionsDB = array(
     'ErrorConsole2@Off.JustOff' => 'error-console2',
     'h5vtuner@Off.JustOff' => 'html5-video-tuner',
     'MoonPDFViewer@Off.JustOff' => 'moon-pdf-viewer',
-    'moonttool@Off.JustOff' => 'moon-tester-tool'
+    'moonttool@Off.JustOff' => 'moon-tester-tool',
+    'abh2me@Off.JustOff' => 'add-bookmark-here-2-me'
 );
 
 // Override for Firefox Specific IDs or Changed IDs

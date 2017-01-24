@@ -337,6 +337,7 @@ $arrayExCat10 = array(
     'title' => 'Other',
     'space-advance',
     'moon-pdf-viewer',
+    'add-bookmark-here-2-me',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
