@@ -101,7 +101,7 @@ $arrayExCat02 = array(
             'id' => 'fx-198916',
             'name' => 'ToggleDocumentColors',
             'shortDescription' => 'Adds a toolbar button to switch between page-defined and user-defined colors for web pages.',
-            'url' => 'url'
+            'url' => 'https://addons.mozilla.org/firefox/addon/toggledocumentcolors-198916/'
         ),
         'xclear' => array(
             'id' => 'default',
