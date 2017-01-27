@@ -50,7 +50,8 @@ $arrayExtensionsDB = array(
     'h5vtuner@Off.JustOff' => 'html5-video-tuner',
     'MoonPDFViewer@Off.JustOff' => 'moon-pdf-viewer',
     'moonttool@Off.JustOff' => 'moon-tester-tool',
-    'abh2me@Off.JustOff' => 'add-bookmark-here-2-me'
+    'abh2me@Off.JustOff' => 'add-bookmark-here-2-me',
+    'youtubelazy@Off.JustOff' => 'youtube-lazy-load'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
