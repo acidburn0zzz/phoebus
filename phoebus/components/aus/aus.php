@@ -118,7 +118,7 @@ elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
 }
 // Externals
 elseif (array_key_exists($strRequestAddonID, $arrayExternalsDB)) {
-    funcRedirect($strRequestAddonID);
+    funcRedirect($arrayExternalsDB[$strRequestAddonID]);
 }
 // Unknown - Send to AMO or to 'bad' update xml
 else {
