@@ -123,7 +123,7 @@ $arrayExCat03 = array(
             'id' => 'ex-005',
             'name' => 'ImageHost Grabber',
             'shortDescription' => 'Download entire galleries of hosted images with just a few clicks.',
-            'url' => 'http://imagehost-grabber.org/index.php?topic=3457.0'
+            'url' => 'http://hot-honeys.com/index.php#c9'
         ),
         'opendownload2' => array(
             'id' => 'fx-10902',
