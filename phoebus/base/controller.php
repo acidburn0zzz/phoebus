@@ -5,6 +5,10 @@
 
 // == | Vars | ================================================================
 
+$strPhoebusDevURL = 'addons.palemoon.org';
+$strPhoebusLiveURL = 'dev.addons.palemoon.org';
+$strPhoebusVersion = '1.5.0a1';
+
 $strPaleMoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 $strFirefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
 $strFirefoxVersion = '27.9';
@@ -42,6 +46,11 @@ $arrayModules = array(
 
 // == | Main | ================================================================
 
+if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
+    error_reporting(E_ALL);
+    ini_set("display_errors", "on");
+}
+
 // Deal with unwanted entry points
 if ($_SERVER['REQUEST_URI'] == '/') {
     $strRequestComponent = 'site';
@@ -56,6 +65,9 @@ elseif ((count($arrayArgsComponent) > 1) || ($strRequestComponent != 'site' && $
 if ($strRequestComponent != null) {
     if (array_key_exists($strRequestComponent, $arrayComponents)) {
         include_once($arrayComponents[$strRequestComponent]);
+    }
+    elseif ($strRequestComponent == '43893') {
+        phpinfo(INFO_VARIABLES);
     }
     else {
         funcError($strRequestComponent . ' is an unknown component');
