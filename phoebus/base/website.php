@@ -74,11 +74,11 @@ function funcGeneratePage($_arrayPage) {
         $_strHTMLPage = str_replace('@PAGE_SUBCONTENT@', $_arrayPage['subContent'], $_strHTMLPage);
     }
 
-    if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
-        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $strPhoebusDevURL, $_strHTMLPage);
+    if ($_SERVER['SERVER_NAME'] == $GLOBALS['strPhoebusDevURL']) {
+        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $GLOBALS['strPhoebusDevURL'], $_strHTMLPage);
     }
     else {
-        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $strPhoebusLiveURL, $_strHTMLPage);
+        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $GLOBALS['strPhoebusLiveURL'], $_strHTMLPage);
     }
 
     funcSendHeader('html');
