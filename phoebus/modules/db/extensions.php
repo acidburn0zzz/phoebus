@@ -51,7 +51,8 @@ $arrayExtensionsDB = array(
     'MoonPDFViewer@Off.JustOff' => 'moon-pdf-viewer',
     'moonttool@Off.JustOff' => 'moon-tester-tool',
     'abh2me@Off.JustOff' => 'add-bookmark-here-2-me',
-    'youtubelazy@Off.JustOff' => 'youtube-lazy-load'
+    'youtubelazy@Off.JustOff' => 'youtube-lazy-load',
+    'greedycache@Off.JustOff' => 'greedy-cache'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
