@@ -7,6 +7,8 @@
 
 $strPhoebusDevURL = 'addons.palemoon.org';
 $strPhoebusLiveURL = 'dev.addons.palemoon.org';
+$strPhoebusURL = $strPhoebusLiveURL;
+$strPhoebusSiteName = 'Pale Moon - Add-ons';
 $strPhoebusVersion = '1.5.0a1';
 
 $strPaleMoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
@@ -49,6 +51,7 @@ $arrayModules = array(
 if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
     error_reporting(E_ALL);
     ini_set("display_errors", "on");
+    $strPhoebusURL = $strPhoebusDevURL;
 }
 
 // Deal with unwanted entry points

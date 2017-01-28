@@ -61,7 +61,8 @@ function funcGeneratePage($_arrayPage) {
         '@PAGE_CONTENT@' => $_strHTMLContent,
         '@SITE_MENU@' => $_strPageMenu,
         '@SITE_STYLESHEET@' => $_strHTMLStyle,
-        '@SITE_NAME@' => 'Pale Moon - Add-ons',
+        '@SITE_DOMAIN@' => '//' . $GLOBALS['strPhoebusURL'],
+        '@SITE_NAME@' => $GLOBALS['strPhoebusSiteName'],
         '@PAGE_TITLE@' => $_arrayPage['title'],
         '@BASE_PATH@' => substr($_strSkinBasePath, 1),
     );
@@ -72,13 +73,6 @@ function funcGeneratePage($_arrayPage) {
     
     if (array_key_exists('subContent', $_arrayPage)) {
         $_strHTMLPage = str_replace('@PAGE_SUBCONTENT@', $_arrayPage['subContent'], $_strHTMLPage);
-    }
-
-    if ($_SERVER['SERVER_NAME'] == $GLOBALS['strPhoebusDevURL']) {
-        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $GLOBALS['strPhoebusDevURL'], $_strHTMLPage);
-    }
-    else {
-        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $GLOBALS['strPhoebusLiveURL'], $_strHTMLPage);
     }
 
     funcSendHeader('html');
