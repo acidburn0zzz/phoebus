@@ -71,7 +71,7 @@ if ($strRequestAddonID == null) {
 
 // Includes
 foreach($arrayIncludes as $_value) {
-    include_once($_value);
+    require_once($_value);
 }
 unset($arrayIncludes);
 

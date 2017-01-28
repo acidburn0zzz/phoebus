@@ -95,7 +95,7 @@ function funcGeneratePage($_arrayPage) {
 if (startsWith($strRequestPath, '/extensions/') == true ||
     startsWith($strRequestPath, '/themes/') == true ||
     startsWith($strRequestPath, '/search-plugins/') == true) {
-    include_once('./phoebus/base/addons.php');
+    require_once('./phoebus/base/addons.php');
 }
 else {
     if (array_key_exists($strRequestPath, $arrayStaticPages)) {

@@ -174,19 +174,19 @@ function funcGenSearchPluginsCategoryContent() {
 
 // == | Main | ================================================================
 
-include_once($arrayModules['readManifest']);
+require_once($arrayModules['readManifest']);
 
 if (startsWith($strRequestPath, '/extensions/')) {
-    include_once($arrayModules['dbExtensions']);
+    require_once($arrayModules['dbExtensions']);
     if ($strRequestPath == '/extensions/') {
         funcSendHeader('404');
     }
     elseif ($strRequestPath == '/extensions/category/all/') {
-        include_once($arrayModules['dbExtCategories']);
+        require_once($arrayModules['dbExtCategories']);
         funcGeneratePage(funcGenAllExtensions($arrayExtensionCategoriesDB));
     }
     elseif (startsWith($strRequestPath, '/extensions/category/')) {
-        include_once($arrayModules['dbExtCategories']);
+        require_once($arrayModules['dbExtCategories']);
         $strStrippedPath = str_replace('/', '', str_replace('/extensions/category/', '', $strRequestPath));
         
         if (array_key_exists($strStrippedPath,$arrayExtensionCategoriesDB)) {
@@ -209,7 +209,7 @@ if (startsWith($strRequestPath, '/extensions/')) {
     }
 }
 elseif (startsWith($strRequestPath, '/themes/')) {
-    include_once($arrayModules['dbThemes']);
+    require_once($arrayModules['dbThemes']);
     if ($strRequestPath == '/themes/') {
         asort($arrayThemesDB);
         $arrayPage = array(
@@ -233,7 +233,7 @@ elseif (startsWith($strRequestPath, '/themes/')) {
     }
 }
 elseif ($strRequestPath == '/search-plugins/') {
-    include_once($arrayModules['dbSearchPlugins']);
+    require_once($arrayModules['dbSearchPlugins']);
     funcSendHeader('html');
     asort($arraySearchPluginsDB);
    

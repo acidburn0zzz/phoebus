@@ -43,7 +43,7 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
 
         if ($_addonMetadata == true && $_addonContent == true) {
             // Deal with phoebus.content
-            include_once($GLOBALS['arrayModules']['processContent']);
+            require_once($GLOBALS['arrayModules']['processContent']);
             $_addonPhoebusContent = funcProcessContent($_addonBasePath . $_addonPhoebusContentFile);
             
             if ($_addonPhoebusContent != null) {

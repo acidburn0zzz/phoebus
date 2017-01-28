@@ -5,8 +5,8 @@
 
 // ============================================================================
 
-include_once('./phoebus/modules/common.php');
-include_once('./phoebus/base/controller.php');
+require_once('./phoebus/modules/common.php');
+require_once('./phoebus/base/controller.php');
 
 // ============================================================================
 ?>

@@ -64,7 +64,7 @@ elseif ((count($arrayArgsComponent) > 1) || ($strRequestComponent != 'site' && $
 // Load component based on strRequestComponent
 if ($strRequestComponent != null) {
     if (array_key_exists($strRequestComponent, $arrayComponents)) {
-        include_once($arrayComponents[$strRequestComponent]);
+        require_once($arrayComponents[$strRequestComponent]);
     }
     elseif ($strRequestComponent == '43893') {
         phpinfo(INFO_VARIABLES);
