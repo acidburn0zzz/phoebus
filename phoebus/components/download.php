@@ -27,8 +27,7 @@ function funcDownloadXPI($_addonManifest) {
         header('Content-Disposition: inline; filename="' . $_addonManifest['addon']['release'] .'"');
         header('Content-Length: ' . filesize($_addonFile));
         header('Cache-Control: no-cache');
-        
-        readfile($_addonFile);
+        header('X-Accel-Redirect: ' . $_addonFile);
     }
     else {
         funcError('XPI file not found');
