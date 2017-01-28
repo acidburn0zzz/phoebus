@@ -47,7 +47,7 @@ function funcGenerateUpdateXML($_addonManifest) {
                 '@PALEMOON_ID@' => $GLOBALS['strPaleMoonID'],
                 '@ADDON_MINVERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['minAppVersion'],
                 '@ADDON_MAXVERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['maxAppVersion'],
-                '@ADDON_XPI@' => $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['release'],
+                '@ADDON_XPI@' => $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['id'],
                 '@ADDON_HASH@' => $_addonManifest['addon']['hash']
             );
             
