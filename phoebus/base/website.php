@@ -68,7 +68,7 @@ function funcGeneratePage($_arrayPage) {
     );
     
     if (array_key_exists('subContent', $_arrayPage)) {
-        $_strHTMLPage = str_replace('@PAGE_SUBCONTENT@', $_arrayPage['subContent'], $_strHTMLPage);
+        $_arrayFilterSubstitute['@PAGE_SUBCONTENT@'] = $_arrayPage['subContent'];
     }
 
     foreach ($_arrayFilterSubstitute as $_key => $_value) {
