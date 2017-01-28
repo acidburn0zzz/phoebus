@@ -5,8 +5,8 @@
 
 // == | Vars | ================================================================
 
-$strPhoebusDevURL = 'addons.palemoon.org';
-$strPhoebusLiveURL = 'dev.addons.palemoon.org';
+$strPhoebusLiveURL = 'addons.palemoon.org';
+$strPhoebusDevURL = 'dev.addons.palemoon.org';
 $strPhoebusURL = $strPhoebusLiveURL;
 $strPhoebusSiteName = 'Pale Moon - Add-ons';
 $strPhoebusVersion = '1.5.0a1';
@@ -49,9 +49,10 @@ $arrayModules = array(
 // == | Main | ================================================================
 
 if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
+    $strPhoebusURL = $strPhoebusDevURL;
+    $strPhoebusSiteName = 'Phoebus Development - Version ' . $strPhoebusVersion;
     error_reporting(E_ALL);
     ini_set("display_errors", "on");
-    $strPhoebusURL = $strPhoebusDevURL;
 }
 
 // Deal with unwanted entry points
