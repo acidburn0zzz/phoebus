@@ -67,12 +67,12 @@ function funcGeneratePage($_arrayPage) {
         '@BASE_PATH@' => substr($_strSkinBasePath, 1),
     );
     
-    foreach ($_arrayFilterSubstitute as $_key => $_value) {
-        $_strHTMLPage = str_replace($_key, $_value, $_strHTMLPage);
-    }
-    
     if (array_key_exists('subContent', $_arrayPage)) {
         $_strHTMLPage = str_replace('@PAGE_SUBCONTENT@', $_arrayPage['subContent'], $_strHTMLPage);
+    }
+
+    foreach ($_arrayFilterSubstitute as $_key => $_value) {
+        $_strHTMLPage = str_replace($_key, $_value, $_strHTMLPage);
     }
 
     funcSendHeader('html');
