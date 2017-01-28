@@ -68,7 +68,7 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
         // assign the baseURL to the add-on manifest array
         if ($_addonBaseURL == true) {
             
-            $_addonManifest['addon']["baseURL"] = 'http://' . $GLOBALS['strPhoebusURL'] . '/' . $_addonDirectory;
+            $_addonManifest['addon']["baseURL"] = 'http://' . $GLOBALS['strPhoebusURL'] . '/?component=download&id=' . $_addonManifest['addon']['id'];
         }
 
         // assign the basePath to the add-on manifest array
