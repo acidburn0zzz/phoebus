@@ -61,7 +61,6 @@ function funcGeneratePage($_arrayPage) {
         '@PAGE_CONTENT@' => $_strHTMLContent,
         '@SITE_MENU@' => $_strPageMenu,
         '@SITE_STYLESHEET@' => $_strHTMLStyle,
-        '@SITE_DOMAIN@' => '//' . $GLOBALS['strPhoebusURL'],
         '@SITE_NAME@' => $GLOBALS['strPhoebusSiteName'],
         '@PAGE_TITLE@' => $_arrayPage['title'],
         '@BASE_PATH@' => substr($_strSkinBasePath, 1),
@@ -69,6 +68,7 @@ function funcGeneratePage($_arrayPage) {
     
     if (array_key_exists('subContent', $_arrayPage)) {
         $_arrayFilterSubstitute['@PAGE_SUBCONTENT@'] = $_arrayPage['subContent'];
+        $_arrayFilterSubstitute['@SITE_DOMAIN@'] = '//' . $GLOBALS['strPhoebusURL'];
     }
 
     foreach ($_arrayFilterSubstitute as $_key => $_value) {
