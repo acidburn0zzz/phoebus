@@ -74,11 +74,11 @@ function funcGeneratePage($_arrayPage) {
         $_strHTMLPage = str_replace('@PAGE_SUBCONTENT@', $_arrayPage['subContent'], $_strHTMLPage);
     }
 
-    if ($_SERVER["HTTP_X_FORWARDED_HOST"] == 'dev.addons.palemoon.org') {
-        $_strHTMLPage = str_replace('@SITE_DOMAIN@', 'http://dev.addons.palemoon.org', $_strHTMLPage);
+    if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
+        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $strPhoebusDevURL, $_strHTMLPage);
     }
     else {
-        $_strHTMLPage = str_replace('@SITE_DOMAIN@', 'https://addons.palemoon.org', $_strHTMLPage);
+        $_strHTMLPage = str_replace('@SITE_DOMAIN@', '//' . $strPhoebusLiveURL, $_strHTMLPage);
     }
 
     funcSendHeader('html');
