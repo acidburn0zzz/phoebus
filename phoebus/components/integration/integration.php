@@ -31,7 +31,7 @@ if ($strRequestType == null || $strRequestReq == null) {
 }
 
 // Maintain Pale Moon <26 Compatibility
-if ($strRequestAppVersion != null) {
+if ($strRequestVersion != null) {
     require_once($arrayModules['vc']);
     $intVcResult = ToolkitVersionComparator::compare($strRequestVersion, '27.0.0');
 
