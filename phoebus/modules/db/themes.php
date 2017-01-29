@@ -37,6 +37,7 @@ $arrayThemesDB = array(
     'darkmoon@lootyhoof-pm' => 'darkmoon',
     'phoenity-rebirth@lootyhoof-pm' => 'phoenity-rebirth',
     'walnutty@lootyhoof-pm' => 'walnutty',
-    '{2C646A52-4EDC-455F-8047-9405795D3E51}' => 'moonscape'
+    '{2C646A52-4EDC-455F-8047-9405795D3E51}' => 'moonscape',
+    'materialmoon@franklindm' => 'material-moon'
 );
 ?>
