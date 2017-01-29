@@ -279,6 +279,7 @@ $arrayExCat08 = array(
     'rosetta-qls',
     'html5-video-tuner',
     'moon-tester-tool',
+    'greedy-cache',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
