@@ -21,9 +21,6 @@ $strRequestVersion = funcHTTPGetValue('version');
 
 $_strFirefoxVersion = $strFirefoxVersion;
 
-$strBlankXML = '<?xml version="1.0" encoding="utf-8" ?>' . "\n" .
-            '<searchresults total_results="0">' . "\n" .
-            '</searchresults>';
 // ============================================================================
 
 // == | Main | ================================================================
@@ -45,10 +42,14 @@ if ($strRequestVersion != null) {
 
 // Start the logic to fulfill the request
 if ($strRequestType == 'internal') {
-    if ($strRequestReq == 'get' || $strRequestReq == 'recommended') {
-        // For the moment we are sending a 'blank' xml response
+    if ($strRequestReq == 'get') {
+        // This request deals primarily with Sync. It may never return.. Send blank response
         funcSendHeader('xml');
-        print($strBlankXML);
+        print(
+            '<?xml version="1.0" encoding="utf-8" ?>' . "\n" .
+            '<searchresults total_results="0">' . "\n" .
+            '</searchresults>'
+        );
         exit();
     }
     elseif ($strRequestReq == 'search') {
@@ -62,6 +63,16 @@ if ($strRequestType == 'internal') {
             $strRequestOS .
             '/' . $_strFirefoxVersion
         );
+    }
+    elseif ($strRequestReq == 'recommended') {
+        // This doesn't even seem to be a used request anymore.. Send blank response
+        funcSendHeader('xml');
+        print(
+            '<?xml version="1.0" encoding="utf-8" ?>' . "\n" .
+            '<addons>' . "\n" .
+            '</addons>'
+        );
+        exit();
     }
     else {
         funcError('Unknown Internal Request');
