@@ -17,6 +17,9 @@ $strRequestAddonID = funcHTTPGetValue('addonguid');
 $strRequestSearchQuery = funcHTTPGetValue('q');
 $strRequestLocale = funcHTTPGetValue('locale');
 $strRequestOS = funcHTTPGetValue('os');
+$strRequestVersion = funcHTTPGetValue('version')
+
+$_strFirefoxVersion = $strFirefoxVersion;
 
 // ============================================================================
 
@@ -27,6 +30,17 @@ if ($strRequestType == null || $strRequestReq == null) {
     funcError('Missing minimum arguments (type or request)');
 }
 
+// Maintain Pale Moon <26 Compatibility
+if ($strRequestAppVersion != null) {
+    require_once($arrayModules['vc']);
+    $intVcResult = ToolkitVersionComparator::compare($strRequestVersion, '27.0.0');
+
+    if ($intVcResult < 0) {
+        $_strFirefoxVersion = '24.9';
+    }
+}
+
+// Start the logic to fulfill the request
 if ($strRequestType == 'internal') {
     if ($strRequestReq == 'get') {
         // For the moment we are sending a 'blank' xml response
@@ -49,7 +63,7 @@ if ($strRequestType == 'internal') {
             $strRequestSearchQuery .
             '/all/10/' .
             $strRequestOS .
-            '/24.9'
+            '/' . $_strFirefoxVersion
         );
     }
     elseif ($strRequestReq == 'recommended') {
@@ -59,7 +73,7 @@ if ($strRequestType == 'internal') {
             $strAMOServicesAPIPath .
             'list/featured/all/10/' .
             $strRequestOS .
-            '/24.9'
+            '/' . $_strFirefoxVersion
         );
     }
     else {
@@ -71,7 +85,7 @@ elseif ($strRequestType == 'external') {
         funcRedirect(
             'https://addons.mozilla.org/firefox/search?q=' .
             $strRequestSearchQuery .
-            '&appver=24.9'
+            '&appver=' . $_strFirefoxVersion
         );
     }
     elseif ($strRequestReq == 'recommended') {
