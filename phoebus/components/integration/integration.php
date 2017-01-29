@@ -21,6 +21,9 @@ $strRequestVersion = funcHTTPGetValue('version');
 
 $_strFirefoxVersion = $strFirefoxVersion;
 
+$strBlankXML = '<?xml version="1.0" encoding="utf-8" ?>' . "\n" .
+            '<searchresults total_results="0">' . "\n" .
+            '</searchresults>';
 // ============================================================================
 
 // == | Main | ================================================================
@@ -42,16 +45,10 @@ if ($strRequestVersion != null) {
 
 // Start the logic to fulfill the request
 if ($strRequestType == 'internal') {
-    if ($strRequestReq == 'get') {
+    if ($strRequestReq == 'get' || $strRequestReq == 'recommended') {
         // For the moment we are sending a 'blank' xml response
         funcSendHeader('xml');
-        print(
-            '<?xml version="1.0" encoding="utf-8" ?>' .
-            "\n" .
-            '<searchresults total_results="0">' .
-            "\n" .
-            '</searchresults>'
-        );
+        print($strBlankXML);
         exit();
     }
     elseif ($strRequestReq == 'search') {
@@ -62,16 +59,6 @@ if ($strRequestType == 'internal') {
             'search/' .
             $strRequestSearchQuery .
             '/all/10/' .
-            $strRequestOS .
-            '/' . $_strFirefoxVersion
-        );
-    }
-    elseif ($strRequestReq == 'recommended') {
-        funcRedirect(
-            $strAMOServicesURL .
-            $strRequestLocale .
-            $strAMOServicesAPIPath .
-            'list/featured/all/10/' .
             $strRequestOS .
             '/' . $_strFirefoxVersion
         );
