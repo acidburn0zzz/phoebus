@@ -17,6 +17,9 @@ $strRequestAddonID = funcHTTPGetValue('addonguid');
 $strRequestSearchQuery = funcHTTPGetValue('q');
 $strRequestLocale = funcHTTPGetValue('locale');
 $strRequestOS = funcHTTPGetValue('os');
+$strRequestVersion = funcHTTPGetValue('version');
+
+$_strFirefoxVersion = $strFirefoxVersion;
 
 // ============================================================================
 
@@ -27,15 +30,24 @@ if ($strRequestType == null || $strRequestReq == null) {
     funcError('Missing minimum arguments (type or request)');
 }
 
+// Maintain Pale Moon <26 Compatibility
+if ($strRequestVersion != null) {
+    require_once($arrayModules['vc']);
+    $intVcResult = ToolkitVersionComparator::compare($strRequestVersion, '27.0.0');
+
+    if ($intVcResult < 0) {
+        $_strFirefoxVersion = '24.9';
+    }
+}
+
+// Start the logic to fulfill the request
 if ($strRequestType == 'internal') {
     if ($strRequestReq == 'get') {
-        // For the moment we are sending a 'blank' xml response
+        // This request deals primarily with Sync. It may never return.. Send blank response
         funcSendHeader('xml');
         print(
-            '<?xml version="1.0" encoding="utf-8" ?>' .
-            "\n" .
-            '<searchresults total_results="0">' .
-            "\n" .
+            '<?xml version="1.0" encoding="utf-8" ?>' . "\n" .
+            '<searchresults total_results="0">' . "\n" .
             '</searchresults>'
         );
         exit();
@@ -49,18 +61,18 @@ if ($strRequestType == 'internal') {
             $strRequestSearchQuery .
             '/all/10/' .
             $strRequestOS .
-            '/24.9'
+            '/' . $_strFirefoxVersion
         );
     }
     elseif ($strRequestReq == 'recommended') {
-        funcRedirect(
-            $strAMOServicesURL .
-            $strRequestLocale .
-            $strAMOServicesAPIPath .
-            'list/featured/all/10/' .
-            $strRequestOS .
-            '/24.9'
+        // This doesn't even seem to be a used request anymore.. Send blank response
+        funcSendHeader('xml');
+        print(
+            '<?xml version="1.0" encoding="utf-8" ?>' . "\n" .
+            '<addons>' . "\n" .
+            '</addons>'
         );
+        exit();
     }
     else {
         funcError('Unknown Internal Request');
@@ -71,7 +83,7 @@ elseif ($strRequestType == 'external') {
         funcRedirect(
             'https://addons.mozilla.org/firefox/search?q=' .
             $strRequestSearchQuery .
-            '&appver=24.9'
+            '&appver=' . $_strFirefoxVersion
         );
     }
     elseif ($strRequestReq == 'recommended') {
