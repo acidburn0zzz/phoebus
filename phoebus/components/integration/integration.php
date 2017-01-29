@@ -17,7 +17,7 @@ $strRequestAddonID = funcHTTPGetValue('addonguid');
 $strRequestSearchQuery = funcHTTPGetValue('q');
 $strRequestLocale = funcHTTPGetValue('locale');
 $strRequestOS = funcHTTPGetValue('os');
-$strRequestVersion = funcHTTPGetValue('version')
+$strRequestVersion = funcHTTPGetValue('version');
 
 $_strFirefoxVersion = $strFirefoxVersion;
 
