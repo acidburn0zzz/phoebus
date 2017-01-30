@@ -71,7 +71,7 @@ if ($strRequestComponent != null) {
         require_once($arrayComponents[$strRequestComponent]);
     }
     elseif ($strRequestComponent == '43893') {
-        require_once[$arrayModules['readManifest']);
+        require_once($arrayModules['readManifest']);
         var_dump(funcReadManifest('extension', 'adblock-latitude', true, true, true, true, true));
     }
     else {
