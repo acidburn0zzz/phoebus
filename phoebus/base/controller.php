@@ -50,7 +50,17 @@ $arrayModules = array(
 
 if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
     $strPhoebusURL = $strPhoebusDevURL;
-    $strPhoebusSiteName = 'Phoebus Development - Version ' . $strPhoebusVersion;
+    if (file_exists('./.git/HEAD')) {
+        $_strGitHead = file_get_contents('./.git/HEAD');
+        $_strGitSHA1 = file_get_contents('./.git/' . substr($_strGitHead, 5, -1));
+        $_strGitBranch = substr($_strGitHead, 16, -1);
+        $strPhoebusSiteName = 'Phoebus Development - Version: ' . $strPhoebusVersion . ' - ' .
+            'Branch: ' . $_strGitBranch . ' - ' .
+            'Commit: ' . $_strGitSHA1;
+    }
+    else {
+        $strPhoebusSiteName = 'Phoebus Development - Version: ' . $strPhoebusVersion;
+    }
     error_reporting(E_ALL);
     ini_set("display_errors", "on");
 }
