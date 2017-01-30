@@ -16,18 +16,21 @@
     font-style: normal;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
 	margin-left: 0px;
 	margin-top: 8px;
 	margin-right: 0px;
 	margin-bottom: 46px;
-  font-family: "Museo500Regular","Times New Roman",Times,serif;
-  font-style: normal;
-  font-size: 12pt;
-  letter-spacing: 0.3px;
-  background-color: #d4d9f7;
-  background: linear-gradient(to bottom, #d4d9f7 0%, #abafea 31%, #999ee8 93%, #d4d9f7 100%);
-  background: -moz-linear-gradient(top, #d4d9f7 0%, #abafea 31%, #999ee8 93%, #d4d9f7 100%);
+    font-family: "Museo500Regular","Times New Roman",Times,serif;
+    font-style: normal;
+    font-size: 12pt;
+    letter-spacing: 0.3px;
+    background-color: #d4d9f7;
+    background: linear-gradient(to bottom, #d4d9f7 0%, #abafea 31%, #999ee8 100%);
 }
 
 body,td,th {
@@ -103,16 +106,24 @@ vertical-align: top;
 }
 
 #PM-Content-Body {
-	width: 100%;
-	display: table-cell;
-	vertical-align: top;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-
+    width: 100%;
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+   /* animation: fadeEffect 1s;  Fading effect takes 1 second */
 }
 
+/*
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+*/
 .fake-table {
 
 }
@@ -150,27 +161,6 @@ h2.faq {
   background-color: #e0e0ff;
 }
 
-.rssincl-itemtitle {
-margin-bottom: 18px !important;
-}
-
-.rssincl-itemtitle a{
-  font-family: "Museo500Regular","Times New Roman",Times,serif !important;
-  font-size: 14pt !important;
-  letter-spacing: 0.3px;
-  color: #000000 !important;
-  text-decoration: none !important;
-}
-
-.rssincl-itemdesc {
-  font-family: "Museo500Regular","Times New Roman",Times,serif !important;
-  font-style: normal !important;
-  font-size: 12pt !important;
-  color: #000000 !important;
-  letter-spacing: 0.3px;
-margin-bottom: 25px !important;
-}
-
 blockquote {
   background-color: #ffffcc;
   font-family: "Museo500Regular","Times New Roman",Times,serif;
@@ -206,20 +196,29 @@ display: none;
 }
 
 .dllink_green {
-border: 1px solid rgb(0, 153, 0); 
-padding: 14px; 
-background-color: rgb(153, 255, 153); 
-font-family: "Museo500Regular",Arial,Helvetica,sans-serif; 
-color: black; 
-text-decoration: none; 
-border-radius: 9px; 
--moz-border-radius: 9px;
+  border: 1px solid rgb(0, 153, 0); 
+  padding: 14px; 
+  background-color: rgb(153, 255, 153); 
+  font-family: "Museo500Regular",Arial,Helvetica,sans-serif; 
+  color: black; 
+  text-decoration: none; 
+  border-radius: 9px; 
+}
+
+.dllink_blue {
+  border: 1px solid rgb(0, 0, 153); 
+  padding: 14px; 
+  background-color: rgb(153, 153, 255); 
+  font-family: "Museo500Regular",Arial,Helvetica,sans-serif; 
+  color: black; 
+  text-decoration: none; 
+  border-radius: 9px; 
 }
 
 /* pull-down mainmenu css */
 .mainmenu{
 position:relative;
-z-index:999;
+z-index:998;
 	float: left;
 	width: 100%;
 	padding: 0;
