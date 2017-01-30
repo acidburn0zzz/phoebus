@@ -48,7 +48,7 @@ function funcGenAllExtensions($_array) {
     $_strFinalSubContent = '';
     
     foreach ($_array as $_key => $_value) {
-        $_arrayReturn = funcGenExtensionsCategoryContent($_value);
+        $_arrayReturn = funcGenCategoryContent('extension', $_value);
         $_strFinalSubContent = $_strFinalSubContent . '<h3>' . $_arrayReturn['title'] . '</h3>' .
             "\n" . $_arrayReturn['subContent'] . "\n";
     }
@@ -64,110 +64,90 @@ function funcGenAllExtensions($_array) {
 
 // ============================================================================
 
-// == | funcGenExtensionsCategoryContent | ====================================
+// == | funcGenCategoryContent | ==============================================
 
-function funcGenExtensionsCategoryContent($_array) {
-    $strExtensionContent = array();
-    $strExtensionContentCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-extensions.xhtml');
-    $strExternalsContentCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-externals.xhtml');
+function funcGenCategoryContent($_type, $_array) {
+    $strCategoryContent = array();
+    
+    if ($_type == 'extension') {
+        $strAddonCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-extensions.xhtml');
+        $strExternalCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-externals.xhtml');
+    }
+    elseif ($_type == 'theme') {
+        $strAddonCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-themes.xhtml');
+    }
+    elseif ($_type == 'search-plugin') {
+        $strAddonCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-search-plugins.xhtml');
+    }
+ 
     foreach ($_array as $_key => $_value) {
-        if (is_int($_key)) {
-            $_arrayExtensionMetadata = funcReadManifest('extension', $_value, true, false, false, false, false);
-            $_strExtensionContentCatList = $strExtensionContentCatList;
-            $_arrayFilterSubstitute = array(
-                '@EXTENSION_SLUG@' => $_arrayExtensionMetadata['metadata']['slug'],
-                '@EXTENSION_NAME@' => $_arrayExtensionMetadata['metadata']['name'],
-                '@EXTENSION_AUTHOR@' => $_arrayExtensionMetadata['metadata']['author'],
-                '@EXTENSION_SHORTDESCRIPTION@' => $_arrayExtensionMetadata['metadata']['shortDescription'],
-            );
-            
-            foreach ($_arrayFilterSubstitute as $_fkey => $_fvalue) {
-                $_strExtensionContentCatList = str_replace($_fkey, $_fvalue, $_strExtensionContentCatList);
-            }
-            array_push($strExtensionContent, $_strExtensionContentCatList);
-        }
-        elseif ($_key == 'externals') {
-            foreach($_array['externals'] as $_key2 => $_value2) {
-                $_strExtensionContentCatList = $strExternalsContentCatList;
+        if (($_type == 'extension' && is_int($_key)) || $_type == 'theme' || $_type == 'search-plugin') {
+            $_strAddonCatList = $strAddonCatList;
+            if ($_type == 'extension' || $_type == 'theme') {
+                $_arrayAddonMetadata = funcReadManifest($_type, $_value, true, false, false, false, false);
                 $_arrayFilterSubstitute = array(
-                    '@EXTENSION_SLUG@' => $_key2,
-                    '@EXTENSION_ID@' => $_value2['id'],
-                    '@EXTENSION_NAME@' => $_value2['name'],
-                    '@EXTENSION_URL@' => $_value2['url'],
-                    '@EXTENSION_SHORTDESCRIPTION@' => $_value2['shortDescription'],
+                    '@ADDON_SLUG@' => $_arrayAddonMetadata['metadata']['slug'],
+                    '@ADDON_NAME@' => $_arrayAddonMetadata['metadata']['name'],
+                    '@ADDON_AUTHOR@' => $_arrayAddonMetadata['metadata']['author'],
+                    '@ADDON_SHORTDESCRIPTION@' => $_arrayAddonMetadata['metadata']['shortDescription'],
                 );
-                
+            }
+            elseif ($_type == 'search-plugin') {
+                $_arrayFilterSubstitute = array(
+                    '@ADDON_ID@' => $_key,
+                    '@ADDON_SLUG@' => $_value['slug'],
+                    '@ADDON_NAME@' => $_value['name'],
+                );
+            }
+            foreach ($_arrayFilterSubstitute as $_fkey => $_fvalue) {
+                $_strAddonCatList = str_replace($_fkey, $_fvalue, $_strAddonCatList);
+            }
+            array_push($strCategoryContent, $_strAddonCatList);
+        }
+        elseif ($_type == 'extension' && $_key == 'externals') {
+            foreach($_array['externals'] as $_key2 => $_value2) {
+                $_strAddonCatList = $strExternalCatList;
+                $_arrayFilterSubstitute = array(
+                    '@ADDON_SLUG@' => $_key2,
+                    '@ADDON_ID@' => $_value2['id'],
+                    '@ADDON_NAME@' => $_value2['name'],
+                    '@ADDON_URL@' => $_value2['url'],
+                    '@ADDON_SHORTDESCRIPTION@' => $_value2['shortDescription'],
+                );
                 foreach ($_arrayFilterSubstitute as $_fkey => $_fvalue) {
-                    $_strExtensionContentCatList = str_replace($_fkey, $_fvalue, $_strExtensionContentCatList);
+                    $_strAddonCatList = str_replace($_fkey, $_fvalue, $_strAddonCatList);
                 }
-                array_push($strExtensionContent, $_strExtensionContentCatList);
+                array_push($strCategoryContent, $_strAddonCatList);
             }
         }
     }
+
+    asort($strCategoryContent);
+    $strCategoryContent = implode($strCategoryContent);
     
-    asort($strExtensionContent);
-    
-    $strExtensionContent = implode($strExtensionContent);
-    
-    $arrayPage = array(
-        'title' => $_array['title'],
-        'contentFile' => $GLOBALS['strContentBasePath'] . 'addons/category-page-extensions.xhtml',
-        'subContent' => $strExtensionContent
-    );
+    if ($_type == 'extension') {
+        $arrayPage = array(
+            'title' => $_array['title'],
+            'contentFile' => $GLOBALS['strContentBasePath'] . 'addons/category-page-extensions.xhtml',
+            'subContent' => $strCategoryContent
+        );
+    }
+    elseif ($_type == 'theme') {
+        $arrayPage = array(
+            'title' => 'Themes',
+            'contentFile' => $GLOBALS['strContentBasePath'] . 'addons/category-page-themes.xhtml',
+            'subContent' => $strCategoryContent
+        );
+    }
+    elseif ($_type == 'search-plugin') {
+        $arrayPage = array(
+            'title' => 'Search Plugins',
+            'contentFile' => $GLOBALS['strContentBasePath'] . 'addons/category-page-search-plugins.xhtml',
+            'subContent' => $strCategoryContent
+        );
+    }
     
     return $arrayPage;
-}
-
-// ============================================================================
-
-// == | funcGenThemesCategoryContent | ========================================
-
-function funcGenThemesCategoryContent() {
-    $strThemeContent = array();
-    $strThemeContentCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-themes.xhtml');
-    foreach ($GLOBALS['arrayThemesDB'] as $_key => $_value) {
-        $_arrayThemeMetadata = funcReadManifest('theme', $_value, true, false, false, false, false);
-        $_strThemeContentCatList = $strThemeContentCatList;
-        $_arrayFilterSubstitute = array(
-            '@THEME_SLUG@' => $_arrayThemeMetadata['metadata']['slug'],
-            '@THEME_NAME@' => $_arrayThemeMetadata['metadata']['name'],
-            '@THEME_AUTHOR@' => $_arrayThemeMetadata['metadata']['author'],
-            '@THEME_SHORTDESCRIPTION@' => $_arrayThemeMetadata['metadata']['shortDescription'],
-        );
-        
-        foreach ($_arrayFilterSubstitute as $_fkey => $_fvalue) {
-            $_strThemeContentCatList = str_replace($_fkey, $_fvalue, $_strThemeContentCatList);
-        }
-        array_push($strThemeContent, $_strThemeContentCatList);
-    }
-    $strThemeContent = implode($strThemeContent);
-    
-    
-    return $strThemeContent;
-}
-
-// ============================================================================
-
-// == | funcGenSearchPluginsCategoryContent | =================================
-
-function funcGenSearchPluginsCategoryContent() {
-    $strSearchPluginsContent = array();
-    $strSearchPluginsContentCatList = file_get_contents($GLOBALS['strContentBasePath'] . 'addons/category-list-search-plugins.xhtml');
-    foreach ($GLOBALS['arraySearchPluginsDB'] as $_key => $_value) {
-        $_strSearchPluginsContentCatList = $strSearchPluginsContentCatList;
-        $_arrayFilterSubstitute = array(
-            '@SEARCH_ID@' => $_key,
-            '@SEARCH_SLUG@' => $_value['slug'],
-            '@SEARCH_TITLE@' => $_value['name'],
-        );
-        
-        foreach ($_arrayFilterSubstitute as $_fkey => $_fvalue) {
-            $_strSearchPluginsContentCatList = str_replace($_fkey, $_fvalue, $_strSearchPluginsContentCatList);
-        }
-        array_push($strSearchPluginsContent, $_strSearchPluginsContentCatList);
-    }
-    $strSearchPluginsContent = implode($strSearchPluginsContent);
-    return $strSearchPluginsContent;
 }
 
 // ============================================================================
@@ -190,7 +170,7 @@ if (startsWith($strRequestPath, '/extensions/')) {
         $strStrippedPath = str_replace('/', '', str_replace('/extensions/category/', '', $strRequestPath));
         
         if (array_key_exists($strStrippedPath,$arrayExtensionCategoriesDB)) {
-            funcGeneratePage(funcGenExtensionsCategoryContent($arrayExtensionCategoriesDB[$strStrippedPath]));
+            funcGeneratePage(funcGenCategoryContent('extension', $arrayExtensionCategoriesDB[$strStrippedPath]));
         }
         else {
             funcSendHeader('404');
@@ -211,14 +191,7 @@ if (startsWith($strRequestPath, '/extensions/')) {
 elseif (startsWith($strRequestPath, '/themes/')) {
     require_once($arrayModules['dbThemes']);
     if ($strRequestPath == '/themes/') {
-        asort($arrayThemesDB);
-        $arrayPage = array(
-            'title' => 'Themes',
-            'contentFile' => $strContentBasePath . 'addons/category-page-themes.xhtml',
-            'subContent' => funcGenThemesCategoryContent(),
-        );
-        
-        funcGeneratePage($arrayPage);
+        funcGeneratePage(funcGenCategoryContent('theme', $arrayThemesDB));
     }
     else {
         $strStrippedPath = str_replace('/', '', str_replace('/themes/', '', $strRequestPath));
@@ -234,16 +207,7 @@ elseif (startsWith($strRequestPath, '/themes/')) {
 }
 elseif ($strRequestPath == '/search-plugins/') {
     require_once($arrayModules['dbSearchPlugins']);
-    funcSendHeader('html');
-    asort($arraySearchPluginsDB);
-   
-    $arrayPage = array(
-        'title' => 'Search Plugins',
-        'contentFile' => $strContentBasePath . 'addons/category-page-search-plugins.xhtml',
-        'subContent' => funcGenSearchPluginsCategoryContent(),
-    );
-    
-    funcGeneratePage($arrayPage);
+    funcGeneratePage(funcGenCategoryContent('search-plugin', $arraySearchPluginsDB));
 }
 else {
     funcSendHeader('404');
