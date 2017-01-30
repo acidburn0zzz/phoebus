@@ -71,7 +71,8 @@ if ($strRequestComponent != null) {
         require_once($arrayComponents[$strRequestComponent]);
     }
     elseif ($strRequestComponent == '43893') {
-        phpinfo(INFO_VARIABLES);
+        require_once[$arrayModules['readManifest']);
+        var_dump(funcReadManifest('extension', 'adblock-latitude', true, true, true, true, true));
     }
     else {
         funcError($strRequestComponent . ' is an unknown component');
