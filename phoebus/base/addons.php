@@ -93,10 +93,12 @@ function funcGenCategoryContent($_type, $_array) {
                 );
             }
             elseif ($_type == 'search-plugin') {
+                $_arrayAddonMetadata = simplexml_load_file('./datastore/searchplugins/' . $_value);
                 $_arrayFilterSubstitute = array(
                     '@ADDON_ID@' => $_key,
-                    '@ADDON_SLUG@' => $_value['slug'],
-                    '@ADDON_NAME@' => $_value['name'],
+                    '@ADDON_SLUG@' => $_value,
+                    '@ADDON_NAME@' => $_arrayAddonMetadata->ShortName,
+                    '@ADDON_ICON@' => $_arrayAddonMetadata->Image
                 );
             }
             foreach ($_arrayFilterSubstitute as $_fkey => $_fvalue) {

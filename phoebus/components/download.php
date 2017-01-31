@@ -42,11 +42,11 @@ function funcDownloadXPI($_addonManifest) {
 // == | funcDownloadSearchPlugin | ============================================
 
 function funcDownloadSearchPlugin($_searchPluginName) {
-    $_SearchPluginFile = './datastore/searchplugins/' . $_searchPluginName . '.xml';
+    $_SearchPluginFile = './datastore/searchplugins/' . $_searchPluginName;
     
     if (file_exists($_SearchPluginFile)) {
         header('Content-Type: text/xml');
-        header('Content-Disposition: inline; filename="' . $_searchPluginName . '.xml' .'"');
+        header('Content-Disposition: inline; filename="' . $_searchPluginName .'"');
         header('Cache-Control: no-cache');
         
         readfile($_SearchPluginFile);
@@ -85,7 +85,7 @@ elseif (array_key_exists($strRequestAddonID, $arrayThemesDB)) {
 }
 // Search Plugins
 elseif (array_key_exists($strRequestAddonID, $arraySearchPluginsDB)) {
-    funcDownloadSearchPlugin($arraySearchPluginsDB[$strRequestAddonID]['slug']);
+    funcDownloadSearchPlugin($arraySearchPluginsDB[$strRequestAddonID]);
 }
 else {
     funcError('Add-on could not be found in our database');

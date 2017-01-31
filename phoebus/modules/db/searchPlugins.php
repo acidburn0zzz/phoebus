@@ -4,136 +4,37 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 $arraySearchPluginsDB = array(
-    'search-100' => array(
-        'slug' => 'google',
-        'name' => 'Google'
-    ),
-    'search-101' => array(
-        'slug' => 'youtube',
-        'name' => 'YouTube'
-    ),
-    'search-102' => array(
-        'slug' => 'google-play',
-        'name' => 'Google Play'
-    ),
-    'search-103' => array(
-        'slug' => 'ask',
-        'name' => 'Ask.com'
-    ),
-    'search-104' => array(
-        'slug' => 'merriam-webster',
-        'name' => 'Merriam-Webster'
-    ),
-    'search-105' => array(
-        'slug' => 'facebook',
-        'name' => 'Facebook'
-    ),
-    'search-106' => array(
-        'slug' => 'abbreviations-com',
-        'name' => 'Abbreviations.com'
-    ),
-    'search-107' => array(
-        'slug' => 'accuweather',
-        'name' => 'Accuweather'
-    ),
-    'search-108' => array(
-        'slug' => 'amazon-com',
-        'name' => 'Amazon.com'
-    ),
-    'search-109' => array(
-        'slug' => 'amazon-co-uk',
-        'name' => 'Amazon.co.uk'
-    ),
-    'search-110' => array(
-        'slug' => 'baidu',
-        'name' => 'Baidu'
-    ),
-    'search-111' => array(
-        'slug' => 'dictionary-com',
-        'name' => 'Dictionary.com'
-    ),
-    'search-112' => array(
-        'slug' => 'dogpile',
-        'name' => 'Dogpile'
-    ),
-    'search-113' => array(
-        'slug' => 'ebay',
-        'name' => 'eBay'
-    ),
-    'search-114' => array(
-        'slug' => 'european-search-engine',
-        'name' => 'Unbubble'
-    ),
-    'search-115' => array(
-        'slug' => 'imdb',
-        'name' => 'IMDb'
-    ),
-    'search-116' => array(
-        'slug' => 'imgur',
-        'name' => 'Imgur'
-    ),
-    'search-117' => array(
-        'slug' => 'ixquick',
-        'name' => 'Ixquick'
-    ),
-    'search-118' => array(
-        'slug' =>'openstreetmap',
-        'name' => 'OpenStreetMap'
-    ),
-/*    'search-119' => 'pale-moon-add-ons-site',
-        'name' => 'Pale Moon Add-ons Site'
-    ), */
-    'search-120' => array(
-        'slug' => 'pale-moon-forum',
-        'name' => 'Pale Moon Forum'
-    ),
-    'search-121' => array(
-        'slug' => 'pcnet',
-        'name' => 'PC.net'
-    ),
-    'search-122' => array(
-        'slug' => 'qwant',
-        'name' => 'Qwant'
-    ),
-    'search-123' => array(
-        'slug' => 'reference-com',
-        'name' => 'Reference.com'
-    ),
-    'search-124' => array(
-        'slug' => 'searx',
-        'name' => 'SearchX'
-    ),
-    'search-125' => array(
-        'slug' => 'startpage',
-        'name' => 'Startpage'
-    ),
-    'search-126' => array(
-        'slug' => 'the-online-slang-dictionary',
-        'name' => 'The Online Slang Dictionary'
-    ),
-    'search-127' => array(
-        'slug' => 'the-weather-channel',
-        'name' => 'The Weather Channel'
-    ),
-    'search-128' => array(
-        'slug' => 'tumblr',
-        'name' => 'Tumblr'
-    ),
-    'search-129' => array(
-        'slug' => 'urban-dictionary',
-        'name' => 'Urban Dictionary'
-    ),
-    'search-130' => array(
-        'slug' => 'webopedia',
-        'name' => 'Webopedia'
-    ),
-    'search-131' => array(
-        'slug' => 'wiktionary',
-        'name' => 'Wiktionary'
-    ),
-    'search-132' => array(
-        'slug' => 'yandex',
-        'name' => 'Yandex'
-    ),
+    'search-100' => 'google.xml',
+    'search-101' => 'youtube.xml',
+    'search-102' => 'google-play.xml',
+    'search-103' => 'ask.xml',
+    'search-104' => 'merriam-webster.xml',
+    'search-105' => 'facebook.xml',
+    'search-106' => 'abbreviations-com.xml',
+    'search-107' => 'accuweather.xml',
+    'search-108' => 'amazon-com.xml',
+    'search-109' => 'amazon-co-uk.xml',
+    'search-110' => 'baidu.xml',
+    'search-111' => 'dictionary-com.xml',
+    'search-112' => 'dogpile.xml',
+    'search-113' => 'ebay.xml',
+    'search-114' => 'european-search-engine.xml',
+    'search-115' => 'imdb.xml',
+    'search-116' => 'imgur.xml',
+    'search-117' => 'ixquick.xml',
+    'search-118' => 'openstreetmap.xml',
+    'search-120' => 'pale-moon-forum.xml',
+    'search-121' => 'pcnet.xml',
+    'search-122' => 'qwant.xml',
+    'search-123' => 'reference-com.xml',
+    'search-124' => 'searx.xml',
+    'search-125' => 'startpage.xml',
+    'search-126' => 'the-online-slang-dictionary.xml',
+    'search-127' => 'the-weather-channel.xml',
+    'search-128' => 'tumblr.xml',
+    'search-129' => 'urban-dictionary.xml',
+    'search-130' => 'webopedia.xml',
+    'search-131' => 'wiktionary.xml',
+    'search-132' => 'yandex.xml'
 );
 ?>
