@@ -44,7 +44,7 @@ function funcGenerateUpdateXML($_addonManifest) {
                 '@ADDON_TYPE@' => $_addonManifest['addon']['type'],
                 '@ADDON_ID@' => $_addonManifest['addon']['id'],
                 '@ADDON_VERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['version'],
-                '@PALEMOON_ID@' => $GLOBALS['strPaleMoonID'],
+                '@APPLICATION_ID@' => $GLOBALS['strApplicationID'],
                 '@ADDON_MINVERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['minAppVersion'],
                 '@ADDON_MAXVERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['maxAppVersion'],
                 '@ADDON_XPI@' => $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['id'],
@@ -76,7 +76,7 @@ if ($strRequestAddonID == null || $strRequestAddonVersion == null ||
     funcError('Missing minimum required arguments.');
 }
 
-if ($strRequestAppID != $strPaleMoonID) {
+if ($strRequestAppID != $strApplicationID) {
     funcError('Invalid Application ID');
 }
 
@@ -123,11 +123,11 @@ elseif (array_key_exists($strRequestAddonID, $arrayExternalsDB)) {
 // Unknown - Send to AMO or to 'bad' update xml
 else {
     if ($boolAMOKillSwitch == false) {
-        $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, '27.0.0');
+        $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, $strMinimumApplicationVersion);
         $_strFirefoxVersion = $strFirefoxVersion;
         
         if ($intVcResult < 0) {
-            $_strFirefoxVersion = '24.9';
+            $_strFirefoxVersion = $strFirefoxOldVersion;
         }
         
         $strAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=2' .

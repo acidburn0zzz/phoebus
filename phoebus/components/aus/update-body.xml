@@ -6,7 +6,7 @@
             <em:version>@ADDON_VERSION@</em:version>
             <em:targetApplication>
               <RDF:Description>
-                <em:id>@PALEMOON_ID@</em:id>
+                <em:id>@APPLICATION_ID@</em:id>
                 <em:minVersion>@ADDON_MINVERSION@</em:minVersion>
                 <em:maxVersion>@ADDON_MAXVERSION@</em:maxVersion>
                 <em:updateLink>@ADDON_XPI@</em:updateLink>

@@ -33,10 +33,10 @@ if ($strRequestType == null || $strRequestReq == null) {
 // Maintain Pale Moon <26 Compatibility
 if ($strRequestVersion != null) {
     require_once($arrayModules['vc']);
-    $intVcResult = ToolkitVersionComparator::compare($strRequestVersion, '27.0.0');
+    $intVcResult = ToolkitVersionComparator::compare($strRequestVersion, $strMinimumApplicationVersion);
 
     if ($intVcResult < 0) {
-        $_strFirefoxVersion = '24.9';
+        $_strFirefoxVersion = $strFirefoxOldVersion;
     }
 }
 
