@@ -109,6 +109,12 @@ $arrayExCat02 = array(
             'shortDescription' => 'Adds in-field clear buttons to the URL bar, the Search bar and the Find bar.',
             'url' => 'https://addons.mozilla.org/firefox/addon/xclear/'
         ),
+        'tab-utilities-phoenix' => array(
+            'id' => 'ex-014',
+            'name' => 'Tab Utilities Phoenix',
+            'shortDescription' => 'Open Bookmarks/History/URL/Search in new tabs, and more utilities for tabbed browsing.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/tab-utilities-phoenix/'
+        ),
     ),
 );
 
@@ -130,6 +136,12 @@ $arrayExCat03 = array(
             'name' => 'OpenDownload²',
             'shortDescription' => 'OpenDownload² extends the "Save" dialog by a "Run" button to open the file directly.',
             'url' => 'https://addons.mozilla.org/firefox/addon/opendownload-10902/'
+        ),
+        'download-manager-s3' => array(
+            'id' => 'ex-015',
+            'name' => 'Download Manager (S3)',
+            'shortDescription' => 'View and manage downloads from a tidy statusbar.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/s3download-statusbar/'
         ),
     ),
 );
@@ -235,6 +247,18 @@ $arrayExCat05 = array(
             'name' => 'Proxy Privacy Ruler',
             'shortDescription' => 'Restrict Proxy by Private Windows, Tabs and Domain List.',
             'url' => 'https://addons.mozilla.org/firefox/addon/proxy-privacy-ruler/'
+        ),
+        'ublock-0' => array(
+            'id' => 'ex-012',
+            'name' => 'uBlock Origin',
+            'shortDescription' => 'Finally, an efficient blocker. Easy on CPU and memory.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/ublock-origin/'
+        ),
+        'umatrix' => array(
+            'id' => 'ex-013',
+            'name' => 'uMatrix',
+            'shortDescription' => 'Point & click to forbid/allow any class of requests made by your browser.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/umatrix/'
         ),
     ),
 );
