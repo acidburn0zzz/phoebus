@@ -54,6 +54,7 @@ $arrayExCat02 = array(
     'stylish-editor-modified',
     'tiny-menu',
     'themetool',
+    'tab-mix-plus',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
