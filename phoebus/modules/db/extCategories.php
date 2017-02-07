@@ -37,6 +37,12 @@ $arrayExCat01 = array(
             'shortDescription' => 'Monitors your Yandex Mail account(s) and notifies you when you have new mail.',
             'url' => 'https://sites.google.com/site/sonthakit/yandexmailwatcher'
         ),
+        'gmail-mail-sidebar' => array(
+            'id' => 'ex-023',
+            'name' => 'Gmail Mail Sidebar',
+            'shortDescription' => 'Gmail Mail Sidebar brings Gmail right into your Pale Moon Sidebar.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/gmail-mail-sidebar/'
+        ),
     ),
 );
 
@@ -116,6 +122,18 @@ $arrayExCat02 = array(
             'shortDescription' => 'Open Bookmarks/History/URL/Search in new tabs, and more utilities for tabbed browsing.',
             'url' => 'https://addons.mozilla.org/firefox/addon/tab-utilities-phoenix/'
         ),
+        'theme-font-size-changer' => array(
+            'id' => 'ex-016',
+            'name' => 'Theme Font & Size Changer',
+            'shortDescription' => 'Lets you change the global font size and font family used for the user interface in Pale Moon.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/theme-font-size-changer/'
+        ),
+        'browser-backgrounds' => array(
+            'id' => 'ex-019',
+            'name' => 'Browser Backgrounds',
+            'shortDescription' => 'Browser Backgrounds is the new Pale Moon extension that lets you install backgrounds directly on your browser.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/browser-backgrounds/'
+        ),
     ),
 );
 
@@ -173,6 +191,12 @@ $arrayExCat04 = array(
             'name' => 'Social Fixer for Facebook',
             'shortDescription' => 'Fixes annoyances, adds features and enhances existing functionality to make FB more fun and efficient.',
             'url' => 'http://socialfixer.com/'
+        ),
+        'reader' => array(
+            'id' => 'ex-017',
+            'name' => 'Reader',
+            'shortDescription' => 'Reader is the ultimate Reader tool for Pale Moon.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/reader/'
         ),
     ),
 );
@@ -282,6 +306,12 @@ $arrayExCat06 = array(
             'shortDescription' => 'Search for copies of images using Yandex.ru, Tineye.com, Google.com and VK.com via the right-click menu.',
             'url' => 'https://addons.mozilla.org/firefox/addon/who-stole-my-pictures/'
         ),
+        'google-reverse-image-search' => array(
+            'id' => 'ex-021',
+            'name' => 'Google Reverse Image Search',
+            'shortDescription' => 'Search the images reversely on Google Images and find the other copies of the very image you are looking for on the web.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/google-reverse-image-search/'
+        ),
     ),
 );
 
@@ -289,6 +319,26 @@ $arrayExCat07 = array(
     'title' => 'Social & Communication',
     'chatzilla',
     'foxclocks',
+    'externals' => array(
+        'messenger-for-facebook' => array(
+            'id' => 'default',
+            'name' => 'Messenger for Facebook™',
+            'shortDescription' => 'Messenger for Facebook™ lets you bring a Messenger right into your browser to chat with your friends.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/facebook-messenger/'
+        ),
+        'facebook-toolbar-button' => array(
+            'id' => 'default',
+            'name' => 'Toolbar Button for Facebook™',
+            'shortDescription' => 'Visit your favorite Facebook™ quickly and easily by adding a special button to your Toolbar.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/facebook-messenger/'
+        ),
+        'twitter-app' => array(
+            'id' => 'ex-020',
+            'name' => 'Twitter App',
+            'shortDescription' => 'Twitter App brings Twitter right into your Pale Moon Sidebar.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/twitter-app/'
+        ),
+    ),
 );
 
 $arrayExCat08 = array(
@@ -407,6 +457,30 @@ $arrayExCat10 = array(
             'name' => 'Speed Start',
             'shortDescription' => 'Speed Dial & Start Page with flexible layout for fast access to sites via visual bookmarks.',
             'url' => 'https://addons.mozilla.org/firefox/addon/speed-start/'
+        ),
+        'open-with-google-chrome' => array(
+            'id' => 'ex-018',
+            'name' => 'Open with Google Chrome',
+            'shortDescription' => 'Open With Google Chrome sends pages from Pale Moon to Google Chrome.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/open-with-google-chrome/'
+        ),
+        'open-with-internet-explorer' => array(
+            'id' => 'ex-022',
+            'name' => 'Open with Internet Explorer',
+            'shortDescription' => 'Open With Internet Explorer sends pages from Pale Moon to Internet Explorer.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/open-with-internet-explorer/'
+        ),
+        'google-keep-notes' => array(
+            'id' => 'ex-024',
+            'name' => 'Google Keep Notes',
+            'shortDescription' => 'Google Keep Notes brings Google Keep right into your Pale Moon Sidebar.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/google-keep-notes/'
+        ),
+        'open-with-opera' => array(
+            'id' => 'ex-025',
+            'name' => 'Open with Opera',
+            'shortDescription' => 'Open With Opera sends pages, links, tabs and images from Pale Moon to Opera.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/open-with-opera/'
         ),
     ),
 );
