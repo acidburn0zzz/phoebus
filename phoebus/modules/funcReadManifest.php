@@ -76,6 +76,20 @@ function funcReadManifest($_addonType, $_addonSlug, $_addonMetadata, $_addonCont
             $_addonManifest['addon']['basePath'] = $_addonBasePath;
         }
         
+        if (file_exists($_addonBasePath . 'icon.png')) {
+            $_addonManifest['metadata']['hasIcon'] = true;
+        }
+        else {
+            $_addonManifest['metadata']['hasIcon'] = false;
+        }
+        
+        if (file_exists($_addonBasePath . 'preview.png')) {
+            $_addonManifest['metadata']['hasPreview'] = true;
+        }
+        else {
+            $_addonManifest['metadata']['hasPreview'] = false;
+        }
+        
         return $_addonManifest;
     }
     else {

@@ -10,6 +10,7 @@ $strPhoebusDevURL = 'dev.addons.palemoon.org';
 $strPhoebusURL = $strPhoebusLiveURL;
 $strPhoebusSiteName = 'Pale Moon - Add-ons';
 $strPhoebusVersion = '1.5.0a1';
+$boolDebugMode = false;
 
 $strPaleMoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
 $strFirefoxID = '{ec8030f7-c20a-464f-9b0e-13a3a9e97384}';
@@ -25,9 +26,10 @@ $strRequestComponent = funcHTTPGetValue('component');
 $arrayArgsComponent = preg_grep('/^component=(.*)/', explode('&', parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY)));
 $strRequestPath = funcHTTPGetValue('path');
 
-$strApplicationPath = './phoebus/';
+$strApplicationPath = $_SERVER['DOCUMENT_ROOT'] . '/phoebus/';
 $strComponentsPath = $strApplicationPath . 'components/';
 $strModulesPath = $strApplicationPath . 'modules/';
+$strGlobalLibPath = $_SERVER['DOCUMENT_ROOT'] . '/lib/';
 
 $arrayComponents = array(
     'site' => $strApplicationPath . 'base/website.php',
@@ -47,7 +49,8 @@ $arrayModules = array(
     'dbExtCategories' => $strModulesPath . 'db/extCategories.php',
     'readManifest' => $strModulesPath . 'funcReadManifest.php',
     'processContent' => $strModulesPath . 'funcProcessContent.php',
-    'vc' => $strModulesPath . 'nsIVersionComparator.php'
+    'vc' => $strGlobalLibPath . 'nsIVersionComparator.php',
+    'smarty' => $strGlobalLibPath . 'smarty/Smarty.class.php'
 );
 
 // ============================================================================
@@ -55,6 +58,7 @@ $arrayModules = array(
 // == | Main | ================================================================
 
 if ($_SERVER['SERVER_NAME'] == $strPhoebusDevURL) {
+    $boolDebugMode = true;
     $strPhoebusURL = $strPhoebusDevURL;
     if (file_exists('./.git/HEAD')) {
         $_strGitHead = file_get_contents('./.git/HEAD');
@@ -77,7 +81,7 @@ if ($_SERVER['REQUEST_URI'] == '/') {
     $strRequestPath = '/';
 }
 elseif ((count($arrayArgsComponent) > 1) || ($strRequestComponent != 'site' && $strRequestPath != null)) {
-    header("HTTP/1.0 404 Not Found");
+    funcSendHeader('404');
     exit();
 }
 

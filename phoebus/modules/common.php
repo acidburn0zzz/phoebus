@@ -34,9 +34,11 @@ function funcHTTPGetValue($_value) {
 function funcSendHeader($_value) {
     $_arrayHeaders = array(
         '404' => 'HTTP/1.0 404 Not Found',
+        '501' => 'HTTP/1.0 501 Not Implemented',
         'html' => 'Content-Type: text/html',
         'text' => 'Content-Type: text/plain',
         'xml' => 'Content-Type: text/xml',
+        'css' => 'Content-Type: text/css',
         'phoebus' => 'X-Phoebus: https://github.com/Pale-Moon-Addons-Team/phoebus/',
     );
     

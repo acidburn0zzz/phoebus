@@ -1,17 +1,17 @@
 @charset "utf-8";
 @font-face {
     font-family: 'Museo500Regular';
-    src: url('@BASE_PATH@Museo500-Regular-webfont.eot');
-    src: url('@BASE_PATH@Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('@BASE_PATH@Museo500-Regular-webfont.woff') format('woff');
+    src: url('{$BASE_PATH}Museo500-Regular-webfont.eot');
+    src: url('{$BASE_PATH}Museo500-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('{$BASE_PATH}Museo500-Regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Museo300Regular';
-    src: url('@BASE_PATH@Museo300-Regular-webfont.eot');
-    src: url('@BASE_PATH@Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('@BASE_PATH@Museo300-Regular-webfont.woff') format('woff');
+    src: url('{$BASE_PATH}Museo300-Regular-webfont.eot');
+    src: url('{$BASE_PATH}Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('{$BASE_PATH}Museo300-Regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -119,8 +119,8 @@ vertical-align: top;
 /*
 
 @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 */
@@ -133,7 +133,7 @@ background: linear-gradient(to right, rgba(240,240,240,1) 50%,rgba(255,255,255,0
 }
 
 .fake-table-row-search-plugin {
-    width: 330px;
+    width: 335px;
     height: 20px;
     display: inline-block;
     text-align: left;
@@ -216,7 +216,7 @@ display: none;
 }
 
 /* pull-down mainmenu css */
-.mainmenu{
+.mainmenu {
 position:relative;
 z-index:998;
 	float: left;
@@ -255,24 +255,24 @@ z-index:998;
 	opacity: 0.99;
 
 }
-.mainmenu ul ul a{
+.mainmenu ul ul a {
 	width:100%;
 	height:100%;
 }
-.mainmenu ul a{
+.mainmenu ul a {
 	width:1%;
 }
 
 
-.mainmenu li  {
+.mainmenu li {
 	float: left;
 	margin:0;
 	padding: 0;
 	/* width: 8em; */
 }
 
-.mainmenu ul li {float:left; position:relative;  }
-.mainmenu ul li a {white-space:nowrap;}
+.mainmenu ul li { float:left; position:relative; }
+.mainmenu ul li a { white-space:nowrap; }
 	
 .mainmenu li ul {
 	position: absolute;
@@ -322,11 +322,11 @@ z-index:998;
 	left: auto;
 }
 
-.mainmenu li:hover{
+.mainmenu li:hover {
 	background: #004B97;
 }
 
-.mainmenu li:hover a,.mainmenu li:hover a:visited,.mainmenu li:hover a:hover,.mainmenu li a:hover{
+.mainmenu li:hover a,.mainmenu li:hover a:visited,.mainmenu li:hover a:hover,.mainmenu li a:hover {
 	color:#FFFBF0;
 }
 .mainmenu li:hover li a, .mainmenu li li:hover li a, 
@@ -358,13 +358,13 @@ z-index:998;
 .mainmenu li:hover li:hover li:hover a,.mainmenu li:hover li:hover li:hover a:visited,
 .mainmenu li:hover li:hover li:hover li:hover a,.mainmenu li:hover li:hover li:hover li:hover a:visited ,
 .mainmenu li:hover li:hover li:hover li:hover li:hover a,.mainmenu li:hover li:hover li:hover li:hover li:hover a:visited,
-.mainmenu li:hover li:hover li:hover li:hover li:hover li:hover a,.mainmenu li:hover li:hover li:hover li:hover li:hover li:hover a:visited{
+.mainmenu li:hover li:hover li:hover li:hover li:hover li:hover a,.mainmenu li:hover li:hover li:hover li:hover li:hover li:hover a:visited {
 	color: #FFFBF0;
 }
 .mainmenu li:hover li:hover li a,.mainmenu li:hover li:hover li a:visited ,
 .mainmenu li:hover li:hover li:hover li a,.mainmenu li:hover li:hover li:hover li a:visited,
 .mainmenu li:hover li:hover li:hover li:hover li a,.mainmenu li:hover li:hover li:hover li:hover li a:visited,
-.mainmenu li:hover li:hover li:hover li:hover li:hover li a,.mainmenu li:hover li:hover li:hover li:hover li:hover li a:visited{
+.mainmenu li:hover li:hover li:hover li:hover li:hover li a,.mainmenu li:hover li:hover li:hover li:hover li:hover li a:visited {
 	color: #FFFFFF;
 }
 

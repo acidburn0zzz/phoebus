@@ -1,4 +1,4 @@
-<h1>@PAGE_TITLE@</h1>
+<h1>{$PAGE_TITLE}</h1>
 
 <h3>Why aren&rsquo;t all Firefox add-ons compatible with Pale Moon?</h3>
 
