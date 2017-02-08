@@ -52,7 +52,8 @@ $arrayExtensionsDB = array(
     'moonttool@Off.JustOff' => 'moon-tester-tool',
     'abh2me@Off.JustOff' => 'add-bookmark-here-2-me',
     'youtubelazy@Off.JustOff' => 'youtube-lazy-load',
-    'greedycache@Off.JustOff' => 'greedy-cache'
+    'greedycache@Off.JustOff' => 'greedy-cache',
+    '{dc572301-7619-498c-a57d-39143191b318}' => 'tab-mix-plus'
 );
 
 // Override for Firefox Specific IDs or Changed IDs

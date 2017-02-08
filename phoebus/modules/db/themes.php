@@ -38,6 +38,7 @@ $arrayThemesDB = array(
     'phoenity-rebirth@lootyhoof-pm' => 'phoenity-rebirth',
     'walnutty@lootyhoof-pm' => 'walnutty',
     '{2C646A52-4EDC-455F-8047-9405795D3E51}' => 'moonscape',
-    'materialmoon@franklindm' => 'material-moon'
+    'materialmoon@franklindm' => 'material-moon',
+    '{77d97525-e813-48d0-9bba-9c43df19baf9}' => 'winstripe-moon'
 );
 ?>
