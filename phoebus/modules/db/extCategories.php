@@ -143,6 +143,7 @@ $arrayExCat03 = array(
     'image-toolbox',
     'mozarchiver',
     'complete-yt-saver',
+    'downloads-window',
     'externals' => array(
         'imagehost-grabber' => array(
             'id' => 'ex-005',
@@ -421,6 +422,7 @@ $arrayExCat10 = array(
     'moon-pdf-viewer',
     'add-bookmark-here-2-me',
     'youtube-lazy-load',
+    'send-tab-to-device',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
