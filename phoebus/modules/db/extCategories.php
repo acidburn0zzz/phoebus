@@ -422,6 +422,7 @@ $arrayExCat10 = array(
     'moon-pdf-viewer',
     'add-bookmark-here-2-me',
     'youtube-lazy-load',
+    'send-tab-to-device',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
