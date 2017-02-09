@@ -143,6 +143,7 @@ $arrayExCat03 = array(
     'image-toolbox',
     'mozarchiver',
     'complete-yt-saver',
+    'downloads-window',
     'externals' => array(
         'imagehost-grabber' => array(
             'id' => 'ex-005',
