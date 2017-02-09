@@ -6,63 +6,73 @@
 $arrayLangPackDB = array(
     'langpack-cs@palemoon.org' => array(
         'locale' => 'cs',
-        'version' => '27.0.0',
-        'hash' => 'ded8c23759d3433c6c8348160de397ebc59348fdccd371e1113b8b9652be5d52'
+        'version' => '27.1.0',
+        'hash' => 'a98c1ab5fb701790478ab5e41afc9855a1a3eedd26942b2b6123bac796f73f2e'
     ),
     'langpack-de@palemoon.org' => array(
         'locale' => 'de',
-        'version' => '27.0.0',
-        'hash' => '5080323e9f860938726423feac2c73f0ca4822d956ee63691385b5dfb55e8fbf'
+        'version' => '27.1.0',
+        'hash' => 'f55767715fb59a030dd68a8d6c59a69c062cd3a000e774b0063fb8811c6316fe'
+    ),
+    'langpack-en-GB@palemoon.org' => array(
+        'locale' => 'en-GB',
+        'version' => '27.1.0',
+        'hash' => '3fa10c58c861c0345bc2b27fc8d3ec7f39e2b8bc13f9edd7a40c6abc664f25f5'
     ),
     'langpack-es-AR@palemoon.org' => array(
         'locale' => 'es-AR',
-        'version' => '27.0.0',
-        'hash' => 'fa139738c70397dd2b5e70328fe32f5ebe72684cbe1b39ee074eb4b875770874'
+        'version' => '27.1.0',
+        'hash' => '5fc713baabf7b6ae4df21e1667fe1ad82ccaf0e160160d503b19a3fa2b54e739'
     ),
     'langpack-es-ES@palemoon.org' => array(
         'locale' => 'es-ES',
-        'version' => '27.0.0',
-        'hash' => 'd0e32ccd22bb17fd862789b8f1cdadc08e4a5607b27123632692207e8b7ab3b2'
+        'version' => '27.1.0',
+        'hash' => '5cebc6bf702c11e3116f7467800a299d788facb15e3dccb114f8fae93d63bf12'
     ),
     'langpack-es-MX@palemoon.org' => array(
         'locale' => 'es-MX',
-        'version' => '27.0.0',
-        'hash' => 'a45cdaf413c03532e3e8ffc17ab690527bc3e93f23d3eca2257d12d21d362f45'
+        'version' => '27.1.0',
+        'hash' => '9fe6a771573a38f3fb03449e1ac32221d112e54f25b3c3aa2d3d7fcdd9f12ffa'
     ),
     'langpack-fr@palemoon.org' => array(
         'locale' => 'fr',
-        'version' => '27.0.0',
-        'hash' => '1c11c0cdbc160be07b3cf19d41eb92d45bd832597d345c73cb1594998e643e8d'
+        'version' => '27.1.0',
+        'hash' => '6f146d07e238154134f66e0a98aa7b26026e2d30d00aef85c558e3ba5b9c35e2'
     ),
     'langpack-hu@palemoon.org' => array(
         'locale' => 'hu',
-        'version' => '27.0.0',
-        'hash' => 'b1c91147ba44d757c7d0d2d09b39f0c64d5c4148910658e69e9153282097046a'
+        'version' => '27.1.0',
+        'hash' => '1fdab290e4dc37ca3d9887aa0b06f90651137af5300543171efcf06a09207f2a'
     ),
     'langpack-it@palemoon.org' => array(
         'locale' => 'it',
-        'version' => '27.0.0',
-        'hash' => 'b6402395436242ea49ef3ab0ab77e8c3024c28f7f2323f3f491d24c6586b6a95'
+        'version' => '27.1.0',
+        'hash' => '3472994218706bd9d8fcbef94fe52b458ba807393dabbc41aa445d531839d3c8'
     ),
     'langpack-ja@palemoon.org' => array(
         'locale' => 'ja',
-        'version' => '27.0.0',
-        'hash' => 'aafbda001364f0080809e9f62e8b227f8fa47d2cbe7292b1e462e05d2fc18400'
+        'version' => '27.1.0',
+        'hash' => 'fc93a81b61b9f96df259883afc3c82e1223c027951b92bc8073c623c6bf68208'
+    ),
+    'langpack-ko@palemoon.org' => array(
+        'locale' => 'ko',
+        'version' => '27.1.0',
+        'hash' => '8818a6822df6ae176e007fa0a1cc45ce08a8bdbc1c324e8b4dea7fdd94cc997a'
     ),
     'langpack-pl@palemoon.org' => array(
         'locale' => 'pl',
-        'version' => '27.0.0',
-        'hash' => 'ae786d58878bee0e70b24d95b40abe5df610b596cd6e74cc025e4228e4f04fbe'
+        'version' => '27.1.0',
+        'hash' => '9ae3497be5961994df550888ffaa1e0fcbb73c09ef04acf1035677d2ca70644f'
     ),
     'langpack-ru@palemoon.org' => array(
         'locale' => 'ru',
-        'version' => '27.0.0',
-        'hash' => 'ee8e6265d5b8bf049aec7794db4b72d8f7145f0030b6e2545d9728a10d71e60d'
+        'version' => '27.1.0',
+        'hash' => '8327b707528f9e575391b3f280359b35fcd1fcd2a3aa180e44b75ff21c4a87d8'
     ),
     'langpack-zh-CN@palemoon.org' => array(
         'locale' => 'zh-CN',
-        'version' => '27.0.0',
-        'hash' => '8b1db411c503f214171b8d9c87a453aa933955ff900f151065efa3587ffc4042'
+        'version' => '27.1.0',
+        'hash' => 'aae049f8ec49aa26020401b0add15c4f8e66201a4f1d078207d47cf0912a200d'
     )
 );
 ?>
