@@ -78,7 +78,7 @@
 {if $PAGE_TYPE == 'cat-search-plugins'}
 <div>
 {foreach $PAGE_DATA as $key}
-<a onclick="window.external.AddSearchProvider('https://addons.palemoon.org/?component=download&id={$key.addon.id}');"
+<a onclick="window.external.AddSearchProvider('{$SITE_DOMAIN}/?component=download&id={$key.addon.id}');"
    href="#{$key.metadata.slug}"
    name="#{$key.metadata.slug}"
    class="fake-table-row-search-plugin">
