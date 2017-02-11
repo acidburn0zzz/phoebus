@@ -14,11 +14,6 @@ $arrayLangPackDB = array(
         'version' => '27.1.0',
         'hash' => 'f55767715fb59a030dd68a8d6c59a69c062cd3a000e774b0063fb8811c6316fe'
     ),
-    'langpack-en-GB@palemoon.org' => array(
-        'locale' => 'en-GB',
-        'version' => '27.1.0',
-        'hash' => '3fa10c58c861c0345bc2b27fc8d3ec7f39e2b8bc13f9edd7a40c6abc664f25f5'
-    ),
     'langpack-es-AR@palemoon.org' => array(
         'locale' => 'es-AR',
         'version' => '27.1.0',
