@@ -55,7 +55,8 @@ $arrayExtensionsDB = array(
     'greedycache@Off.JustOff' => 'greedy-cache',
     '{dc572301-7619-498c-a57d-39143191b318}' => 'tab-mix-plus',
     '{a7213cf2-fa1e-4373-88ff-255d0abd3020}' => 'downloads-window',
-    'tab2device@Off.JustOff' => 'send-tab-to-device'
+    'tab2device@Off.JustOff' => 'send-tab-to-device',
+    'ntlmauth@lakora.us' => 'integrated-authentication'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
