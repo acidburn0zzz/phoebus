@@ -213,6 +213,7 @@ $arrayExCat05 = array(
     'i-dont-care-about-cookies',
     'show-my-password',
     'isadmin',
+    'integrated-authentication',
     'externals' => array(
         'clean-links' => array(
             'id' => 'fx-317263',
