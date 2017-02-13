@@ -76,73 +76,98 @@ if ($strRequestAddonID == null || $strRequestAddonVersion == null ||
     funcError('Missing minimum required arguments.');
 }
 
-if ($strRequestAppID != $strPaleMoonID) {
-    funcError('Invalid Application ID');
-}
+if ($strRequestAppID === $strPaleMoonID) {
+    // Include modules
+    foreach($arrayIncludes as $_value) {
+        include_once($_value);
+    }
+    unset($arrayIncludes);
 
-// Include modules
-foreach($arrayIncludes as $_value) {
-    include_once($_value);
+    // Search for add-ons in our databases
+    // Extensions
+    if (array_key_exists($strRequestAddonID, $arrayExtensionsDB)) {
+        funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsDB[$strRequestAddonID], false, false, true, true, false));
+    }
+    elseif(array_key_exists($strRequestAddonID, $arrayExtensionsOverrideDB)) {
+        funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsOverrideDB[$strRequestAddonID], false, false, true, true, false));
+    }
+    // Themes
+    elseif (array_key_exists($strRequestAddonID, $arrayThemesDB)) {
+        funcGenerateUpdateXML(funcReadManifest('theme', $arrayThemesDB[$strRequestAddonID], false, false, true, true, false));
+    }
+    // Language Packs
+    elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
+        $arrayLangPack = array(
+            'addon' => array(
+                        'type' => 'item',
+                        'id' => $strRequestAddonID,
+                        'release' => $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi',
+                        'baseURL' => 'http://relmirror.palemoon.org/langpacks/27.x/',
+                        'hash' => $arrayLangPackDB[$strRequestAddonID]['hash']),
+            'xpi' => array(
+                        $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi' => array(
+                            'version' => $arrayLangPackDB[$strRequestAddonID]['version'],
+                            'minAppVersion' => '27.0.0a1',
+                            'maxAppVersion' => '27.*'))
+        );
+        
+        funcGenerateUpdateXML($arrayLangPack);
+    }
+    // Externals
+    elseif (array_key_exists($strRequestAddonID, $arrayExternalsDB)) {
+        funcRedirect($arrayExternalsDB[$strRequestAddonID]);
+    }
+    // Unknown - Send to AMO or to 'bad' update xml
+    else {
+        if ($boolAMOKillSwitch == false) {
+            $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, '27.0.0');
+            $_strFirefoxVersion = $strFirefoxVersion;
+            
+            if ($intVcResult < 0) {
+                $_strFirefoxVersion = '24.9';
+            }
+            
+            $strAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=2' .
+            '&id=' . $strRequestAddonID .
+            '&version=' . $strRequestAddonVersion .
+            '&appID=' . $strFirefoxID .
+            '&appVersion=' . $_strFirefoxVersion .
+            '&compatMode=' . $strRequestCompatMode;
+            
+            funcRedirect($strAMOLink);
+        }
+        else {
+            funcGenerateUpdateXML(null);
+        }
+    }
 }
-unset($arrayIncludes);
-
-// Search for add-ons in our databases
-// Extensions
-if (array_key_exists($strRequestAddonID, $arrayExtensionsDB)) {
-    funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsDB[$strRequestAddonID], false, false, true, true, false));
-}
-elseif(array_key_exists($strRequestAddonID, $arrayExtensionsOverrideDB)) {
-    funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsOverrideDB[$strRequestAddonID], false, false, true, true, false));
-}
-// Themes
-elseif (array_key_exists($strRequestAddonID, $arrayThemesDB)) {
-    funcGenerateUpdateXML(funcReadManifest('theme', $arrayThemesDB[$strRequestAddonID], false, false, true, true, false));
-}
-// Language Packs
-elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
-    $arrayLangPack = array(
-        'addon' => array(
-                    'type' => 'item',
-                    'id' => $strRequestAddonID,
-                    'release' => $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi',
-                    'baseURL' => 'http://relmirror.palemoon.org/langpacks/27.x/',
-                    'hash' => $arrayLangPackDB[$strRequestAddonID]['hash']),
-        'xpi' => array(
-                    $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi' => array(
-                        'version' => $arrayLangPackDB[$strRequestAddonID]['version'],
-                        'minAppVersion' => '27.0.0a1',
-                        'maxAppVersion' => '27.*'))
+elseif ($strRequestAppID === $strThunderbirdID) {
+    $arrayBadFossaMailDB = array(
+        '{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}' => 'gdata',
+        '{e2fda1a4-762b-4020-b5ad-a41df1933103}' => 'lightning'
     );
     
-    funcGenerateUpdateXML($arrayLangPack);
-}
-// Externals
-elseif (array_key_exists($strRequestAddonID, $arrayExternalsDB)) {
-    funcRedirect($arrayExternalsDB[$strRequestAddonID]);
-}
-// Unknown - Send to AMO or to 'bad' update xml
-else {
-    if ($boolAMOKillSwitch == false) {
-        $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, '27.0.0');
-        $_strFirefoxVersion = $strFirefoxVersion;
-        
-        if ($intVcResult < 0) {
-            $_strFirefoxVersion = '24.9';
-        }
-        
-        $strAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=2' .
-        '&id=' . $strRequestAddonID .
-        '&version=' . $strRequestAddonVersion .
-        '&appID=' . $strFirefoxID .
-        '&appVersion=' . $_strFirefoxVersion .
-        '&compatMode=' . $strRequestCompatMode;
-        
-        funcRedirect($strAMOLink);
-    }
-    else {
+    if (array_key_exists($strRequestAddonID, $arrayBadFossaMailDB)) {
         funcGenerateUpdateXML(null);
     }
+    else {
+        if ($boolAMOKillSwitch == false) {           
+            $strAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=2' .
+            '&id=' . $strRequestAddonID .
+            '&version=' . $strRequestAddonVersion .
+            '&appID=' . $strThunderbirdID .
+            '&appVersion=' . '38.9' .
+            '&compatMode=' . $strRequestCompatMode;
+            
+            funcRedirect($strAMOLink);
+        }
+        else {
+            funcGenerateUpdateXML(null);
+        }
+    }
 }
-
+else {
+    funcError('Invalid Application ID');
+}
 // ============================================================================
 ?>
