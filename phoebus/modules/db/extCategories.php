@@ -390,6 +390,7 @@ $arrayExCat09 = array(
     'title' => 'Web Development',
     'devtools',
     'error-console2',
+    'jsview-revive',
     'externals' => array(
         'alertip' => array(
             'id' => 'default',
