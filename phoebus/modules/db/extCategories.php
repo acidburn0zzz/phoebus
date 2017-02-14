@@ -61,6 +61,7 @@ $arrayExCat02 = array(
     'tiny-menu',
     'themetool',
     'tab-mix-plus',
+    'treestyletabforpm',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
@@ -389,6 +390,7 @@ $arrayExCat09 = array(
     'title' => 'Web Development',
     'devtools',
     'error-console2',
+    'jsview-revive',
     'externals' => array(
         'alertip' => array(
             'id' => 'default',
