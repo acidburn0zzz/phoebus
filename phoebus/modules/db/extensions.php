@@ -58,7 +58,8 @@ $arrayExtensionsDB = array(
     'tab2device@Off.JustOff' => 'send-tab-to-device',
     'ntlmauth@lakora.us' => 'integrated-authentication',
     'treestyletabforpm@oinkoink' => 'treestyletabforpm',
-    '{55e5dab6-f1cc-11e6-8a72-4981b17b32b7}' => 'jsview-revive'
+    '{55e5dab6-f1cc-11e6-8a72-4981b17b32b7}' => 'jsview-revive',
+    'AdvancedNightMode@Off.JustOff' => 'advanced-night-mode'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
