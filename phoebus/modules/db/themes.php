@@ -39,6 +39,7 @@ $arrayThemesDB = array(
     'walnutty@lootyhoof-pm' => 'walnutty',
     '{2C646A52-4EDC-455F-8047-9405795D3E51}' => 'moonscape',
     'materialmoon@franklindm' => 'material-moon',
-    '{77d97525-e813-48d0-9bba-9c43df19baf9}' => 'winstripe-moon'
+    '{77d97525-e813-48d0-9bba-9c43df19baf9}' => 'winstripe-moon',
+    '{ef547bbe-6237-45ed-b0d6-bc6ad58af954}' => 'stratum'
 );
 ?>
