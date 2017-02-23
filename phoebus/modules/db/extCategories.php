@@ -359,6 +359,7 @@ $arrayExCat08 = array(
     'html5-video-tuner',
     'moon-tester-tool',
     'greedy-cache',
+    'calendate',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
