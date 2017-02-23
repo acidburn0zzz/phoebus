@@ -59,7 +59,8 @@ $arrayExtensionsDB = array(
     'ntlmauth@lakora.us' => 'integrated-authentication',
     'treestyletabforpm@oinkoink' => 'treestyletabforpm',
     '{55e5dab6-f1cc-11e6-8a72-4981b17b32b7}' => 'jsview-revive',
-    'AdvancedNightMode@Off.JustOff' => 'advanced-night-mode'
+    'AdvancedNightMode@Off.JustOff' => 'advanced-night-mode',
+    '{5b965352-430a-11e2-956a-13226188709b}' => 'calendate'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
