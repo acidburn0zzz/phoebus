@@ -428,6 +428,7 @@ $arrayExCat10 = array(
     'add-bookmark-here-2-me',
     'youtube-lazy-load',
     'send-tab-to-device',
+    'auto-sort-bookmarks',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
