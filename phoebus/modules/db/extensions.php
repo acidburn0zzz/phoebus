@@ -62,7 +62,8 @@ $arrayExtensionsDB = array(
     'AdvancedNightMode@Off.JustOff' => 'advanced-night-mode',
     '{5b965352-430a-11e2-956a-13226188709b}' => 'calendate',
     'sortbookmarks@bouanto' => 'auto-sort-bookmarks',
-    'themeshim@lootyhoof-pm' => 'theme-shim'
+    'themeshim@lootyhoof-pm' => 'theme-shim',
+    'abprime@projects.binaryoutcast.com' => 'abprime'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
