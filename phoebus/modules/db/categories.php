@@ -61,6 +61,9 @@ $arrayCategoryList02 = array(
     'tiny-menu',
     'themetool',
     'tab-mix-plus',
+    'treestyletabforpm',
+    'advanced-night-mode',
+    'theme-shim',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
@@ -143,6 +146,7 @@ $arrayCategoryList03 = array(
     'image-toolbox',
     'mozarchiver',
     'complete-yt-saver',
+    'downloads-window',
     'externals' => array(
         'imagehost-grabber' => array(
             'id' => 'ex-005',
@@ -203,6 +207,7 @@ $arrayCategoryList04 = array(
 
 $arrayCategoryList05 = array(
     'title' => 'Privacy & Security',
+    'abprime',
     'adblock-latitude',
     'change-referer-button',
     'cipherfox',
@@ -212,6 +217,7 @@ $arrayCategoryList05 = array(
     'i-dont-care-about-cookies',
     'show-my-password',
     'isadmin',
+    'integrated-authentication',
     'externals' => array(
         'clean-links' => array(
             'id' => 'fx-317263',
@@ -355,6 +361,7 @@ $arrayCategoryList08 = array(
     'html5-video-tuner',
     'moon-tester-tool',
     'greedy-cache',
+    'calendate',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
@@ -387,6 +394,7 @@ $arrayCategoryList09 = array(
     'title' => 'Web Development',
     'devtools',
     'error-console2',
+    'jsview-revive',
     'externals' => array(
         'alertip' => array(
             'id' => 'default',
@@ -421,6 +429,8 @@ $arrayCategoryList10 = array(
     'moon-pdf-viewer',
     'add-bookmark-here-2-me',
     'youtube-lazy-load',
+    'send-tab-to-device',
+    'auto-sort-bookmarks',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
