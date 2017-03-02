@@ -135,7 +135,7 @@ if ($strRequestAppID == $strPaleMoonID) {
         }
     }
 }
-elseif if ($strRequestAppID == $strFossaMailID) {
+elseif ($strRequestAppID == $strFossaMailID) {
     $strApplicationID = $strFossaMailID;
 
     $arrayBadFossaMailDB = array(
