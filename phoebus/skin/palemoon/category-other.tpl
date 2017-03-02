@@ -27,7 +27,7 @@
 
     <ol>
         <li>Download the language pack .xpi from this page (below). Choose to immediately "install" in the Pale Moon browser (the default when left-clicking), skipping the need to save it first.</li>
-        <li>Install <a href="/extensions/locale-switcher/">Pale Moon locale switcher from this site.</a></li>
+        <li>Install <a href="/addon/locale-switcher/">Pale Moon locale switcher from this site.</a></li>
         <li>Click the new globe icon with colored bubbles in your toolbar, and select the language you prefer from the drop-down.</li>
         <li>Let the browser restart when asked.</li>
     </ol>
