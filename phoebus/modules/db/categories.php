@@ -533,8 +533,6 @@ $arrayCategoryList20 = array(
     'moonscape',
     'material-moon',
     'winstripe-moon',
-    'material-moon',
-    'winstripe-moon',
     'stratum'
     
 );
