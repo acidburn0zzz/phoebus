@@ -98,7 +98,7 @@ body,td,th {
     font-size: 12pt;
     letter-spacing: 0.3px;
     vertical-align: top;
-    animation: fadeEffect 0.5s;
+/*    animation: fadeEffect 0.5s; */
 }
 
 #PM-Content-Body {
@@ -138,8 +138,8 @@ background: linear-gradient(to right, rgba(240,240,240,1) 50%,rgba(255,255,255,0
 }
 
 .fake-table-row-search-plugin {
-    width: 335px;
-    height: 20px;
+    width: 325px;
+    height: 24px;
     display: inline-block;
     text-align: left;
     vertical-align: top;

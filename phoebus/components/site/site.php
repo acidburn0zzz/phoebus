@@ -100,6 +100,12 @@ function funcGenCategoryContent($_type, $_array) {
                 $arrayCategory[$_value2['name']]['metadata']['shortDescription'] = $_value2['shortDescription'];
             }
         }
+        elseif ($_type == 'language-pack') {
+            foreach($_array as $_key3 => $_value3) {
+                $arrayCategory[$_key3] = $_value3;
+                $arrayCategory[$_key3]['url'] = $GLOBALS['strLangPackBaseURL'] . $_value3['locale'] . '.xpi';
+            }
+        }
         elseif ($_type == 'search-plugin') {
             $_arrayAddonMetadata = simplexml_load_file('./datastore/searchplugins/' . $_value);
             $arrayCategory[(string)$_arrayAddonMetadata->ShortName]['addon']['type'] = 'search-plugin';

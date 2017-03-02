@@ -24,6 +24,8 @@ $strMinimumApplicationVersion = '27.0.0';
 $strFirefoxVersion = '27.9';
 $strFirefoxOldVersion = '24.9';
 
+$strLangPackBaseURL = 'http://relmirror.palemoon.org/langpacks/27.x/';
+
 $strRequestComponent = funcHTTPGetValue('component');
 $arrayArgsComponent = preg_grep('/^component=(.*)/', explode('&', parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY)));
 $strRequestPath = funcHTTPGetValue('path');

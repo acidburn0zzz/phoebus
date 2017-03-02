@@ -62,27 +62,40 @@
 {/if}
 
 {if $PAGE_TYPE == 'cat-search-plugins'}
-<div>
+<div style="-moz-column-count: 3; width: 100%;">
 {foreach $PAGE_DATA as $key}
-<a onclick="window.external.AddSearchProvider('{$SITE_DOMAIN}/?component=download&id={$key.addon.id}');"
-   href="#{$key.metadata.slug}"
-   name="#{$key.metadata.slug}"
-   class="fake-table-row-search-plugin">
+    <a onclick="window.external.AddSearchProvider('{$SITE_DOMAIN}/?component=download&id={$key.addon.id}');"
+       href="#{$key.metadata.slug}"
+       name="#{$key.metadata.slug}"
+       class="fake-table-row-search-plugin">
 
-    <img src="{$key.metadata.icon}"
-        class="alignleft"
-        width="16px"
-        height="16px">
-    <p style="margin-top: 0px;">
-        <strong>
-            {$key.metadata.name}
-        </strong>
-    </p>
-</a>
+        <img src="{$key.metadata.icon}"
+            class="alignleft"
+            width="16px"
+            height="16px">
+        <p style="margin-top: 0px;">
+            <strong>
+                {$key.metadata.name}
+            </strong>
+        </p>
+    </a>
 {/foreach}
 </div>
 {elseif $PAGE_TYPE == 'cat-language-packs'}
-<div><p><strong>======= langpacks here</strong></p></div>
+<div style="-moz-column-count: 3; width: 100%;">
+{foreach $PAGE_DATA as $key}
+    <a href="{$key.url}" class="fake-table-row-search-plugin" style="height: 36px;">
+        <img src="/datastore/langpacks/icons/{$key.locale}.png"
+            class="alignleft"
+            width="32px"
+            height="32px">
+        <p style="margin-top: 7px;">
+            <strong>{$key.name}</strong>
+            <small>[{$key.locale}]</small>
+        </p>
+    </a>
+{/foreach}
+</div>
 {/if}
 
 {if $PAGE_TYPE == 'cat-search-plugins'}
