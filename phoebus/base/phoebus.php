@@ -10,6 +10,7 @@ $strPhoebusDevURL = 'dev.addons.palemoon.org';
 $strPhoebusURL = $strPhoebusLiveURL;
 $strPhoebusSiteName = 'Pale Moon - Add-ons';
 $strPhoebusVersion = '1.5.0a1';
+$strPhoebusDatastore = './datastore/';
 $boolDebugMode = false;
 
 $strPaleMoonID = '{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}';
@@ -32,26 +33,107 @@ $strModulesPath = $strApplicationPath . 'modules/';
 $strGlobalLibPath = $_SERVER['DOCUMENT_ROOT'] . '/lib/';
 
 $arrayComponents = array(
-    'site' => $strApplicationPath . 'base/website.php',
+    'site' => $strComponentsPath . 'site/site.php',
     'aus' => $strComponentsPath . 'aus/aus.php',
-    'download' => $strComponentsPath . 'download.php',
+    'download' => $strComponentsPath . 'download/download.php',
     'integration' => $strComponentsPath . 'integration/integration.php',
     'discover' => $strComponentsPath . 'discover/discover.php',
+    '43893' => $strComponentsPath . 'special/special.php'
 );
 
 $arrayModules = array(
-    'dbExtensions' => $strModulesPath . 'db/extensions.php',
-    'dbThemes' => $strModulesPath . 'db/themes.php',
+    'dbAddons' => $strModulesPath . 'db/addons.php',
     'dbLangPacks' => $strModulesPath . 'db/langPacks.php',
     'dbSearchPlugins' => $strModulesPath . 'db/searchPlugins.php',
     'dbAUSExternals' => $strModulesPath . 'db/ausExternals.php',
-    'dbSiteExternals' => $strModulesPath . 'db/siteExternals.php',
-    'dbExtCategories' => $strModulesPath . 'db/extCategories.php',
+    'dbCategories' => $strModulesPath . 'db/categories.php',
     'readManifest' => $strModulesPath . 'funcReadManifest.php',
     'processContent' => $strModulesPath . 'funcProcessContent.php',
     'vc' => $strGlobalLibPath . 'nsIVersionComparator.php',
     'smarty' => $strGlobalLibPath . 'smarty/Smarty.class.php'
 );
+
+// ============================================================================
+
+// == | Function: funcError |==================================================
+
+function funcError($_value) {
+    die('Error: ' . $_value);
+    
+    // We are done here
+    exit();
+}
+
+// ============================================================================
+
+// == | Function: funcHTTPGetValue |===========================================
+
+function funcHTTPGetValue($_value) {
+    $_arrayGET = array_unique($_GET);
+    if (!isset($_GET[$_value]) || $_GET[$_value] === '' || $_GET[$_value] === null || empty($_GET[$_value])) {
+        return null;
+    }
+    else {    
+        $_finalValue = preg_replace('/[^-a-zA-Z0-9_\-\/\{\}\@\.]/', '', $_GET[$_value]);
+        return $_finalValue;
+    }
+}
+
+// ============================================================================
+
+// == | funcSendHeader | ======================================================
+
+function funcSendHeader($_value) {
+    $_arrayHeaders = array(
+        '404' => 'HTTP/1.0 404 Not Found',
+        '501' => 'HTTP/1.0 501 Not Implemented',
+        'html' => 'Content-Type: text/html',
+        'text' => 'Content-Type: text/plain',
+        'xml' => 'Content-Type: text/xml',
+        'css' => 'Content-Type: text/css',
+        'phoebus' => 'X-Phoebus: https://github.com/Pale-Moon-Addons-Team/phoebus/',
+    );
+    
+    if (array_key_exists($_value, $_arrayHeaders)) {
+        header($_arrayHeaders['phoebus']);
+        header($_arrayHeaders[$_value]);
+        
+        if ($_value == '404') {
+            // We are done here
+            exit();
+        }
+    }
+}
+
+// ============================================================================
+
+// == | Function: funcRedirect |===============================================
+
+function funcRedirect($_strURL) {
+	header('Location: ' . $_strURL , true, 302);
+    
+    // We are done here
+    exit();
+}
+
+// ============================================================================
+
+// == | Functions: startsWith & endsWith |=====================================
+function startsWith($haystack, $needle)
+{
+     $length = strlen($needle);
+     return (substr($haystack, 0, $length) === $needle);
+}
+
+function endsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    if ($length == 0) {
+        return true;
+    }
+
+    return (substr($haystack, -$length) === $needle);
+}
 
 // ============================================================================
 
@@ -89,11 +171,6 @@ elseif ((count($arrayArgsComponent) > 1) || ($strRequestComponent != 'site' && $
 if ($strRequestComponent != null) {
     if (array_key_exists($strRequestComponent, $arrayComponents)) {
         require_once($arrayComponents[$strRequestComponent]);
-    }
-    elseif ($strRequestComponent == '43893') {
-        require_once($arrayModules['readManifest']);
-        funcSendHeader('text');
-        var_dump(funcReadManifest('extension', 'adblock-latitude', true, true, true, true, true));
     }
     else {
         funcError($strRequestComponent . ' is an unknown component');

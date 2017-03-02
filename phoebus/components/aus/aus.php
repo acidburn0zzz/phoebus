@@ -9,8 +9,7 @@ $boolAMOKillSwitch = false;
 $boolAMOWhiteList = false;
 
 $arrayIncludes = array(
-    $arrayModules['dbExtensions'],
-    $arrayModules['dbThemes'],
+    $arrayModules['dbAddons'],
     $arrayModules['dbLangPacks'],
     $arrayModules['dbAUSExternals'],
     $arrayModules['readManifest'],
@@ -38,7 +37,7 @@ function funcGenerateUpdateXML($_addonManifest) {
     if ($_addonManifest != null) {
             print("\n");
             
-            $_strUpdateXMLBody = file_get_contents('./phoebus/components/aus/update-body.xml');
+            $_strUpdateXMLBody = file_get_contents('./phoebus/components/aus/content/update-body.xml');
             
             $_arrayFilterSubstitute = array(
                 '@ADDON_TYPE@' => $_addonManifest['addon']['type'],
@@ -87,16 +86,11 @@ foreach($arrayIncludes as $_value) {
 unset($arrayIncludes);
 
 // Search for add-ons in our databases
-// Extensions
-if (array_key_exists($strRequestAddonID, $arrayExtensionsDB)) {
-    funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsDB[$strRequestAddonID], false, false, true, true, false));
+if (array_key_exists($strRequestAddonID, $arrayAddonsDB)) {
+    funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsDB[$strRequestAddonID]));
 }
-elseif(array_key_exists($strRequestAddonID, $arrayExtensionsOverrideDB)) {
-    funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsOverrideDB[$strRequestAddonID], false, false, true, true, false));
-}
-// Themes
-elseif (array_key_exists($strRequestAddonID, $arrayThemesDB)) {
-    funcGenerateUpdateXML(funcReadManifest('theme', $arrayThemesDB[$strRequestAddonID], false, false, true, true, false));
+elseif(array_key_exists($strRequestAddonID, $arrayAddonsOverrideDB)) {
+    funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsOverrideDB[$strRequestAddonID]));
 }
 // Language Packs
 elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {

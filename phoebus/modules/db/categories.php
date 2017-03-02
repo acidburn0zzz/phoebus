@@ -3,7 +3,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-$arrayExCat01 = array(
+$arrayCategoryList01 = array(
     'title' => 'Alerts & Updates',
     'expose-noisy-tabs',
     'externals' => array(
@@ -46,7 +46,7 @@ $arrayExCat01 = array(
     ),
 );
 
-$arrayExCat02 = array(
+$arrayCategoryList02 = array(
     'title' => 'Appearance',
     'addons-manager-fix',
     'aviary-addons-manager',
@@ -137,7 +137,7 @@ $arrayExCat02 = array(
     ),
 );
 
-$arrayExCat03 = array(
+$arrayCategoryList03 = array(
     'title' => 'Download Management',
     'base64-encoder',
     'image-toolbox',
@@ -165,7 +165,7 @@ $arrayExCat03 = array(
     ),
 );
 
-$arrayExCat04 = array(
+$arrayCategoryList04 = array(
     'title' => 'Feeds, News, & Blogging',
     'externals' => array(
         'bamboo-feed-reader' => array(
@@ -201,7 +201,7 @@ $arrayExCat04 = array(
     ),
 );
 
-$arrayExCat05 = array(
+$arrayCategoryList05 = array(
     'title' => 'Privacy & Security',
     'adblock-latitude',
     'change-referer-button',
@@ -288,7 +288,7 @@ $arrayExCat05 = array(
     ),
 );
 
-$arrayExCat06 = array(
+$arrayCategoryList06 = array(
     'title' => 'Search Tools',
     'add-to-search-bar',
     'finderbar-tweak',
@@ -315,7 +315,7 @@ $arrayExCat06 = array(
     ),
 );
 
-$arrayExCat07 = array(
+$arrayCategoryList07 = array(
     'title' => 'Social & Communication',
     'chatzilla',
     'foxclocks',
@@ -341,7 +341,7 @@ $arrayExCat07 = array(
     ),
 );
 
-$arrayExCat08 = array(
+$arrayCategoryList08 = array(
     'title' => 'Tools & Utilities',
     'date-picker',
     'extension-preferences-menu',
@@ -383,7 +383,7 @@ $arrayExCat08 = array(
     ),
 );
 
-$arrayExCat09 = array(
+$arrayCategoryList09 = array(
     'title' => 'Web Development',
     'devtools',
     'error-console2',
@@ -415,7 +415,7 @@ $arrayExCat09 = array(
     ),
 );
 
-$arrayExCat10 = array(
+$arrayCategoryList10 = array(
     'title' => 'Other',
     'space-advance',
     'moon-pdf-viewer',
@@ -485,16 +485,57 @@ $arrayExCat10 = array(
     ),
 );
 
-$arrayExtensionCategoriesDB = array(
-    'alerts-and-updates' => $arrayExCat01,
-    'appearance' => $arrayExCat02,
-    'download-management' => $arrayExCat03,
-    'feeds-news-and-blogging' => $arrayExCat04,
-    'privacy-and-security' => $arrayExCat05,
-    'search-tools' => $arrayExCat06,
-    'social-and-communication' => $arrayExCat07,
-    'tools-and-utilities' => $arrayExCat08,
-    'web-development' => $arrayExCat09,
-    'other' => $arrayExCat10
+$arrayCategoryList20 = array(
+    'title' => 'Themes',
+    'kempelton-reloaded',
+    'white-moon',
+    'qute-4-pm',
+    'pmopera',
+    'pmchrome',
+    'fox-2-the-moon',
+    'tangerinemoon',
+    'tangomoon',
+    'noia-moon-theme',
+    'darkness',
+    'darkpitch',
+    'maxi3',
+    'maxi4',
+    'moonfox3',
+    'qute-large',
+    'qute-legacy',
+    'reinheit',
+    'xmoon',
+    'opresto',
+    'past-modern-revisited',
+    'compact-moon-theme',
+    'moonola',
+    'macmoon',
+    'littlemoon',
+    'australium',
+    'modoki-moon',
+    'aeromoon',
+    'nauticalia',
+    'camimoon',
+    'micromoon',
+    'darkmoon',
+    'phoenity-rebirth',
+    'walnutty',
+    'moonscape',
+    'material-moon',
+    'winstripe-moon'
+);
+
+$arrayCategoriesDB = array(
+    'alerts-and-updates' => $arrayCategoryList01,
+    'appearance' => $arrayCategoryList02,
+    'download-management' => $arrayCategoryList03,
+    'feeds-news-and-blogging' => $arrayCategoryList04,
+    'privacy-and-security' => $arrayCategoryList05,
+    'search-tools' => $arrayCategoryList06,
+    'social-and-communication' => $arrayCategoryList07,
+    'tools-and-utilities' => $arrayCategoryList08,
+    'web-development' => $arrayCategoryList09,
+    'other' => $arrayCategoryList10,
+    'themes' => $arrayCategoryList20
 );
 ?>

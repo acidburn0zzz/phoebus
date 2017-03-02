@@ -55,6 +55,8 @@ body,td,th {
 */
 #PM-Wrapper {
   	width: 1200px;
+    min-width: 1200px;
+    max-width: 1200px;
   	margin: 0 auto;
 	border: 1px solid;
 	border-color: #888888;
@@ -69,40 +71,34 @@ body,td,th {
 }
 
 #PM-Header {
-	width: 100%;
-	height: 82px;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  overflow: hidden;
-background: #dee6e8; /* Old browsers */
-background: radial-gradient(circle at 50% 85%, #dee6e8 0%,#c6ced1 80%,#b8cacc 100%); /* W3C */
-}
-
-#PM-Header-Body {
-	width: 100%;
-	height: 82px;
-	background: radial-gradient(ellipse at 50% 100%, rgba(236,242,240,1) 0%,rgba(236,242,240,0.5) 50%,rgba(255,255,255,0) 100%); /* W3C */
+    width: 100%;
+    height: 82px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    overflow: hidden;
+    background: #dee6e8; /* Old browsers */
+    background: radial-gradient(ellipse at 50% 100%, rgba(236,242,240,1) 0%,rgba(236,242,240,0.5) 50%,rgba(255,255,255,0) 100%), radial-gradient(circle at 50% 85%, #dee6e8 0%,#c6ced1 80%,#b8cacc 100%);
 }
 
 #PM-Menubar {
-padding: 0pt;
-vertical-align: top;
-background-color: rgb(82, 114, 161);
-width: 100%;
-height: 29px;
-	border: solid #A0A0A4;
-	border-width: 1px 0;
+    padding: 0pt;
+    vertical-align: top;
+    background-color: rgb(82, 114, 161);
+    width: 100%;
+    height: 29px;
+    border: solid #A0A0A4;
+    border-width: 1px 0;
 }
 
 #PM-Content {
-	width: 100%;
-	display: table;
-  font-family: "Museo500Regular","Times New Roman",Times,serif;
-  font-style: normal;
-  font-size: 12pt;
-  letter-spacing: 0.3px;
-  
-vertical-align: top;
+    width: 100%;
+    display: table;
+    font-family: "Museo500Regular","Times New Roman",Times,serif;
+    font-style: normal;
+    font-size: 12pt;
+    letter-spacing: 0.3px;
+    vertical-align: top;
+    animation: fadeEffect 0.5s;
 }
 
 #PM-Content-Body {
@@ -113,17 +109,26 @@ vertical-align: top;
     padding-right: 8px;
     padding-top: 8px;
     padding-bottom: 8px;
-   /* animation: fadeEffect 1s;  Fading effect takes 1 second */
 }
 
-/*
+#PM-Content-Sidebar {
+    min-width: 270px;
+    width: 270px;
+    height: 100%;
+    display: table-cell;
+    padding: 8px 10px 10px;
+    vertical-align: top;
+}
+
+#PM-Content-Sidebar a, #PM-Content-Sidebar a:visited, #PM-Content-Sidebar a:hover {
+    color: #00E;
+}
 
 @keyframes fadeEffect {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-*/
 .fake-table {
 
 }

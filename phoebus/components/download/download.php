@@ -6,8 +6,7 @@
 // == | Vars | ================================================================
 
 $arrayIncludes = array(
-    $arrayModules['dbExtensions'],
-    $arrayModules['dbThemes'],
+    $arrayModules['dbAddons'],
     $arrayModules['dbLangPacks'],
     $arrayModules['dbSearchPlugins'],
     $arrayModules['readManifest'],
@@ -75,13 +74,9 @@ foreach($arrayIncludes as $_value) {
 unset($arrayIncludes);
 
 // Search for add-ons in our databases
-// Extensions
-if (array_key_exists($strRequestAddonID, $arrayExtensionsDB)) {
-    funcDownloadXPI(funcReadManifest('extension', $arrayExtensionsDB[$strRequestAddonID], false, false, false, false, true));
-}
-// Themes
-elseif (array_key_exists($strRequestAddonID, $arrayThemesDB)) {
-    funcDownloadXPI(funcReadManifest('theme', $arrayThemesDB[$strRequestAddonID], false, false, false, false, true));
+// Add-ons
+if (array_key_exists($strRequestAddonID, $arrayAddonsDB)) {
+    funcDownloadXPI(funcReadManifest('download', $arrayAddonsDB[$strRequestAddonID]));
 }
 // Search Plugins
 elseif (array_key_exists($strRequestAddonID, $arraySearchPluginsDB)) {

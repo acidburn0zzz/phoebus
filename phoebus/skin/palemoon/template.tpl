@@ -12,10 +12,8 @@
     <body>
         <div id="PM-Wrapper">
             <div id="PM-Header" class="PM-Wrapper-Width">
-                <div id="PM-Header-Body">
-                    <img src="{$BASE_PATH}logo.png" class="alignleft" />
-                    <img src="{$BASE_PATH}wordmark-palemoon.png" class="alignright" />
-                </div>
+                <img src="{$BASE_PATH}logo.png" class="alignleft" />
+                <img src="{$BASE_PATH}wordmark-palemoon.png" class="alignright" />
             </div>
             <div id="PM-Menubar" class="mainmenu">
             <span class="alignleft">
@@ -28,26 +26,10 @@
                             <li class="li_nc"><a href="/" target="_self">Pale Moon add-ons site</a></li>
                         </ul>
                     </li>
-                    <li class="li_nc">
-                        <a href="#">Extensions</a>
-                        <ul class="ul_ch">
-                            <li class="li_nc"><a href="/extensions/category/alerts-and-updates/">Alerts &amp; Updates</a></li>
-                            <li class="li_nc"><a href="/extensions/category/appearance/">Appearance</a></li>
-                            <li class="li_nc"><a href="/extensions/category/download-management/">Download Management</a></li>
-                            <li class="li_nc"><a href="/extensions/category/feeds-news-and-blogging/">Feeds, News, &amp; Blogging</a></li>
-                            <li class="li_nc"><a href="/extensions/category/privacy-and-security/">Privacy &amp; Security</a></li>
-                            <li class="li_nc"><a href="/extensions/category/search-tools/">Search Tools</a></li>
-                            <li class="li_nc"><a href="/extensions/category/social-and-communication/">Social &amp; Communication</a></li>
-                            <li class="li_nc"><a href="/extensions/category/tools-and-utilities/">Tools &amp; Utilities</a></li>
-                            <li class="li_nc"><a href="/extensions/category/web-development/">Web Development</a></li>
-                            <li class="li_nc"><a href="/extensions/category/other/">Other</a></li>
-                            <li class="li_nc"><a href="/extensions/category/all/">All Extensions</a></li>
-                        </ul>
-                    </li>
+                    <li class="li_nc"><a href="/extensions/">Extensions</a></li>
                     <li class="li_nc"><a href="/themes/">Themes</a></li>
+                    <li class="li_nc"><a href="/language-packs/">Language Packs</a></li>
                     <li class="li_nc"><a href="/search-plugins/">Search Plugins</a></li>
-                    <li class="li_nc"><a href="//www.palemoon.org/langpacks.shtml" target="_blank">Language Packs</a></li>
-                    <li class="li_nc"><a href="//www.palemoon.org/tabgroups.shtml" target="_blank">Tab Groups</a></li>
                     <li class="li_nc"><a href="#">Resources</a>
                         <ul class="ul_ch">
                             <li class="li_nc"><a href="/incompatible/">Incompatible Extensions</a></li>
@@ -63,33 +45,33 @@
             <div id="PM-Content">
                 <div id="PM-Content-Body">
                     {%PAGE_CONTENT}
-                    <div style="text-align: center;">
-                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                        <!-- Addons site leaderboard -->
-                        <ins class="adsbygoogle"
-                             style="display:inline-block;width:728px;height:90px"
-                             data-ad-client="ca-pub-4490583218014683"
-                             data-ad-slot="4318962855"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                    </div>
-                    <div style="margin-top: 10px; text-align: center; line-height: 13px; font-size: 10px;">
-                        <span style="color: rgb(102, 102, 102);">
-                            Site design and Branding &copy; 2017 <a href="http://www.moonchildproductions.info/" target="_blank">Moonchild Productions</a> - All rights reserved
-                        </span><br />
-                        <span style="color: rgb(102, 102, 102);">
-                            Any other content, brand names or logos are copyright or trademark to their respective owners.
-                        </span><br />
-                        <span style="color: rgb(102, 102, 102);">
-                            Policies: <a href="//www.palemoon.org/cookies.shtml">Cookies</a> - <a href="//www.palemoon.org/usercontent.shtml">User Content</a>
-                            - <a href="//www.palemoon.org/privacy.shtml">Privacy</a>.
-                        </span><br /><br />
-                        <span style="color: rgb(102, 102, 102);">
-                            The Pale Moon Add-ons Site is powered by <a href="https://github.com/Pale-Moon-Addons-Team/phoebus/" target="_blank">Project Phoebus</a>.
-                        </span><br />
-                    </div>
                 </div>
+            </div>
+            <div style="text-align: center;">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Addons site leaderboard -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-4490583218014683"
+                     data-ad-slot="4318962855"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <div style="margin-top: 10px; text-align: center; line-height: 13px; font-size: 10px;">
+                <span style="color: rgb(102, 102, 102);">
+                    Site design and Branding &copy; 2017 <a href="http://www.moonchildproductions.info/" target="_blank">Moonchild Productions</a> - All rights reserved
+                </span><br />
+                <span style="color: rgb(102, 102, 102);">
+                    Any other content, brand names or logos are copyright or trademark to their respective owners.
+                </span><br />
+                <span style="color: rgb(102, 102, 102);">
+                    Policies: <a href="//www.palemoon.org/cookies.shtml">Cookies</a> - <a href="//www.palemoon.org/usercontent.shtml">User Content</a>
+                    - <a href="//www.palemoon.org/privacy.shtml">Privacy</a>.
+                </span><br /><br />
+                <span style="color: rgb(102, 102, 102);">
+                    The Pale Moon Add-ons Site is powered by <a href="https://github.com/Pale-Moon-Addons-Team/phoebus/" target="_blank">Project Phoebus</a>.
+                </span><br />
             </div>
         </div>
     </body>
