@@ -532,7 +532,11 @@ $arrayCategoryList20 = array(
     'walnutty',
     'moonscape',
     'material-moon',
-    'winstripe-moon'
+    'winstripe-moon',
+    'material-moon',
+    'winstripe-moon',
+    'stratum'
+    
 );
 
 $arrayCategoriesDB = array(
