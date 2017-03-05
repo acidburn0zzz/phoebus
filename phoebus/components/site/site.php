@@ -245,7 +245,8 @@ elseif (startsWith($strRequestPath, '/extensions/') || startsWith($strRequestPat
             funcGeneratePage(funcGenCategoryContent('extension', $arrayCategoriesDB[$strStrippedPath]));
         }
         else {
-            funcSendHeader('404');
+            // Nginx cannot easily handle the condition of non-matching-category slug so send non-matching slugs to /addon/[slug] and let that 404 if it isn't an extension
+            funcRedirect('/addon/' . $strStrippedPath);
         }
     }
     elseif ($strRequestPath == '/themes/') {
