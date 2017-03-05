@@ -9,7 +9,7 @@
     <li><strong>Australis</strong><br />In Firefox 29, Mozilla adopted a nearly completely rewritten user interface and theme as well as some technologies that Pale Moon has chosen not to implement. Add-ons targeting these features without fall-backs to the more time-tested and more commonly used features in all Mozilla-based programs will not be supported.</li>
     <li><strong>Jetpack/SDK</strong><br />In Pale Moon 27.0, support for the Add-On SDK (AKA Jetpack) was dropped as a framework for extensions, making multiple extensions incompatible with Pale Moon. If this is the case, then the Add-On Manager inside the browser will inform you of it with an explanatory text. In Pale Moon 27.1, <strong>PMKit</strong> was added as a compatibility layer, to allow SDK add-ons that choose to support Pale Moon to work correctly. For those that have not been converted, but have been built with JPM (i.e. compatible with Firefox 38.0a1), the extension <a href="https://addons.palemoon.org/extensions/moon-tester-tool/">Moon Tester Tool</a> can be used to force installation. This type of installation is unsupported however, and may result in instability. Use with caution!</li>
     <li><strong>WebExtensions</strong><br />From Firefox 57 onwards, WebExtensions will be the only supported extension framework in Firefox. This framework is not and will not be supported in Pale Moon, therefore anything using it will not be compatible.</li>
-    <li><strong>Complete Themes</strong><br />With changes to the user interface in Pale Moon over time, themes specifically written for Firefox have largely become incompatible. While these will continue to work, issues such as doubled text in the address bar can impede usage. Please use the aforementioned Moon Tester Tool to work around this, or see if the theme exists in our <a href="/themes/">themes catalog</a>, either as a fork or original work.</li>
+    <li><strong>Complete Themes</strong><br />With changes to the user interface in Pale Moon over time, themes specifically written for Firefox have largely become incompatible. While these will continue to work, issues such as doubled text in the address bar can impede usage. Please see if the theme exists in our <a href="/themes/">themes catalog</a>, either as a fork or original work; if it is not, please try installing the <a href="/extensions/theme-shim/">Theme Compatibility Provider</a> to solve most issues.</li>
 </ul>
 
 <h3>I found an add-on that has issues, where can I report it?</h3>
@@ -18,7 +18,7 @@
 
 <h3>List of add-ons with known compatibility issues</h3>
 
-<p><strong>Last updated: 2017-02-27</strong> (compatible with Pale Moon 27.1, released 2017-02-09)</p>
+<p><strong>Last updated: 2017-03-04</strong> (compatible with Pale Moon 27.1, released 2017-02-09)</p>
 
 <p><strong>PENDING</strong></p>
 <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%">
@@ -31,7 +31,7 @@
                     <li>Emoji Cheatsheet</li>
                     <li>Enjoy Reading</li>
                     <li>Enter Selects</li>
-                    <li>Fastest Search - Browse/Shop Faster!</li>            
+                    <li>Fastest Search - Browse/Shop Faster!</li>
                 </ul>
             </td>
 
@@ -51,7 +51,7 @@
                     <li>Private Tab</li>
                     <li>Random Bookmark</li>
                     <li>Scroll To Top</li>
-                    <li>Twitch Now</li>
+                    <li>Simple YouTube MP3 Button</li>
                 </ul>
             </td>
         </tr>
@@ -69,7 +69,7 @@
                     <li>Blacken<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/blacken/versions/?page=1#version-2.1.14.1-signed" target="_blank">2.1.14</a></small></li>
                     <li>Blur<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/donottrackplus/versions/?page=1#version-4.5.1334.1-signed" target="_blank">4.5.1334.1</a></small></li>
                     <li>CacheViewer<br /><small>Use CacheViewer2 version <a href="https://addons.mozilla.org/firefox/addon/cacheviewer2/versions/?page=1#version-1.6.1-signed.1-signed" target="_blank">1.6</a></small></li>
-                    <li>Clippings<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/clippings/versions/?page=1#version-4.1.2.1-signed" target="_blank">4.1.2.1</a></small></li>
+                    <li>Clippings<br /><small>Install version <a href="https://addons.mozilla.org/firefox/addon/clippings/versions/5.0.2" target="_blank">5.0.2</a> using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
                     <li>Color That Site!<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/color-that-site/versions/?page=1#version-0.16.1-signed.1-signed" target="_blank">0.16.1</a></small></li>
                     <li>CoLT<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/colt/versions/2.6.5.1-signed" target="_blank">2.6.5.1</a></small></li>
                     <li>Cookie Monster<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/cookie-monster/versions/?page=1#version-1.2.0.1-signed" target="_blank">1.2.0.1</a></small></li>
@@ -97,7 +97,7 @@
                     <li>gTranslate<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/s3google-translator/" target="_blank">S3.Google Translator</a></small></li>
                     <li>Hide Caption Titlebar Plus<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/hide-caption-titlebar-plus-sma/versions/?page=2#version-2.8.7rc" target="_blank">2.8.7rc</a></small></li>
                     <li>HTitle<br /><small>Use Hide Caption Titlebar Plus version <a href="https://addons.mozilla.org/firefox/addon/hide-caption-titlebar-plus-sma/versions/?page=1#version-2.8.7rc" target="_blank">2.8.7rc</a></small></li>
-                    <li>iMacros for Firefox<br /><small>Install version <a href="https://addons.mozilla.org/en-US/firefox/addon/imacros-for-firefox/versions/8.9.7" target="_blank">8.9.7</a> using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
+                    <li>iMacros for Firefox<br /><small>Install version <a href="https://addons.mozilla.org/firefox/addon/imacros-for-firefox/versions/8.9.7" target="_blank">8.9.7</a> using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
                     <li>LiveClick<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/liveclick/versions/?page=1#version-1.0.0.1-signed" target="_blank">1.0.0.1</a></small></li>
                     <li>Lucifox<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/lucifox/versions/?page=1#version-0.9.7.1-signed" target="_blank">0.9.7.1</a></small></li>
                     <li>Multiple Tab Handler<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/multiple-tab-handler/versions/?page=1#version-0.7.2014050101.1-signed" target="_blank">0.7.2014050101.1</a></small></li>
@@ -134,9 +134,10 @@
                     <li>Tab Groups Manager<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/tabgroups-manager-revived/" target="_blank">TabGroups Manager revived</a></small></li>
                     <li>Tab Scope<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/tab-scope/versions/?page=1#version-1.6.1.1-signed" target="_blank">1.6.1.1</a></small></li>
                     <li>Thumbnail Zoom Plus<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/thumbnail-zoom-plus/versions/?page=1#version-3.7" target="_blank">3.7</a></small></li>
+                    <li>Twitch Now<br /><small>Use version <a href=https://addons.mozilla.org/firefox/addon/twitch-now/versions/1.1.187 target="_blank">1.1.187</a></small></li>
                     <li>Toggle Document Colors<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/toggledocumentcolors-198916/" target="_blank">ToggleDocumentColors_</a><br />or <a href="https://addons.mozilla.org/firefox/addon/page-colors-fonts-buttons/" target="_blank">Page Colors & Fonts Buttons</a></small></li>
                     <li>Toggle Document Fonts<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/page-colors-fonts-buttons/" target="_blank">Page Colors & Fonts Buttons</a></small></li>
-                    <li>Toggle Javascript<br /><small>Use <a href="https://addons.mozilla.org/en-US/firefox/addon/js-switch/" target="_blank">JS Switch</a> or <a href="https://addons.mozilla.org/firefox/addon/quickjs/" target="_blank">QuickJS</a></small></li>
+                    <li>Toggle Javascript<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/js-switch/" target="_blank">JS Switch</a> or <a href="https://addons.mozilla.org/firefox/addon/quickjs/" target="_blank">QuickJS</a></small></li>
                     <li>Update Scanner<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/update-scanner/versions/?page=1#version-3.1.13.1-signed" target="_blank">3.1.13.1</a></small></li>
                     <li>User Agent Overrider<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/user-agent-overrider/versions/?page=1#version-0.2.4.1-signed" target="_blank">0.2.4.1</a></small></li>
                     <li>Video DownloadHelper<br /><small>Use <a href="/extensions/complete-yt-saver/">Complete YouTube Saver</a></small></li>
