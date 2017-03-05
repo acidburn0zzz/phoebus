@@ -205,7 +205,6 @@ function funcGeneratePage($_array) {
         $libSmarty->assign('PAGE_TYPE', $_array['contentType']);
     }
     
-    
     // Send html header and pass the final template to Smarty
     funcSendHeader('html');
     $libSmarty->display('string:' . $_strSiteTemplate, null, str_replace('/', '_', $GLOBALS['strRequestPath']));
@@ -222,13 +221,15 @@ require_once($arrayModules['readManifest']);
 
 if (startsWith($strRequestPath, '/addon/')) {
     require_once($arrayModules['dbAddons']);
+    
     $strStrippedPath = str_replace('/', '', str_replace('/addon/', '', $strRequestPath));
     $ArrayDBFlip = array_flip($arrayAddonsDB);
+    
     if (array_key_exists($strStrippedPath,$ArrayDBFlip)) {
         funcGeneratePage(funcGenAddonContent($strStrippedPath));
     }
     else {
-        funcRedirect('/');
+        funcSendHeader('404');
     }
 }
 elseif (startsWith($strRequestPath, '/extensions/') || startsWith($strRequestPath, '/themes/')) {
@@ -247,15 +248,8 @@ elseif (startsWith($strRequestPath, '/extensions/') || startsWith($strRequestPat
             funcSendHeader('404');
         }
     }
-    elseif (startsWith($strRequestPath, '/themes/')) {
-        $strStrippedPath = str_replace('/', '', str_replace('/themes/', '', $strRequestPath));
-        
-        if ($strRequestPath == '/themes/') {
-            funcGeneratePage(funcGenCategoryContent('theme', $arrayCategoriesDB['themes']));
-        }
-        else {
-            funcSendHeader('404');
-        }
+    elseif ($strRequestPath == '/themes/') {
+        funcGeneratePage(funcGenCategoryContent('theme', $arrayCategoriesDB['themes']));
     }
     else {
         funcSendHeader('404');
@@ -263,10 +257,12 @@ elseif (startsWith($strRequestPath, '/extensions/') || startsWith($strRequestPat
 }
 elseif ($strRequestPath == '/language-packs/') {
     require_once($arrayModules['dbLangPacks']);
+    
     funcGeneratePage(funcGenCategoryContent('language-pack', $arrayLangPackDB));
 }
 elseif ($strRequestPath == '/search-plugins/') {
     require_once($arrayModules['dbSearchPlugins']);
+    
     funcGeneratePage(funcGenCategoryContent('search-plugin', $arraySearchPluginsDB));
 }
 else {
