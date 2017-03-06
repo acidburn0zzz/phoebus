@@ -1,7 +1,5 @@
 <h1>Pale Moon Add-ons Site</h1>
 
-<h1>Pale Moon Add-ons Site</h1>
-
 <h3>What are Add-ons?</h3>
 <p>Add-ons let you customize Pale Moon with extra functionality or a different look.</p>
 <p>There are <em>several</em> types of add-ons. <em>Extensions</em> expand the capabilities of the browser, <em>themes</em> allow you to personalize Pale Moon's visual aesthetic, and <em>plugins</em> further extend the browser with specialized external components such as the <a href="http://get.adobe.com/flashplayer/" target="_blank">Adobe Flash Player</a>.</p>
