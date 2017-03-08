@@ -63,7 +63,6 @@ $arrayExCat02 = array(
     'tab-mix-plus',
     'treestyletabforpm',
     'advanced-night-mode',
-    'theme-shim',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
@@ -362,6 +361,7 @@ $arrayExCat08 = array(
     'moon-tester-tool',
     'greedy-cache',
     'calendate',
+    'theme-shim',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
