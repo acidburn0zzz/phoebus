@@ -20,7 +20,7 @@ $arrayExtensionsDB = array(
     '{302dd086-df72-4fbf-835f-dc1f296049eb}' => 'extension-preferences-menu',
     '{2db74bf0-e2ce-4412-a47c-ec6de1449db1}' => 'space-advance',
     '{f60dcfb5-358d-498e-9f2e-1b53eba4dde7}' => 'searchload-options-revived',
-    'jid1-IDCACPalemoon@jetpack' => 'i-dont-care-about-cookies',
+    'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies',
     'mozarchiver@lootyhoof-pm' => 'mozarchiver',
     '{98a2ae55-3a75-4354-a460-9176594d05c3}' => 'open-about-config',
     'printPages2Pdf@reinhold.ripper' => 'print-pages-to-pdf',
@@ -69,9 +69,5 @@ $arrayExtensionsDB = array(
 // Override for Firefox Specific IDs or Changed IDs
 // We put this in a separate array to prevent duplicate entries
 // in the main array.. Always with the developer's permission
-$arrayExtensionsOverrideDB = array(
-    '{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude-update',
-    'colormytabs@jetpack' => 'color-my-tabs',
-    'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies'
-);
+$arrayExtensionsOverrideDB = array();
 ?>
