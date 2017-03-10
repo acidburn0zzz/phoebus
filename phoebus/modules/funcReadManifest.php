@@ -6,14 +6,10 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     $_addonPhoebusManifestFile = 'phoebus.manifest';
     $_addonPhoebusContentFile = 'phoebus.content';
     
-    if (file_exists($GLOBALS['strPhoebusDatastore'] . 'extensions/' . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
-        $_addonBasePath = $GLOBALS['strPhoebusDatastore'] . 'extensions/' . $_addonSlug . '/';
-    }
-    elseif (file_exists($GLOBALS['strPhoebusDatastore'] . 'themes/' . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
-        $_addonBasePath = $GLOBALS['strPhoebusDatastore'] . 'themes/' . $_addonSlug . '/';
-    }
+    if (file_exists($GLOBALS['strPhoebusDatastore'] . 'addons/' . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
+        $_addonBasePath = $GLOBALS['strPhoebusDatastore'] . 'addons/' . $_addonSlug . '/';
     else {
-        funcError('Could not read manifest file');
+        funcError('Could not read manifest file for ' . $_addonSlug);
     }
     
     $_addonManifest = parse_ini_file($_addonBasePath . $_addonPhoebusManifestFile, true);

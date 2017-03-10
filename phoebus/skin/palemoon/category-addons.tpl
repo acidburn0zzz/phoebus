@@ -30,11 +30,7 @@
         display: inline-block; margin-left: 15px; margin-right: 20px; text-align: left; vertical-align: top; align: left; padding: 4px 8px; text-decoration: none; color: black;">
 
         <img
-{if $key.addon.type == 'external'}
-            src="/datastore/extensions/{$key.addon.id}/icon.png"
-{else}
-            src="/datastore/{$key.addon.type}s/{$key.metadata.slug}/icon.png"
-{/if}
+            src="/datastore/addons/{$key.addon.id}/icon.png"
             style="padding-top: 8px; padding-bottom: 16px;" class="alignleft"
             width="32px"
             height="32px">
@@ -42,7 +38,7 @@
 {if $key.addon.type == 'theme'}
         <div
             class="alignright"
-            style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; background-image: url('/datastore/{$key.addon.type}s/{$key.metadata.slug}/preview.png'); align: center; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa; overflow: hidden;">
+            style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; background-image: url('/datastore/addons/{$key.metadata.slug}/preview.png'); align: center; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa; overflow: hidden;">
         </div>
 {/if}
         
