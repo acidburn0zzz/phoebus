@@ -8,6 +8,7 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     
     if (file_exists($GLOBALS['strPhoebusDatastore'] . 'addons/' . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
         $_addonBasePath = $GLOBALS['strPhoebusDatastore'] . 'addons/' . $_addonSlug . '/';
+    }
     else {
         funcError('Could not read manifest file for ' . $_addonSlug);
     }
