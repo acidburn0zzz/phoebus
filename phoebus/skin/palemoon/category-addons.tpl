@@ -30,7 +30,11 @@
         display: inline-block; margin-left: 15px; margin-right: 20px; text-align: left; vertical-align: top; align: left; padding: 4px 8px; text-decoration: none; color: black;">
 
         <img
+{if $key.addon.type == 'external'}
             src="/datastore/addons/{$key.addon.id}/icon.png"
+{else}
+            src="/datastore/addons/{$key.metadata.slug}/icon.png"
+{/if}
             style="padding-top: 8px; padding-bottom: 16px;" class="alignleft"
             width="32px"
             height="32px">
