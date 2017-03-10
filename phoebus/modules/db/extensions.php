@@ -63,7 +63,8 @@ $arrayExtensionsDB = array(
     '{5b965352-430a-11e2-956a-13226188709b}' => 'calendate',
     'sortbookmarks@bouanto' => 'auto-sort-bookmarks',
     'themeshim@lootyhoof-pm' => 'theme-shim',
-    'abprime@projects.binaryoutcast.com' => 'abprime'
+    'abprime@projects.binaryoutcast.com' => 'abprime',
+    'about-addons-memory-pm@securefox.org' => 'addons-memory-usage-stats'
 );
 
 // Override for Firefox Specific IDs or Changed IDs

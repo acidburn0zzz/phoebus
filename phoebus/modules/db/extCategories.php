@@ -362,6 +362,7 @@ $arrayExCat08 = array(
     'greedy-cache',
     'calendate',
     'theme-shim',
+    'addons-memory-usage-stats',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
