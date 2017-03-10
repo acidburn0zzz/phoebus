@@ -362,6 +362,8 @@ $arrayCategoryList08 = array(
     'moon-tester-tool',
     'greedy-cache',
     'calendate',
+    'addons-memory-usage-stats',
+    'about-addons-memory-pm',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',

@@ -5,6 +5,7 @@
 
 $arrayAddonsDB = array(
     'abh2me@Off.JustOff' => 'add-bookmark-here-2-me',
+    'about-addons-memory-pm@securefox.org' => 'addons-memory-usage-stats',
     'abprime@projects.binaryoutcast.com' => 'abprime',
     'adblocklatitude@addons.palemoon.org' => 'adblock-latitude',
     'addonsmanagerfix@sonco.com' => 'addons-manager-fix',
