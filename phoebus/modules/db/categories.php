@@ -534,8 +534,15 @@ $arrayCategoryList20 = array(
     'moonscape',
     'material-moon',
     'winstripe-moon',
-    'stratum'
-    
+    'stratum',
+    'externals' => array(
+        'lavafox' => array(
+            'id' => 'default',
+            'name' => 'LavaFox V2',
+            'shortDescription' => 'LavaFox - A dark and hot theme for Pale Moon. Fully skinned and animated.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/lavafox-v1/'
+        ),
+    ),
 );
 
 $arrayCategoriesDB = array(
