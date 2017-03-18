@@ -102,7 +102,7 @@ if ($strRequestAppID === $strPaleMoonID) {
                         'type' => 'item',
                         'id' => $strRequestAddonID,
                         'release' => $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi',
-                        'baseURL' => 'http://relmirror.palemoon.org/langpacks/27.x/',
+                        'baseURL' => 'http://rm-eu.palemoon.org/langpacks/27.x/',
                         'hash' => $arrayLangPackDB[$strRequestAddonID]['hash']),
             'xpi' => array(
                         $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi' => array(
