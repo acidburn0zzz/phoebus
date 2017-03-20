@@ -15,7 +15,7 @@
     {$PAGE_DATA.metadata.longDescription}
 </p>
 
-<img src="{$PAGE_DATA.mediadata.preview}" class="aligncenter"/>
+<img src="{$PAGE_DATA.metadata.preview}" class="aligncenter"/>
 
 <h3>
     Compatibility
