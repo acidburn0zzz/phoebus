@@ -16,7 +16,6 @@
 </p>
 
 {if $PAGE_DATA.metadata.hasPreview == true}
-    <h3>Preview</h3>
     <img src="{$PAGE_DATA.metadata.preview}" class="aligncenter"/>
 {/if}
 
