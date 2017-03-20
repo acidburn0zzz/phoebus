@@ -42,7 +42,13 @@
 {if $PAGE_TYPE == 'cat-themes'}
         <div
             class="alignright"
-            style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; background-image: url('/datastore/addons/{$key.metadata.slug}/preview.png'); align: center; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa; overflow: hidden;">
+            style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; 
+{if $key.addon.type == 'external'}
+                background-image: url('/datastore/addons/{$key.metadata.id}/preview.png');
+{else}
+                background-image: url('/datastore/addons/{$key.metadata.slug}/preview.png');
+{/if}
+                align: center; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa; overflow: hidden;">
         </div>
 {/if}
         
