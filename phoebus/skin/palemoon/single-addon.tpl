@@ -16,7 +16,11 @@
 </p>
 
 {if $PAGE_DATA.metadata.hasPreview == true}
+{if $PAGE_DATA.addon.type == 'theme'}
     <h3>Preview</h3>
+{else}
+    <h3>Screenshot</h3>
+{/if}
     <img src="{$PAGE_DATA.metadata.preview}" class="aligncenter"/>
 {/if}
 
