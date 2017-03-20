@@ -50,9 +50,11 @@ function funcReadManifest($_addonScope, $_addonSlug) {
         
         if (file_exists($_addonBasePath . 'preview.png')) {
             $_addonManifest['metadata']['preview'] = substr($_addonBasePath . 'preview.png', 1);;
+            $_addonManifest['metadata']['hasPreview'] = true;
         }
         else {
             $_addonManifest['metadata']['preview'] = substr($_strDatastoreBasePath . 'default/preview.png', 1);
+            $_addonManifest['metadata']['hasPreview'] = false;
         }
         
         // shortDescription should be html entity'd

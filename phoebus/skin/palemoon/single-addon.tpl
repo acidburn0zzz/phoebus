@@ -15,7 +15,9 @@
     {$PAGE_DATA.metadata.longDescription}
 </p>
 
-<img src="{$PAGE_DATA.metadata.preview}" class="aligncenter"/>
+{if $PAGE_DATA.metadata.hasPreview == true}
+    <img src="{$PAGE_DATA.metadata.preview}" class="aligncenter"/>
+{/if}
 
 <h3>
     Compatibility
