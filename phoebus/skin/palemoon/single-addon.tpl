@@ -1,5 +1,5 @@
 <h1>
-    <img src="{$PAGE_DATA.addon.basePath}icon.png" style="height: 32px; width: 32px;" class="alignright">
+    <img src="{$PAGE_DATA.metadata.icon}" style="height: 32px; width: 32px;" class="alignright">
     {$PAGE_DATA.metadata.name}
 </h1>
 
@@ -15,9 +15,7 @@
     {$PAGE_DATA.metadata.longDescription}
 </p>
 
-{if $PAGE_DATA.metadata.hasPreview == true}
-<img src="{$PAGE_DATA.addon.basePath}preview.png" class="aligncenter"/>
-{/if}
+<img src="{$PAGE_DATA.mediadata.preview}" class="aligncenter"/>
 
 <h3>
     Compatibility
