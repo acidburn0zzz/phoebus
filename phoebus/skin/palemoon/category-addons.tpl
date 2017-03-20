@@ -39,7 +39,7 @@
             width="32px"
             height="32px">
 
-{if $PAGE_TYPE == 'cat-themes'}
+{if $PAGE_TYPE == 'cat-beer'}
         <div
             class="alignright"
             style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; 
