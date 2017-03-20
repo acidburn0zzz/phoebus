@@ -16,7 +16,7 @@
 </p>
 
 {if $PAGE_DATA.metadata.hasPreview == true}
-    <img src="{$PAGE_DATA.metadata.preview}" class="aligncenter"/>
+    <img src="{$PAGE_DATA.metadata.preview}" class="aligncenter" style="border:1px solid #aaaaaa;"/>
 {/if}
 
 <h3>
