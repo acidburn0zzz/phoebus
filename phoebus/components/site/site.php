@@ -83,6 +83,7 @@ function funcGenAllExtensions($_array) {
 
 function funcGenCategoryContent($_type, $_array) {
     $arrayCategory = array();
+    $_strDatastoreBasePath = $GLOBALS['strPhoebusDatastore'] . 'addons/';
     
     foreach ($_array as $_key => $_value) {
         if (($_type == 'extension' || $_type == 'theme') && is_int($_key)) {
@@ -94,10 +95,26 @@ function funcGenCategoryContent($_type, $_array) {
         elseif ($_key == 'externals') {
             foreach($_array['externals'] as $_key2 => $_value2) {
                 $arrayCategory[$_value2['name']]['addon']['type'] = 'external';
-                $arrayCategory[$_value2['name']]['addon']['id'] = $_value2['id'];
                 $arrayCategory[$_value2['name']]['metadata']['name'] = $_value2['name'];
+                $arrayCategory[$_value2['name']]['metadata']['slug'] = $_value2['id'];
                 $arrayCategory[$_value2['name']]['metadata']['url'] = $_value2['url'];
                 $arrayCategory[$_value2['name']]['metadata']['shortDescription'] = $_value2['shortDescription'];
+
+                if ($_value2['id'] != 'default' && file_exists($_strDatastoreBasePath . $_value2['id'] . '/icon.png')) {
+                    $arrayCategory[$_value2['name']]['metadata']['icon'] = substr($_strDatastoreBasePath . $_value2['id'] . '/icon.png', 1);
+                }
+                else {
+                    $arrayCategory[$_value2['name']]['metadata']['icon'] = substr($_strDatastoreBasePath . 'default/' . $_type . '.png', 1);
+                    
+                }
+                
+                if ($_value2['id'] != 'default' && file_exists($_strDatastoreBasePath . $_value2['id'] . '/preview.png')) {
+                    $arrayCategory[$_value2['name']]['metadata']['preview'] = substr($_strDatastoreBasePath . $_value2['id'] . '/preview.png', 1);
+                }
+                else {
+                    $arrayCategory[$_value2['name']]['metadata']['preview'] = substr($_strDatastoreBasePath . 'default/preview.png', 1);
+                }                
+
             }
         }
         elseif ($_type == 'language-pack') {

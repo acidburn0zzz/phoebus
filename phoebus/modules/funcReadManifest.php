@@ -5,9 +5,10 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     
     $_addonPhoebusManifestFile = 'phoebus.manifest';
     $_addonPhoebusContentFile = 'phoebus.content';
+    $_strDatastoreBasePath = $GLOBALS['strPhoebusDatastore'] . 'addons/';
     
-    if (file_exists($GLOBALS['strPhoebusDatastore'] . 'addons/' . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
-        $_addonBasePath = $GLOBALS['strPhoebusDatastore'] . 'addons/' . $_addonSlug . '/';
+    if (file_exists($_strDatastoreBasePath . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
+        $_addonBasePath = $_strDatastoreBasePath . $_addonSlug . '/';
     }
     else {
         funcError('Could not read manifest file for ' . $_addonSlug);
@@ -38,18 +39,20 @@ function funcReadManifest($_addonScope, $_addonSlug) {
 
     // Only CATEGORY and PAGE care about Metadata
     if ($_addonScope == 'category' || $_addonScope == 'page') {
+        $_addonManifest['metadata']['url'] = '/addon/' . $_addonManifest['metadata']['slug'] . '/';
+        
         if (file_exists($_addonBasePath . 'icon.png')) {
-            $_addonManifest['metadata']['hasIcon'] = true;
+            $_addonManifest['metadata']['icon'] = substr($_addonBasePath . 'icon.png', 1);
         }
         else {
-            $_addonManifest['metadata']['hasIcon'] = false;
+            $_addonManifest['metadata']['icon'] = substr($_strDatastoreBasePath . 'default/' . $_addonManifest['addon']['type'] . '.png', 1);
         }
         
         if (file_exists($_addonBasePath . 'preview.png')) {
-            $_addonManifest['metadata']['hasPreview'] = true;
+            $_addonManifest['metadata']['preview'] = substr($_addonBasePath . 'preview.png', 1);;
         }
         else {
-            $_addonManifest['metadata']['hasPreview'] = false;
+            $_addonManifest['metadata']['preview'] = substr($_strDatastoreBasePath . 'default/preview.png', 1);
         }
         
         // shortDescription should be html entity'd

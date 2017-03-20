@@ -15,26 +15,20 @@
 {foreach $PAGE_DATA as $key}
     <a
         class="PM-addon fake-table-row"
-{if $key.addon.type == 'external'}
         href="{$key.metadata.url}"
+{if $key.addon.type == 'external'}
         target="_blank"
 {if strstr($key.metadata.url, 'addons.mozilla.org')}
         title="This add-on is hosted on Mozilla's Add-ons Site"
 {else}
         title="This add-on is hosted independently"
 {/if}
-{else}
-        href="/addon/{$key.metadata.slug}/"
 {/if}
         style="width: 95%; height: 64px; 
         display: inline-block; margin-left: 15px; margin-right: 20px; text-align: left; vertical-align: top; align: left; padding: 4px 8px; text-decoration: none; color: black;">
 
         <img
-{if $key.addon.type == 'external'}
-            src="/datastore/addons/{$key.addon.id}/icon.png"
-{else}
-            src="/datastore/addons/{$key.metadata.slug}/icon.png"
-{/if}
+            src="{$key.metadata.icon}"
             style="padding-top: 8px; padding-bottom: 16px;" class="alignleft"
             width="32px"
             height="32px">
@@ -42,13 +36,7 @@
 {if $PAGE_TYPE == 'cat-themes'}
         <div
             class="alignright"
-            style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; 
-{if $key.addon.type == 'external'}
-                background-image: url('/datastore/addons/{$key.addon.id}/preview.png');
-{else}
-                background-image: url('/datastore/addons/{$key.metadata.slug}/preview.png');
-{/if}
-                align: center; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa; overflow: hidden;">
+            style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; background-image: url('{$key.metadata.preview}'); align: center; margin-top: 4px; width: 240px; height: 60px; border:1px solid #aaaaaa; overflow: hidden;">
         </div>
 {/if}
         
@@ -86,3 +74,4 @@
     </div>
     <div class="clearfix"></div>
 {/if}
+{$key = null}
