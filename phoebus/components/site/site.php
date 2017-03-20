@@ -183,7 +183,7 @@ function funcGeneratePage($_array) {
     
     // Configure Smarty
     $libSmarty->caching = 0;
-    $libSmarty->debugging = true;
+    $libSmarty->debugging = false;
     $libSmarty->setCacheDir($GLOBALS['arraySmartyPaths']['cache'])
         ->setCompileDir($GLOBALS['arraySmartyPaths']['compile'])
         ->setConfigDir($GLOBALS['arraySmartyPaths']['config'])
