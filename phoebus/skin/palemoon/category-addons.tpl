@@ -44,7 +44,7 @@
             class="alignright"
             style="background: linear-gradient(to bottom, #f0f0f0 0%,#d4d9f7 100%); background-repeat: no-repeat; 
 {if $key.addon.type == 'external'}
-                background-image: url('/datastore/addons/{$key.metadata.id}/preview.png');
+                background-image: url('/datastore/addons/{$key.addon.id}/preview.png');
 {else}
                 background-image: url('/datastore/addons/{$key.metadata.slug}/preview.png');
 {/if}
