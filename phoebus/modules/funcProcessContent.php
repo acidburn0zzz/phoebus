@@ -33,7 +33,7 @@ function funcProcessContent ($_input) {
             '\<(ul|\/ul|li|\/li|p|\/p)\><br \/>' => '<$1>',
             '\[url=(.*)\](.*)\[\/url\]' => '<a href="$1" target="_blank">$2</a>',
             '\[url\](.*)\[\/url\]' => '<a href="$1" target="_blank">$1</a>',
-            '\[img(.*)\](.*)\[\/img\]' => '<img src="$2"$1 />'
+            '\[img(.*)\](.*)\[\/img\]' => '<small>The [img] tag is deprecated please use preview.png.</small>'
         );
         
         // str replace pseudo-bbcode with real html
