@@ -24,6 +24,9 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     unset($_addonManifestVersions['addon']);
     unset($_addonManifestVersions['metadata']);
     
+    // Reverse sort the keys
+    krsort($_addonManifestVersions, SORT_NATURAL | SORT_FLAG_CASE);
+    
     // mangle filename.xpi sections into a subkey
     // we are now working on the add-on manifest array
     foreach ($_addonManifestVersions as $_key => $_value) {

@@ -13,17 +13,40 @@ $arrayIncludes = array(
 );
 
 $strRequestAddonID = funcHTTPGetValue('id');
+$strRequestAddonVersion = funcHTTPGetValue('version');
 
 // ============================================================================
 
 // == | funcDownloadXPI | ===============================================
 
-function funcDownloadXPI($_addonManifest) {
-    $_addonFile = $_addonManifest['addon']['basePath'] . $_addonManifest['addon']['release'];
+function funcDownloadXPI($_addonManifest, $_addonVersion) {
+    $_versionXPI = null;
+    
+    if ($_addonVersion == 'latest') {
+        $_versionXPI = $_addonManifest['addon']['release'];
+        $_addonFile = $_addonManifest['addon']['basePath'] . $_versionXPI;
+    }
+    else {
+        $_versionMatch = false;
+        foreach ($_addonManifest['xpi'] as $_key => $_value) {
+            if (in_array($_addonVersion, $_value)) {
+                $_versionMatch = true;
+                $_versionXPI = $_key;
+                break;
+            }
+        }
+        
+        if ($_versionMatch == true) { 
+            $_addonFile = $_addonManifest['addon']['basePath'] . $_versionXPI;
+        }
+        else {
+            funcError('Unknown XPI version');
+        }
+    }
     
     if (file_exists($_addonFile)) {
         header('Content-Type: application/x-xpinstall');
-        header('Content-Disposition: inline; filename="' . $_addonManifest['addon']['release'] .'"');
+        header('Content-Disposition: inline; filename="' . $_versionXPI . '"');
         header('Content-Length: ' . filesize($_addonFile));
         header('Cache-Control: no-cache');
         header('X-Accel-Redirect: ' . ltrim($_addonFile, '.'));
@@ -67,6 +90,10 @@ if ($strRequestAddonID == null) {
     funcError('Missing minimum required arguments.');
 }
 
+if ($strRequestAddonVersion == null) {
+    $strRequestAddonVersion = 'latest';
+} 
+
 // Includes
 foreach($arrayIncludes as $_value) {
     require_once($_value);
@@ -76,7 +103,7 @@ unset($arrayIncludes);
 // Search for add-ons in our databases
 // Add-ons
 if (array_key_exists($strRequestAddonID, $arrayAddonsDB)) {
-    funcDownloadXPI(funcReadManifest('download', $arrayAddonsDB[$strRequestAddonID]));
+    funcDownloadXPI(funcReadManifest('download', $arrayAddonsDB[$strRequestAddonID]), $strRequestAddonVersion);
 }
 // Search Plugins
 elseif (array_key_exists($strRequestAddonID, $arraySearchPluginsDB)) {
