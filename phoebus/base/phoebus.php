@@ -84,6 +84,19 @@ function funcHTTPGetValue($_value) {
 
 // ============================================================================
 
+// == | Function: funcCheckVar | ==============================================
+
+function funcCheckVar($_value) {
+    if ($_value === '' || $_value === 'none' || $_value === null || empty($_value)) {
+        return null;
+    }
+    else {
+        return $_value;
+    }
+}
+
+// ============================================================================
+
 // == | funcSendHeader | ======================================================
 
 function funcSendHeader($_value) {

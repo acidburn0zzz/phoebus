@@ -34,8 +34,34 @@
         </h3>
 
         <p>
-           Pale Moon {$PAGE_DATA['xpi'][$PAGE_DATA['addon']['release']]['minAppVersion']} to {$PAGE_DATA['xpi'][$PAGE_DATA['addon']['release']]['maxAppVersion']}
+            Pale Moon {$PAGE_DATA['xpi'][$PAGE_DATA['addon']['release']]['minAppVersion']} to 
+{if $PAGE_DATA['xpi'][$PAGE_DATA['addon']['release']]['maxAppVersion'] == '*'}
+            Unknown
+{else}
+            {$PAGE_DATA['xpi'][$PAGE_DATA['addon']['release']]['maxAppVersion']}
+{/if}
         </p>
+
+{if $PAGE_DATA.metadata.homepageURL != null || $PAGE_DATA.metadata.supportURL != null || $PAGE_DATA.metadata.supportEmail != null || $PAGE_DATA.metadata.repository != null}
+        <h3>
+            Links
+        </h3>
+        <p>
+{if $PAGE_DATA.metadata.homepageURL != null}
+            <a href="{$PAGE_DATA.metadata.homepageURL}" target="_blank">Add-on Homepage</a><br />
+{/if}
+{if $PAGE_DATA.metadata.supportURL != null}
+            <a href="{$PAGE_DATA.metadata.supportURL}" target="_blank">Support Site</a><br />
+{/if}
+{if $PAGE_DATA.metadata.supportEmail != null}
+            <a href="mailto:{$PAGE_DATA.metadata.supportEmail}">Support E-mail</a><br />
+{/if}
+{if $PAGE_DATA.metadata.repository != null}
+            <a href="{$PAGE_DATA.metadata.repository}" target="_blank">Source Repository</a><br />
+{/if}
+        </p>
+{/if}
+
 {if $PAGE_DATA.xpi|@count > 1}
         <h3>
             Previous Releases
@@ -43,8 +69,17 @@
         
 {foreach $PAGE_DATA.xpi as $key}
 {if $key != $PAGE_DATA['xpi'][$PAGE_DATA['addon']['release']]}
-            <p><a href="/?component=download&id={$PAGE_DATA.addon.id}&version={$key.version}">Version {$key.version}</a><br />
-            <small>Works with Pale Moon {$key.minAppVersion} to {$key.maxAppVersion}</small></p>
+            <p>
+                <a href="/?component=download&id={$PAGE_DATA.addon.id}&version={$key.version}">Version {$key.version}</a><br />
+                <small>
+                    Works with Pale Moon {$key.minAppVersion} to
+{if $key.maxAppVersion == '*'}
+                    Unknown
+{else}
+                    {$key.maxAppVersion}
+{/if}
+                </small>
+            </p>
 {/if}
 {/foreach}
 {/if}

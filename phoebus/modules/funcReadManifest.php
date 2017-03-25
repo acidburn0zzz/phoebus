@@ -9,13 +9,59 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     
     if (file_exists($_strDatastoreBasePath . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
         $_addonBasePath = $_strDatastoreBasePath . $_addonSlug . '/';
+        $_addonManifestINI = parse_ini_file($_addonBasePath . $_addonPhoebusManifestFile, true)
+            or funcError('Could not parse manifest file for ' . $_addonSlug);
     }
     else {
-        funcError('Could not read manifest file for ' . $_addonSlug);
+        funcError('Could not find manifest file for ' . $_addonSlug);
     }
     
-    $_addonManifest = parse_ini_file($_addonBasePath . $_addonPhoebusManifestFile, true);
-   
+    // Define base manifest data structure
+    $_addonManifestBase = array(
+        'addon' => array(
+            'type' => null,
+            'id' => null,
+            'release' => null
+        ),
+        'metadata' => array(
+            'name' => null,
+            'slug' => null,
+            'author' => null,
+            'shortDescription' => null,
+            'homepageURL' => null,
+            'supportURL' => null,
+            'supportEmail' => null,
+            'repository' => null,
+            'license' => null, // preferred spelling
+            'licence' => null
+        ),
+    );
+    
+    // Create a new array that will replace existing values from manifest ini onto the predefined data structure
+    // then unset the base and ini-read arrays
+    $_addonManifest = array_replace_recursive($_addonManifestBase, $_addonManifestINI);
+    unset($_addonManifestINI);
+    unset($_addonManifestBase);
+    
+    // Let's do some sanity checks
+    if (funcCheckVar($_addonManifest['addon']['type']) == null ||
+        funcCheckVar($_addonManifest['addon']['id']) == null ||
+        funcCheckVar($_addonManifest['addon']['release']) == null ||
+        funcCheckVar($_addonManifest['metadata']['name']) == null ||
+        funcCheckVar($_addonManifest['metadata']['slug']) == null ||
+        funcCheckVar($_addonManifest['metadata']['author']) == null ||
+        funcCheckVar($_addonManifest['metadata']['shortDescription']) == null ||
+        array_key_exists($_addonManifest['addon']['release'], $_addonManifest) == false) {
+        funcError('Missing minimum required entries in manifest file for ' . $_addonSlug);
+    }
+    
+    // If any value of a metadata subkey is 'none' replace it with null
+    foreach ($_addonManifest['metadata'] as $_metadataKey => $_metadataValue) {
+        if ($_metadataValue === 'none') {
+            $_addonManifest['metadata'][$_metadataKey] = null;
+        }
+    }
+    
     // INI has depth and identical section name issues so we need to mangle it
     // Create a temporary array that we can easily manipulate
     $_addonManifestVersions = $_addonManifest;
@@ -67,7 +113,7 @@ function funcReadManifest($_addonScope, $_addonSlug) {
             $_addonManifest['metadata']['shortDescription'] = substr($_addonManifest['metadata']['shortDescription'], 0, 200) . '...';
         }
         
-        // Only PAGE cares about phoebus.content
+        // Only PAGE cares about phoebus.content and extended metadata
         if ($_addonScope == 'page') {
             // Deal with phoebus.content
             require_once($GLOBALS['arrayModules']['processContent']);
@@ -80,6 +126,21 @@ function funcReadManifest($_addonScope, $_addonSlug) {
             else {
                 // Since there is no phoebus.content use the short description
                 $_addonManifest['metadata']['longDescription'] = $_addonFullShortDesc;
+            }
+
+            // Hack for people using repositories as their homepage
+            if ($_addonManifest['metadata']['repository'] == null && (
+                strpos($_addonManifest['metadata']['homepageURL'], 'github') > -1 ||
+                strpos($_addonManifest['metadata']['homepageURL'], 'bitbucket') > -1 ||
+                strpos($_addonManifest['metadata']['homepageURL'], 'gitlab') > -1)) {
+                $_addonManifest['metadata']['repository'] = $_addonManifest['metadata']['homepageURL'];
+                $_addonManifest['metadata']['homepageURL'] = null;
+            }
+            
+            // Hack for license/licence
+            if ($_addonManifest['metadata']['license'] == null && $_addonManifest['metadata']['licence'] != null) {
+                $_addonManifest['metadata']['license'] = $_addonManifest['metadata']['licence'];
+                unset($_addonManifest['metadata']['licence']);
             }
         }
     }
