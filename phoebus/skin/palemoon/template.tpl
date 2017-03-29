@@ -30,7 +30,7 @@
                     <li class="li_nc"><a href="/themes/">Themes</a></li>
                     <li class="li_nc"><a href="/language-packs/">Language Packs</a></li>
                     <li class="li_nc"><a href="/search-plugins/">Search Plugins</a></li>
-                    <li class="li_nc"><a href="#">Resources</a>
+                    <li class="li_nc"><a href="#">More&hellip;</a>
                         <ul class="ul_ch">
                             <li class="li_nc"><a href="/incompatible/">Incompatible Extensions</a></li>
                             <li class="li_nc"><a href="http://developer.palemoon.org/" target="_blank">Add-on Development</a></li>
@@ -47,7 +47,7 @@
                     {%PAGE_CONTENT}
                 </div>
             </div>
-            <div style="text-align: center;">
+            <div style="text-align: center; margin-top: 8px;">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Addons site leaderboard -->
                 <ins class="adsbygoogle"
