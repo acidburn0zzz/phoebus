@@ -63,7 +63,6 @@ $arrayExCat02 = array(
     'tab-mix-plus',
     'treestyletabforpm',
     'advanced-night-mode',
-    'responsive-bookmarks-toolbar',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
@@ -433,6 +432,7 @@ $arrayExCat10 = array(
     'youtube-lazy-load',
     'send-tab-to-device',
     'auto-sort-bookmarks',
+    'responsive-bookmarks-toolbar',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
