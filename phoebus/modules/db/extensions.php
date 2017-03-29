@@ -64,7 +64,8 @@ $arrayExtensionsDB = array(
     'sortbookmarks@bouanto' => 'auto-sort-bookmarks',
     'themeshim@lootyhoof-pm' => 'theme-shim',
     'abprime@projects.binaryoutcast.com' => 'abprime',
-    'about-addons-memory-pm@securefox.org' => 'addons-memory-usage-stats'
+    'about-addons-memory-pm@securefox.org' => 'addons-memory-usage-stats',
+    'resp-bmbar@Off.JustOff' => 'responsive-bookmarks-toolbar'
 );
 
 // Override for Firefox Specific IDs or Changed IDs
