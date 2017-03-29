@@ -42,9 +42,18 @@
 {/if}
         </p>
 
+{if $PAGE_DATA.metadata.license != null}
+        <h3>
+            License
+        </h3>
+        <p>
+            <a href="/?component=license&id={$PAGE_DATA.addon.id}" target="_blank">{$PAGE_DATA.metadata.licenseName}</a>
+        </p>
+{/if}
+
 {if $PAGE_DATA.metadata.homepageURL != null || $PAGE_DATA.metadata.supportURL != null || $PAGE_DATA.metadata.supportEmail != null || $PAGE_DATA.metadata.repository != null}
         <h3>
-            Links
+            Resources
         </h3>
         <p>
 {if $PAGE_DATA.metadata.homepageURL != null}

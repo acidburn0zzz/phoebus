@@ -5,6 +5,7 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     
     $_addonPhoebusManifestFile = 'phoebus.manifest';
     $_addonPhoebusContentFile = 'phoebus.content';
+    $_addonPhoebusLicenseFile = 'phoebus.license';
     $_strDatastoreBasePath = $GLOBALS['strPhoebusDatastore'] . 'addons/';
     
     if (file_exists($_strDatastoreBasePath . $_addonSlug . '/' . $_addonPhoebusManifestFile)) {
@@ -87,7 +88,7 @@ function funcReadManifest($_addonScope, $_addonSlug) {
     unset($_addonManifestVersions_);
 
     // Only CATEGORY and PAGE care about Metadata
-    if ($_addonScope == 'category' || $_addonScope == 'page') {
+    if ($_addonScope == 'category' || $_addonScope == 'page' || $_addonScope == 'license') {
         $_addonManifest['metadata']['url'] = '/addon/' . $_addonManifest['metadata']['slug'] . '/';
         
         if (file_exists($_addonBasePath . 'icon.png')) {
@@ -115,34 +116,86 @@ function funcReadManifest($_addonScope, $_addonSlug) {
         
         // Only PAGE cares about phoebus.content and extended metadata
         if ($_addonScope == 'page') {
-            // Deal with phoebus.content
-            require_once($GLOBALS['arrayModules']['processContent']);
-            $_addonPhoebusContent = funcProcessContent($_addonBasePath . $_addonPhoebusContentFile);
-            
-            if ($_addonPhoebusContent != null) {
-                // Assign parsed phoebus.content to the add-on manifest array
-                $_addonManifest['metadata']['longDescription'] = $_addonPhoebusContent;
-            }
-            else {
-                // Since there is no phoebus.content use the short description
-                $_addonManifest['metadata']['longDescription'] = $_addonFullShortDesc;
-            }
+            if ($_addonScope == 'page') {
+                // Deal with phoebus.content
+                require_once($GLOBALS['arrayModules']['processContent']);
+                $_addonPhoebusContent = funcProcessContent($_addonBasePath . $_addonPhoebusContentFile);
+                
+                if ($_addonPhoebusContent != null) {
+                    // Assign parsed phoebus.content to the add-on manifest array
+                    $_addonManifest['metadata']['longDescription'] = $_addonPhoebusContent;
+                }
+                else {
+                    // Since there is no phoebus.content use the short description
+                    $_addonManifest['metadata']['longDescription'] = $_addonFullShortDesc;
+                }
 
-            // Hack for people using repositories as their homepage
-            if ($_addonManifest['metadata']['repository'] == null && (
-                strpos($_addonManifest['metadata']['homepageURL'], 'github') > -1 ||
-                strpos($_addonManifest['metadata']['homepageURL'], 'bitbucket') > -1 ||
-                strpos($_addonManifest['metadata']['homepageURL'], 'gitlab') > -1)) {
-                $_addonManifest['metadata']['repository'] = $_addonManifest['metadata']['homepageURL'];
-                $_addonManifest['metadata']['homepageURL'] = null;
+                // Hack for people using repositories as their homepage
+                if ($_addonManifest['metadata']['repository'] == null && (
+                    strpos($_addonManifest['metadata']['homepageURL'], 'github') > -1 ||
+                    strpos($_addonManifest['metadata']['homepageURL'], 'bitbucket') > -1 ||
+                    strpos($_addonManifest['metadata']['homepageURL'], 'gitlab') > -1)) {
+                    $_addonManifest['metadata']['repository'] = $_addonManifest['metadata']['homepageURL'];
+                    $_addonManifest['metadata']['homepageURL'] = null;
+                }
             }
+        }
+
+        if ($_addonScope == 'page' || $_addonScope == 'license') {
+            $arrayLicenses = array(
+                'custom' => 'Custom License',
+                'Apache-2.0' => 'Apache License 2.0',
+                'Apache-1.1' => 'Apache License 1.1',
+                'BSD-3-Clause' => 'BSD 3-Clause',
+                'BSD-2-Clause' => 'BSD 2-Clause',
+                'GPL-3.0' => 'GNU General Public License 3.0',
+                'GPL-2.0' => 'GNU General Public License 2.0',
+                'LGPL-3.0' => 'GNU Lesser General Public License 3.0',
+                'LGPL-2.1' => 'GNU Lesser General Public License 2.1',
+                'AGPL-3.0' => 'GNU Affero General Public License v3',
+                'MIT' => 'MIT License',
+                'MPL-2.0' => 'Mozilla Public License 2.0',
+                'MPL-1.1' => 'Mozilla Public License 1.1',
+                'PD' => 'Public Domain'
+            );
+
+            $arrayLicenses = array_change_key_case($arrayLicenses, CASE_LOWER);
             
             // Hack for license/licence
             if ($_addonManifest['metadata']['license'] == null && $_addonManifest['metadata']['licence'] != null) {
                 $_addonManifest['metadata']['license'] = $_addonManifest['metadata']['licence'];
-                unset($_addonManifest['metadata']['licence']);
+            }
+
+            unset($_addonManifest['metadata']['licence']);
+            
+            if (file_exists($_addonBasePath . $_addonPhoebusLicenseFile)) {
+                $_addonManifest['metadata']['license'] = 'custom';
+            }
+            
+            if ($_addonManifest['metadata']['license'] != null) {
+                $_addonManifest['metadata']['license'] = strtolower($_addonManifest['metadata']['license']);
+                if (array_key_exists($_addonManifest['metadata']['license'], $arrayLicenses)) {
+                    $_addonManifest['metadata']['licenseName'] = $arrayLicenses[$_addonManifest['metadata']['license']];
+                }
+                else {
+                    $_addonManifest['metadata']['license'] = 'unknown';
+                    $_addonManifest['metadata']['licenseName'] = 'Unknown License';
+                }
             }
         }
+        
+        if ($_addonScope == 'license') {
+            if ($_addonManifest['metadata']['license'] == 'custom' && file_exists($_addonBasePath . $_addonPhoebusLicenseFile)) {
+                $_addonManifest['metadata']['licenseText'] = file_get_contents($_addonBasePath . $_addonPhoebusLicenseFile);
+            }
+            elseif ($_addonManifest['metadata']['license'] == 'unknown') {
+                $_addonManifest['metadata']['license'] = null;
+            }
+            else {
+                $_addonManifest['metadata']['licenseText'] = null;
+            }
+        }
+
     }
     else {
         unset($_addonManifest['metadata']);
