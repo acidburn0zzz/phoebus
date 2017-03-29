@@ -63,6 +63,7 @@ $arrayExCat02 = array(
     'tab-mix-plus',
     'treestyletabforpm',
     'advanced-night-mode',
+    'responsive-bookmarks-toolbar',
     'externals' => array(
         'active-stop-button' => array(
             'id' => 'fx-2025',
