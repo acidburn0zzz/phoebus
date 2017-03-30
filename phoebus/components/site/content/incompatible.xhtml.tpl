@@ -18,7 +18,7 @@
 
 <h3>List of add-ons with known compatibility issues</h3>
 
-<p><strong>Last updated: 2017-03-04</strong> (compatible with Pale Moon 27.1, released 2017-02-09)</p>
+<p><strong>Last updated: 2017-03-24</strong> (compatible with Pale Moon 27.1+, released 2017-02-09)</p>
 
 <p><strong>PENDING</strong></p>
 <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%">
@@ -39,15 +39,16 @@
                 <ul>
                     <li>Flash Killer</li>
                     <li>fx-statistics</li>
+                    <li>GNotifier</li>
+                    <li>Hoxx VPN Proxy</li>
                     <li>HttpFox</li>
                     <li>Keybinder</li>
-                    <li>mpv-youtube-dl-binding</li>
-                    <li>Open With</li>
                 </ul>
             </td>
 
             <td style="vertical-align:top; width:33%">
                 <ul>
+                    <li>mpv-youtube-dl-binding</li>
                     <li>Private Tab</li>
                     <li>Random Bookmark</li>
                     <li>Scroll To Top</li>
@@ -103,7 +104,6 @@
                     <li>Multiple Tab Handler<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/multiple-tab-handler/versions/?page=1#version-0.7.2014050101.1-signed" target="_blank">0.7.2014050101.1</a></small></li>
                     <li>OmniSidebar<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/omnisidebar/versions/?page=1#version-1.4.7.1-signed" target="_blank">1.4.7.1</a></small></li>
                     <li>Open Bookmarks in New Tab<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/open-bookmarks-in-new-tab/versions/?page=1#version-0.1.2012122901.1-signed" target="_blank">0.1.2012122901.1</a></small></li>
-                    <li>Open With<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/open-with/versions/?page=1#version-5.6.3.1-signed" target="_blank">5.6.3.1</a></small></li>
                     <li>Personas Rotator<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/personas-rotator/versions/47.1" target="_blank">47.1</a></small></li>
                     <li>PrefBar<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/prefbar/versions/?page=1#version-6.5.0.1-signed" target="_blank">6.5.0.1</a></small></li>
                     <li>Pure URL<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/clean-links/" target="_blank">Clean Links</a></small></li>
@@ -134,7 +134,7 @@
                     <li>Tab Groups Manager<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/tabgroups-manager-revived/" target="_blank">TabGroups Manager revived</a></small></li>
                     <li>Tab Scope<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/tab-scope/versions/?page=1#version-1.6.1.1-signed" target="_blank">1.6.1.1</a></small></li>
                     <li>Thumbnail Zoom Plus<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/thumbnail-zoom-plus/versions/?page=1#version-3.7" target="_blank">3.7</a></small></li>
-                    <li>Twitch Now<br /><small>Use version <a href=https://addons.mozilla.org/firefox/addon/twitch-now/versions/1.1.187 target="_blank">1.1.187</a></small></li>
+                    <li>Twitch Now<br /><small>Install version <a href=https://addons.mozilla.org/firefox/addon/twitch-now/versions/1.1.187 target="_blank">1.1.187</a> using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
                     <li>Toggle Document Colors<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/toggledocumentcolors-198916/" target="_blank">ToggleDocumentColors_</a><br />or <a href="https://addons.mozilla.org/firefox/addon/page-colors-fonts-buttons/" target="_blank">Page Colors & Fonts Buttons</a></small></li>
                     <li>Toggle Document Fonts<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/page-colors-fonts-buttons/" target="_blank">Page Colors & Fonts Buttons</a></small></li>
                     <li>Toggle Javascript<br /><small>Use <a href="https://addons.mozilla.org/firefox/addon/js-switch/" target="_blank">JS Switch</a> or <a href="https://addons.mozilla.org/firefox/addon/quickjs/" target="_blank">QuickJS</a></small></li>
@@ -178,10 +178,13 @@
                     <li>EPUBReader</li>
                     <li>FireFTP</li>
                     <li>Fire IE</li>
+                    <li>FlashDisable</li>
                     <li>Forecastfox (fix version)</li>
+                    <li><a href="/extensions/foxclocks/">FoxClocks</a></li>
                     <li>FoxyProxy (All SKUs)</li>
                     <li><a href="/extensions/i-dont-care-about-cookies/">I don't care about cookies</a></li>
                     <li>NewsFox</li>
+                    <li>Open With</li>
                     <li>Play/Pause</li>
                     <li><a href="/extensions/print-pages-to-pdf/">Print pages to PDF</a></li>
                     <li>QuickPasswords</li>
@@ -228,7 +231,6 @@
                     <li><a href="/extensions/add-to-search-bar/">Add to Search Bar</a></li>
                     <li><a href="/extensions/chatzilla/">ChatZilla</a></li>
                     <li><a href="/extensions/date-picker/">Date Picker</a></li>
-                    <li><a href="/extensions/foxclocks/">FoxClocks</a></li>
                 </ul>
             </td>
         </tr>
@@ -284,5 +286,3 @@
         </tr>
     </tbody>
 </table>
-
-<p>&nbsp;</p>

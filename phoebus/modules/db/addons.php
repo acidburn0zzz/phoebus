@@ -29,7 +29,7 @@ $arrayAddonsDB = array(
     'h5vtuner@Off.JustOff' => 'html5-video-tuner',
     'imagetoolbox@addons.palemoon.org' => 'image-toolbox',
     'jid1-BoFifL9Vbdl2zQ@jetpack' => 'decentraleyes',
-    'jid1-IDCACPalemoon@jetpack' => 'i-dont-care-about-cookies',
+    'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies',
     'macmoon@lootyhoof-pm' => 'macmoon',
     'materialmoon@franklindm' => 'material-moon',
     'modoki@lootyhoof-pm' => 'modoki-moon',
@@ -85,7 +85,7 @@ $arrayAddonsDB = array(
     '{6593fe23-6af4-4e1e-b98e-98e62085837f}' => 'moonola',
     '{669920c8-3426-4071-b98e-98e62085837f}' => 'tangerinemoon',
     '{4523665a-317f-4a66-9376-3763d1ad1978}' => 'chatzilla',
-    '{91228860-d602-45c4-9376-3763d1ad1978}' => 'foxclocks',
+    '{d37dc5d0-431d-44e5-8c91-49419370caa1}' => 'foxclocks',
     '{a8d39d11-bb4d-4f0a-a9dd-9ddae0602172}' => 'show-my-password',
     '{a53af763-1a44-4820-b98e-98e62085837f}' => 'pmopera',
     '{a3056aed-a93d-4c22-b98e-98e62085837f}' => 'qute-large',
@@ -101,15 +101,7 @@ $arrayAddonsDB = array(
     '{edbb972f-e557-4870-b98e-98e62085837f}' => 'aeromoon',
     '{ef547bbe-6237-45ed-b0d6-bc6ad58af954}' => 'stratum',
     '{f60dcfb5-358d-498e-9f2e-1b53eba4dde7}' => 'searchload-options-revived',
-    '{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options'
-);
-
-// Override for Firefox Specific IDs or Changed IDs
-// We put this in a separate array to prevent duplicate entries
-// in the main array.. Always with the developer's permission
-$arrayAddonsOverrideDB = array(
-    '{016acf6d-e5c0-4768-9376-3763d1ad1978}' => 'adblock-latitude-update',
-    'colormytabs@jetpack' => 'color-my-tabs',
-    'jid1-KKzOGWgsW3Ao4Q@jetpack' => 'i-dont-care-about-cookies'
+    '{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',
+    'resp-bmbar@Off.JustOff' => 'responsive-bookmarks-toolbar'
 );
 ?>

@@ -432,6 +432,7 @@ $arrayCategoryList10 = array(
     'youtube-lazy-load',
     'send-tab-to-device',
     'auto-sort-bookmarks',
+    'responsive-bookmarks-toolbar',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',

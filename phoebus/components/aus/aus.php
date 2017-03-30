@@ -82,12 +82,9 @@ if ($strRequestAppID == $strPaleMoonID) {
     }
     unset($arrayIncludes);
 
-    // Search for add-ons in our databases
+    // Search for add-ons in our database
     if (array_key_exists($strRequestAddonID, $arrayAddonsDB)) {
         funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsDB[$strRequestAddonID]));
-    }
-    elseif(array_key_exists($strRequestAddonID, $arrayAddonsOverrideDB)) {
-        funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsOverrideDB[$strRequestAddonID]));
     }
     // Language Packs
     elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
