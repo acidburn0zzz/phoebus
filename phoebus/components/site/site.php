@@ -212,7 +212,7 @@ function funcGeneratePage($_array) {
     $libSmarty->assign('SITE_DOMAIN', '//' . $GLOBALS['strPhoebusURL']);
     $libSmarty->assign('PAGE_TITLE', $_array['title']);
     $libSmarty->assign('BASE_PATH', substr($GLOBALS['strSkinBasePath'], 1));
-    $libSmarty->assign('MEMORY', memory_get_usage());
+    $libSmarty->assign('PHOEBUS_VERSION', $GLOBALS['strPhoebusVersion']);
     
     if (array_key_exists('contentData', $_array)) {
         $libSmarty->assign('PAGE_DATA', $_array['contentData']);

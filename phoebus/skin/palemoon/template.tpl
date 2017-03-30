@@ -60,7 +60,7 @@
             </div>
             <div style="margin-top: 10px; text-align: center; line-height: 13px; font-size: 10px;">
                 <span style="color: rgb(102, 102, 102);">
-                    Site design and Branding &copy; 2017 <a href="http://www.moonchildproductions.info/" target="_blank">Moonchild Productions</a> - All rights reserved
+                    Site design and Branding &copy; {'Y'|date} <a href="http://www.moonchildproductions.info/" target="_blank">Moonchild Productions</a> - All rights reserved
                 </span><br />
                 <span style="color: rgb(102, 102, 102);">
                     Any other content, brand names or logos are copyright or trademark to their respective owners.
@@ -70,7 +70,7 @@
                     - <a href="//www.palemoon.org/privacy.shtml">Privacy</a>.
                 </span><br /><br />
                 <span style="color: rgb(102, 102, 102);">
-                    The Pale Moon Add-ons Site is powered by <a href="https://github.com/Pale-Moon-Addons-Team/phoebus/" target="_blank">Project Phoebus</a>.
+                    The Pale Moon Add-ons Site is powered by <a href="https://github.com/Pale-Moon-Addons-Team/phoebus/" target="_blank">Project Phoebus</a> {$PHOEBUS_VERSION}.
                 </span><br />
             </div>
         </div>
