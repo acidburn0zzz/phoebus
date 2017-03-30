@@ -83,7 +83,7 @@ $arrayLangPackDB = array(
         'hash' => 'df69e38a785209754f96f768e96c9811a6dcbbea982f8a73f6bd55a8ff47cdd8',
     ),
     'langpack-en-GB@palemoon.org' => array(
-        'name' => 'English (U.K.)',
+        'name' => 'English (British)',
         'locale' => 'en-GB',
         'version' => '27.2.0',
         'hash' => 'a65d7505765a89c278a05c34767478212f160517b3e37289c7d8af8bec309513',
