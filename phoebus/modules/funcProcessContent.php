@@ -18,10 +18,10 @@ function funcProcessContent ($_input) {
             '[/b]' => '</strong>',
             '[i]' => '<em>',
             '[/i]' => '</em>',
-            '[u]' => '</p>' . "\n" . '<u>',
-            '[/u]' => '</u>' . "\n" . '<p>',
-            '[ul]' => '<ul>',
-            '[/ul]' => '</ul>',
+            '[u]' => '<u>',
+            '[/u]' => '</u>',
+            '[ul]' => '</p>' . "\n" .'<ul>',
+            '[/ul]' => '</ul>' . "\n" . '<p>',
             '[li]' => '<li>',
             '[/li]' => '</li>',
             '[section]' => '</p>' . "\n" . '<h3>',
@@ -33,7 +33,7 @@ function funcProcessContent ($_input) {
             '\<(ul|\/ul|li|\/li|p|\/p)\><br \/>' => '<$1>',
             '\[url=(.*)\](.*)\[\/url\]' => '<a href="$1" target="_blank">$2</a>',
             '\[url\](.*)\[\/url\]' => '<a href="$1" target="_blank">$1</a>',
-            '\[img(.*)\](.*)\[\/img\]' => '<img src="$2"$1 />'
+            '\[img(.*)\](.*)\[\/img\]' => ''
         );
         
         // str replace pseudo-bbcode with real html

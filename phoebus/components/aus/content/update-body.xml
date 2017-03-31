@@ -1,0 +1,20 @@
+  <RDF:Description about="urn:mozilla:@ADDON_TYPE@:@ADDON_ID@">
+    <em:updates>
+      <RDF:Seq>
+        <RDF:li>
+          <RDF:Description>
+            <em:version>@ADDON_VERSION@</em:version>
+            <em:targetApplication>
+              <RDF:Description>
+                <em:id>@APPLICATION_ID@</em:id>
+                <em:minVersion>@ADDON_MINVERSION@</em:minVersion>
+                <em:maxVersion>@ADDON_MAXVERSION@</em:maxVersion>
+                <em:updateLink>@ADDON_XPI@</em:updateLink>
+                <em:updateHash>sha256:@ADDON_HASH@</em:updateHash>
+              </RDF:Description>
+            </em:targetApplication>
+          </RDF:Description>
+        </RDF:li>
+      </RDF:Seq>
+    </em:updates>
+  </RDF:Description>
