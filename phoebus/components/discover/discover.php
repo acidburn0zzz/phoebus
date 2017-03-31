@@ -17,9 +17,9 @@ $arrayPageMetadata = array(
 // == | funcGenerateDiscover | ================================================
 
 function funcGenerateDiscover($_arrayPage) {
-    $_strHTMLTemplate = file_get_contents('./phoebus/components/discover/template.xhtml');
-    $_strHTMLStyle = file_get_contents('./phoebus/components/discover/style.css');
-    $_strHTMLContent = file_get_contents('./phoebus/components/discover/content.xhtml');
+    $_strHTMLTemplate = file_get_contents('./phoebus/components/discover/content/template.xhtml');
+    $_strHTMLStyle = file_get_contents('./phoebus/components/discover/content/style.css');
+    $_strHTMLContent = file_get_contents('./phoebus/components/discover/content/content.xhtml');
     
     $_strHTMLPage = $_strHTMLTemplate;
 

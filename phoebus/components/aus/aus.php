@@ -9,8 +9,7 @@ $boolAMOKillSwitch = false;
 $boolAMOWhiteList = false;
 
 $arrayIncludes = array(
-    $arrayModules['dbExtensions'],
-    $arrayModules['dbThemes'],
+    $arrayModules['dbAddons'],
     $arrayModules['dbLangPacks'],
     $arrayModules['dbAUSExternals'],
     $arrayModules['readManifest'],
@@ -38,16 +37,16 @@ function funcGenerateUpdateXML($_addonManifest) {
     if ($_addonManifest != null) {
             print("\n");
             
-            $_strUpdateXMLBody = file_get_contents('./phoebus/components/aus/update-body.xml');
+            $_strUpdateXMLBody = file_get_contents('./phoebus/components/aus/content/update-body.xml');
             
             $_arrayFilterSubstitute = array(
                 '@ADDON_TYPE@' => $_addonManifest['addon']['type'],
                 '@ADDON_ID@' => $_addonManifest['addon']['id'],
                 '@ADDON_VERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['version'],
-                '@PALEMOON_ID@' => $GLOBALS['strPaleMoonID'],
+                '@APPLICATION_ID@' => $GLOBALS['strApplicationID'],
                 '@ADDON_MINVERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['minAppVersion'],
                 '@ADDON_MAXVERSION@' => $_addonManifest['xpi'][$_addonManifest['addon']['release']]['maxAppVersion'],
-                '@ADDON_XPI@' => $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['release'],
+                '@ADDON_XPI@' => $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['id'],
                 '@ADDON_HASH@' => $_addonManifest['addon']['hash']
             );
             
@@ -76,24 +75,16 @@ if ($strRequestAddonID == null || $strRequestAddonVersion == null ||
     funcError('Missing minimum required arguments.');
 }
 
-if ($strRequestAppID === $strPaleMoonID) {
+if ($strRequestAppID == $strPaleMoonID) {
     // Include modules
     foreach($arrayIncludes as $_value) {
-        include_once($_value);
+        require_once($_value);
     }
     unset($arrayIncludes);
 
-    // Search for add-ons in our databases
-    // Extensions
-    if (array_key_exists($strRequestAddonID, $arrayExtensionsDB)) {
-        funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsDB[$strRequestAddonID], false, false, true, true, false));
-    }
-    elseif(array_key_exists($strRequestAddonID, $arrayExtensionsOverrideDB)) {
-        funcGenerateUpdateXML(funcReadManifest('extension', $arrayExtensionsOverrideDB[$strRequestAddonID], false, false, true, true, false));
-    }
-    // Themes
-    elseif (array_key_exists($strRequestAddonID, $arrayThemesDB)) {
-        funcGenerateUpdateXML(funcReadManifest('theme', $arrayThemesDB[$strRequestAddonID], false, false, true, true, false));
+    // Search for add-ons in our database
+    if (array_key_exists($strRequestAddonID, $arrayAddonsDB)) {
+        funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsDB[$strRequestAddonID]));
     }
     // Language Packs
     elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
@@ -102,7 +93,7 @@ if ($strRequestAppID === $strPaleMoonID) {
                         'type' => 'item',
                         'id' => $strRequestAddonID,
                         'release' => $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi',
-                        'baseURL' => 'http://rm-eu.palemoon.org/langpacks/27.x/',
+                        'baseURL' => $strLangPackBaseURL,
                         'hash' => $arrayLangPackDB[$strRequestAddonID]['hash']),
             'xpi' => array(
                         $arrayLangPackDB[$strRequestAddonID]['locale'] . '.xpi' => array(
@@ -120,11 +111,11 @@ if ($strRequestAppID === $strPaleMoonID) {
     // Unknown - Send to AMO or to 'bad' update xml
     else {
         if ($boolAMOKillSwitch == false) {
-            $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, '27.0.0');
+            $intVcResult = ToolkitVersionComparator::compare($strRequestAppVersion, $strMinimumApplicationVersion);
             $_strFirefoxVersion = $strFirefoxVersion;
             
             if ($intVcResult < 0) {
-                $_strFirefoxVersion = '24.9';
+                $_strFirefoxVersion = $strFirefoxOldVersion;
             }
             
             $strAMOLink = 'https://versioncheck.addons.mozilla.org/update/VersionCheck.php?reqVersion=2' .
@@ -141,12 +132,14 @@ if ($strRequestAppID === $strPaleMoonID) {
         }
     }
 }
-elseif ($strRequestAppID === $strThunderbirdID) {
+elseif ($strRequestAppID == $strFossaMailID) {
+    $strApplicationID = $strFossaMailID;
+
     $arrayBadFossaMailDB = array(
         '{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}' => 'gdata',
         '{e2fda1a4-762b-4020-b5ad-a41df1933103}' => 'lightning'
     );
-    
+
     if (array_key_exists($strRequestAddonID, $arrayBadFossaMailDB)) {
         funcGenerateUpdateXML(null);
     }
@@ -169,5 +162,6 @@ elseif ($strRequestAppID === $strThunderbirdID) {
 else {
     funcError('Invalid Application ID');
 }
+
 // ============================================================================
 ?>
