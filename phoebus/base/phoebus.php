@@ -9,7 +9,7 @@ $strPhoebusLiveURL = 'addons.palemoon.org';
 $strPhoebusDevURL = 'dev.addons.palemoon.org';
 $strPhoebusURL = $strPhoebusLiveURL;
 $strPhoebusSiteName = 'Pale Moon - Add-ons';
-$strPhoebusVersion = '1.5.0';
+$strPhoebusVersion = '1.5.1a1';
 $strPhoebusDatastore = './datastore/';
 $boolDebugMode = false;
 
