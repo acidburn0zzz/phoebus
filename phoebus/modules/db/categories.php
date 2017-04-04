@@ -363,6 +363,7 @@ $arrayCategoryList08 = array(
     'greedy-cache',
     'calendate',
     'addons-memory-usage-stats',
+    'toolbarize-menu-button',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
