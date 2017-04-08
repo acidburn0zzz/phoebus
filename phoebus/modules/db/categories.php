@@ -364,6 +364,7 @@ $arrayCategoryList08 = array(
     'calendate',
     'addons-memory-usage-stats',
     'toolbarize-menu-button',
+    'home-styler',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
