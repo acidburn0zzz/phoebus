@@ -103,6 +103,7 @@ $arrayAddonsDB = array(
     '{f60dcfb5-358d-498e-9f2e-1b53eba4dde7}' => 'searchload-options-revived',
     '{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',
     'resp-bmbar@Off.JustOff' => 'responsive-bookmarks-toolbar',
-    'toolbarize-menu-button@wsdfhjxc' => 'toolbarize-menu-button'
+    'toolbarize-menu-button@wsdfhjxc' => 'toolbarize-menu-button',
+    'homestyle@lootyhoof-pm' => 'home-styler'
 );
 ?>
