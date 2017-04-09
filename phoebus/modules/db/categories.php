@@ -365,6 +365,7 @@ $arrayCategoryList08 = array(
     'addons-memory-usage-stats',
     'toolbarize-menu-button',
     'home-styler',
+    'notestruck',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',

@@ -104,6 +104,7 @@ $arrayAddonsDB = array(
     '{ff497972-c067-44d8-b98e-98e62085837f}' => 'compact-moon-options',
     'resp-bmbar@Off.JustOff' => 'responsive-bookmarks-toolbar',
     'toolbarize-menu-button@wsdfhjxc' => 'toolbarize-menu-button',
-    'homestyle@lootyhoof-pm' => 'home-styler'
+    'homestyle@lootyhoof-pm' => 'home-styler',
+    'notestruck@franklindm' => 'notestruck'
 );
 ?>
