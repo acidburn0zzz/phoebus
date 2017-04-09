@@ -137,6 +137,12 @@ $arrayCategoryList02 = array(
             'shortDescription' => 'Browser Backgrounds is the new Pale Moon extension that lets you install backgrounds directly on your browser.',
             'url' => 'https://addons.mozilla.org/firefox/addon/browser-backgrounds/'
         ),
+        'cutebuttons-crystal-svg' => array(
+            'id' => 'ex-026',
+            'name' => 'CuteButtons',
+            'shortDescription' => 'Adds icons to buttons and/or menus.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/cutebuttons-crystal-svg/'
+        ),
     ),
 );
 
@@ -390,6 +396,12 @@ $arrayCategoryList08 = array(
             'name' => 'WheelClear',
             'shortDescription' => 'Clear any text field by rolling the mousewheel over it.',
             'url' => 'https://addons.mozilla.org/firefox/addon/wheelclear/'
+        ),
+        'stylish-custom' => array(
+            'id' => 'ex-027',
+            'name' => 'Stylish-Custom',
+            'shortDescription' => 'Custom additions to Stylish extension.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/stylish-custom/'
         ),
     ),
 );
