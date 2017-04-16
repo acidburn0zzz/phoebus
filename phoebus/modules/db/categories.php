@@ -177,6 +177,7 @@ $arrayCategoryList03 = array(
 
 $arrayCategoryList04 = array(
     'title' => 'Feeds, News, & Blogging',
+    'inforss-reloaded',
     'externals' => array(
         'bamboo-feed-reader' => array(
             'id' => 'fx-337410',
