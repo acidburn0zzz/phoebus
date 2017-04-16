@@ -105,6 +105,7 @@ $arrayAddonsDB = array(
     'resp-bmbar@Off.JustOff' => 'responsive-bookmarks-toolbar',
     'toolbarize-menu-button@wsdfhjxc' => 'toolbarize-menu-button',
     'homestyle@lootyhoof-pm' => 'home-styler',
-    'notestruck@franklindm' => 'notestruck'
+    'notestruck@franklindm' => 'notestruck',
+    'inforss-reloaded@addons.palemoon.org' => 'inforss-reloaded'
 );
 ?>
