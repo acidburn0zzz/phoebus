@@ -8,7 +8,7 @@
 <p>Looking for that Google Search plugin? Perhaps you want to easily search YouTube or just want to ask why Ask.com got rid of Jeeves from your browser's search box. Head over <a href="/search-plugins/">here</a> to grab your favorite search plugin. More are on the way so check back frequently!</p>
 
 <h3>Language Packs</h3>
-<p>&‌iquest;Habla español? Parle-vous fran&‌ccedil;ais? You can find these and many more to solve your linguistic needs <a href="/language-packs/">here</a>.</p>
+<p>¿Habla español? Parle-vous français? You can find these and many more to solve your linguistic needs <a href="/language-packs/">here</a>.</p>
 
 <h3>Tab Groups and Pale Moon Commander</h3>
 <p>Please note that the two Pale Moon add-ons created and maintained by Moonchild himself do not reside on the Add-ons Site at this time.</p>
