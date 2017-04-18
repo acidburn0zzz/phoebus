@@ -158,7 +158,7 @@ $arrayCategoryList03 = array(
             'id' => 'ex-005',
             'name' => 'ImageHost Grabber',
             'shortDescription' => 'Download entire galleries of hosted images with just a few clicks.',
-            'url' => 'http://hot-honeys.com/index.php#c9'
+            'url' => 'https://imagehostgrabber.com/'
         ),
         'opendownload2' => array(
             'id' => 'fx-10902',
