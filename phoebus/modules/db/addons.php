@@ -106,6 +106,7 @@ $arrayAddonsDB = array(
     'toolbarize-menu-button@wsdfhjxc' => 'toolbarize-menu-button',
     'homestyle@lootyhoof-pm' => 'home-styler',
     'notestruck@franklindm' => 'notestruck',
-    'inforss-reloaded@addons.palemoon.org' => 'inforss-reloaded'
+    'inforss-reloaded@addons.palemoon.org' => 'inforss-reloaded',
+    'eclipsedmoon@addons.eurythrace.perseides' => 'eclipsedmoon'
 );
 ?>
