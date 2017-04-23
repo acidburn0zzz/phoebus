@@ -225,6 +225,7 @@ $arrayCategoryList05 = array(
     'show-my-password',
     'isadmin',
     'integrated-authentication',
+    'eclipsedmoon',
     'externals' => array(
         'clean-links' => array(
             'id' => 'fx-317263',
