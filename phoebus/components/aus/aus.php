@@ -26,7 +26,7 @@ $strRequestCompatMode = funcHTTPGetValue('compatMode');
 
 // == | funcGenerateUpdateXML | ===============================================
 
-function funcGenerateUpdateXML($_addonManifest) {
+function funcGenerateUpdateXML($_addonManifest, $addonUseFilename) {
     $_strUpdateXMLHead = '<?xml version="1.0"?>' . "\n" . '<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">';
     $_strUpdateXMLTail = '</RDF:RDF>';
 
@@ -49,6 +49,10 @@ function funcGenerateUpdateXML($_addonManifest) {
                 '@ADDON_XPI@' => $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['id'],
                 '@ADDON_HASH@' => $_addonManifest['addon']['hash']
             );
+            
+            if ($addonUseFilename == true) {
+                $_arrayFilterSubstitute['@ADDON_XPI@'] = $_addonManifest['addon']['baseURL'] . $_addonManifest['addon']['release'];
+            }
             
             foreach ($_arrayFilterSubstitute as $_key => $_value) {
                 $_strUpdateXMLBody = str_replace($_key, $_value, $_strUpdateXMLBody);
@@ -84,7 +88,7 @@ if ($strRequestAppID == $strPaleMoonID) {
 
     // Search for add-ons in our database
     if (array_key_exists($strRequestAddonID, $arrayAddonsDB)) {
-        funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsDB[$strRequestAddonID]));
+        funcGenerateUpdateXML(funcReadManifest('aus', $arrayAddonsDB[$strRequestAddonID]), false);
     }
     // Language Packs
     elseif (array_key_exists($strRequestAddonID, $arrayLangPackDB)) {
@@ -102,7 +106,7 @@ if ($strRequestAppID == $strPaleMoonID) {
                             'maxAppVersion' => '27.*'))
         );
         
-        funcGenerateUpdateXML($arrayLangPack);
+        funcGenerateUpdateXML($arrayLangPack, true);
     }
     // Externals
     elseif (array_key_exists($strRequestAddonID, $arrayExternalsDB)) {
