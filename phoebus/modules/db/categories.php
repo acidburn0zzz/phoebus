@@ -137,6 +137,12 @@ $arrayCategoryList02 = array(
             'shortDescription' => 'Browser Backgrounds is the new Pale Moon extension that lets you install backgrounds directly on your browser.',
             'url' => 'https://addons.mozilla.org/firefox/addon/browser-backgrounds/'
         ),
+        'cutebuttons-crystal-svg' => array(
+            'id' => 'ex-026',
+            'name' => 'CuteButtons',
+            'shortDescription' => 'Adds icons to buttons and/or menus.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/cutebuttons-crystal-svg/'
+        ),
     ),
 );
 
@@ -152,7 +158,7 @@ $arrayCategoryList03 = array(
             'id' => 'ex-005',
             'name' => 'ImageHost Grabber',
             'shortDescription' => 'Download entire galleries of hosted images with just a few clicks.',
-            'url' => 'http://hot-honeys.com/index.php#c9'
+            'url' => 'https://imagehostgrabber.com/'
         ),
         'opendownload2' => array(
             'id' => 'fx-10902',
@@ -171,6 +177,7 @@ $arrayCategoryList03 = array(
 
 $arrayCategoryList04 = array(
     'title' => 'Feeds, News, & Blogging',
+    'inforss-reloaded',
     'externals' => array(
         'bamboo-feed-reader' => array(
             'id' => 'fx-337410',
@@ -218,6 +225,7 @@ $arrayCategoryList05 = array(
     'show-my-password',
     'isadmin',
     'integrated-authentication',
+    'eclipsedmoon',
     'externals' => array(
         'clean-links' => array(
             'id' => 'fx-317263',
@@ -364,6 +372,8 @@ $arrayCategoryList08 = array(
     'calendate',
     'addons-memory-usage-stats',
     'toolbarize-menu-button',
+    'home-styler',
+    'notestruck',
     'externals' => array(
         'history-submenus-2' => array(
             'id' => 'fx-337408',
@@ -388,6 +398,12 @@ $arrayCategoryList08 = array(
             'name' => 'WheelClear',
             'shortDescription' => 'Clear any text field by rolling the mousewheel over it.',
             'url' => 'https://addons.mozilla.org/firefox/addon/wheelclear/'
+        ),
+        'stylish-custom' => array(
+            'id' => 'ex-027',
+            'name' => 'Stylish-Custom',
+            'shortDescription' => 'Custom additions to Stylish extension.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/stylish-custom/'
         ),
     ),
 );
