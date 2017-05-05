@@ -57,7 +57,6 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-                <script src="/phoebus/skin/palemoon/script-001.js"></script>
             </div>
             <div style="margin-top: 10px; text-align: center; line-height: 13px; font-size: 10px;">
                 <p><span style="color: rgb(102, 102, 102);">
