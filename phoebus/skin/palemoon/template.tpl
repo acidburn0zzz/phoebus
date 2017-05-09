@@ -10,6 +10,15 @@
         </style>
     </head>
     <body>
+        <div id="OKjbdp99tsfsf">
+            <a id="abclosebutton" href="#" onclick="abdismiss();">X</a>
+            We love ad blockers as much as you, but we depend on ad revenue to fund various sites and services.<br />
+            We use responsible ad services to keep your visit to our websites a safe and uninterrupted one.<br />
+            To ensure our continued operation, please disable your ad blocker for this site or <a href="//www.palemoon.org/donations.shtml">support us another way</a>.<br />
+        </div>
+
+        <script src="{$BASE_PATH}ads.js?id=somead" type="text/javascript"></script>
+        <script src="{$BASE_PATH}abfunctions.js" type="text/javascript"></script>
         <div id="PM-Wrapper">
             <div id="PM-Header" class="PM-Wrapper-Width">
                 <img src="{$BASE_PATH}logo.png" class="alignleft" />
