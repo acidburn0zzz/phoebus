@@ -107,6 +107,7 @@ $arrayAddonsDB = array(
     'homestyle@lootyhoof-pm' => 'home-styler',
     'notestruck@franklindm' => 'notestruck',
     'inforss-reloaded@addons.palemoon.org' => 'inforss-reloaded',
-    'eclipsedmoon@addons.eurythrace.perseides' => 'eclipsedmoon'
+    'eclipsedmoon@addons.eurythrace.perseides' => 'eclipsedmoon',
+    'throbberinurlbar@srazzano.com' => 'throbber-in-urlbar'
 );
 ?>
