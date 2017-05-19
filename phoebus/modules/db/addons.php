@@ -108,6 +108,7 @@ $arrayAddonsDB = array(
     'notestruck@franklindm' => 'notestruck',
     'inforss-reloaded@addons.palemoon.org' => 'inforss-reloaded',
     'eclipsedmoon@addons.eurythrace.perseides' => 'eclipsedmoon',
-    'throbberinurlbar@srazzano.com' => 'throbber-in-urlbar'
+    'throbberinurlbar@srazzano.com' => 'throbber-in-urlbar',
+    'save-images-me@Off.JustOff' => 'save-images-me'
 );
 ?>

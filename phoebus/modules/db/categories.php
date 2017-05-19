@@ -154,6 +154,7 @@ $arrayCategoryList03 = array(
     'mozarchiver',
     'complete-yt-saver',
     'downloads-window',
+    'save-images-me',
     'externals' => array(
         'imagehost-grabber' => array(
             'id' => 'ex-005',
