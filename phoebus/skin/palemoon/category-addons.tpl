@@ -63,6 +63,7 @@
         <h1>Categories</h1>
         <a href="/extensions/alerts-and-updates/">Alerts &amp; Updates</a><br />
         <a href="/extensions/appearance/">Appearance</a><br />
+        <a href="/extensions/bookmarks-and-tabs/">Bookmarks & Tabs</a><br />
         <a href="/extensions/download-management/">Download Management</a><br />
         <a href="/extensions/feeds-news-and-blogging/">Feeds, News, &amp; Blogging</a><br />
         <a href="/extensions/privacy-and-security/">Privacy &amp; Security</a><br />
