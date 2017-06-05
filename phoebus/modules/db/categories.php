@@ -60,8 +60,6 @@ $arrayCategoryList02 = array(
     'stylish-editor-modified',
     'tiny-menu',
     'themetool',
-    'tab-mix-plus',
-    'treestyletabforpm',
     'advanced-night-mode',
     'theme-shim',
     'throbber-in-urlbar',
@@ -119,12 +117,6 @@ $arrayCategoryList02 = array(
             'name' => 'Xclear',
             'shortDescription' => 'Adds in-field clear buttons to the URL bar, the Search bar and the Find bar.',
             'url' => 'https://addons.mozilla.org/firefox/addon/xclear/'
-        ),
-        'tab-utilities-phoenix' => array(
-            'id' => 'ex-014',
-            'name' => 'Tab Utilities Phoenix',
-            'shortDescription' => 'Open Bookmarks/History/URL/Search in new tabs, and more utilities for tabbed browsing.',
-            'url' => 'https://addons.mozilla.org/firefox/addon/tab-utilities-phoenix/'
         ),
         'theme-font-size-changer' => array(
             'id' => 'ex-016',
@@ -447,11 +439,7 @@ $arrayCategoryList10 = array(
     'title' => 'Other',
     'space-advance',
     'moon-pdf-viewer',
-    'add-bookmark-here-2-me',
     'youtube-lazy-load',
-    'send-tab-to-device',
-    'auto-sort-bookmarks',
-    'responsive-bookmarks-toolbar',
     'externals' => array(
         'epubreader' => array(
             'id' => 'fx-45281',
@@ -471,23 +459,11 @@ $arrayCategoryList10 = array(
             'shortDescription' => 'S3.Google Translator adds the power of Google Translate’s automatic translations to your browser! ',
             'url' => 'https://addons.mozilla.org/firefox/addon/s3google-translator/'
         ),
-        'tab-groups-helper' => array(
-            'id' => 'fx-473368',
-            'name' => 'Tab Groups Helper',
-            'shortDescription' => 'Provides an alternative interface for the Tab Groups feature. (Requires the Tab Groups add-on!)',
-            'url' => 'https://addons.mozilla.org/firefox/addon/tab-groups-helper/'
-        ),
         'thumbnail-zoom-plus' => array(
             'id' => 'fx-337643',
             'name' => 'Thumbnail Zoom Plus',
             'shortDescription' => 'Shows the full image when you hover over a thumbnail.',
             'url' => 'https://addons.mozilla.org/firefox/addon/thumbnail-zoom-plus/'
-        ),
-        'speed-start' => array(
-            'id' => 'ex-010',
-            'name' => 'Speed Start',
-            'shortDescription' => 'Speed Dial & Start Page with flexible layout for fast access to sites via visual bookmarks.',
-            'url' => 'https://addons.mozilla.org/firefox/addon/speed-start/'
         ),
         'open-with-google-chrome' => array(
             'id' => 'ex-018',
@@ -516,7 +492,38 @@ $arrayCategoryList10 = array(
     ),
 );
 
-$arrayCategoryList20 = array(
+
+$arrayCategoryList11 = array(
+    'title' => 'Bookmarks & Tabs',
+    'add-bookmark-here-2-me',
+    'auto-sort-bookmarks',
+    'responsive-bookmarks-toolbar',
+    'send-tab-to-device',
+    'tab-mix-plus',
+    'treestyletabforpm',
+    'externals' => array(
+        'speed-start' => array(
+            'id' => 'ex-010',
+            'name' => 'Speed Start',
+            'shortDescription' => 'Speed Dial & Start Page with flexible layout for fast access to sites via visual bookmarks.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/speed-start/'
+        ),
+        'tab-groups-helper' => array(
+            'id' => 'fx-473368',
+            'name' => 'Tab Groups Helper',
+            'shortDescription' => 'Provides an alternative interface for the Tab Groups feature. (Requires the Tab Groups add-on!)',
+            'url' => 'https://addons.mozilla.org/firefox/addon/tab-groups-helper/'
+        ),
+        'tab-utilities-phoenix' => array(
+            'id' => 'ex-014',
+            'name' => 'Tab Utilities Phoenix',
+            'shortDescription' => 'Open Bookmarks/History/URL/Search in new tabs, and more utilities for tabbed browsing.',
+            'url' => 'https://addons.mozilla.org/firefox/addon/tab-utilities-phoenix/'
+        ),
+    ),
+);
+
+$arrayCategoryList50 = array(
     'title' => 'Themes',
     'kempelton-reloaded',
     'white-moon',
@@ -576,6 +583,7 @@ $arrayCategoriesDB = array(
     'tools-and-utilities' => $arrayCategoryList08,
     'web-development' => $arrayCategoryList09,
     'other' => $arrayCategoryList10,
-    'themes' => $arrayCategoryList20
+    'bookmarks-and-tabs' => $arrayCategoryList11,
+    'themes' => $arrayCategoryList50
 );
 ?>
