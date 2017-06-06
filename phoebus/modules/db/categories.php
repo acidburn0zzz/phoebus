@@ -225,7 +225,7 @@ $arrayCategoryList05 = array(
             'id' => 'fx-317263',
             'name' => 'Clean Links',
             'shortDescription' => 'Converts obfuscated or nested links to genuine clean links.',
-            'url' => 'https://addons.mozilla.org/firefox/addon/clean-links/'
+            'url' => 'https://github.com/diegocr/CleanLinks'
         ),
         'cookiekeeper' => array(
             'id' => 'fx-481410',
