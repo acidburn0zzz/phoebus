@@ -18,7 +18,7 @@
 
 <h3>List of add-ons with known compatibility issues</h3>
 
-<p><strong>Last updated: 2017-04-13</strong> (compatible with Pale Moon 27.1+, released 2017-02-09)</p>
+<p><strong>Last updated: 2017-06-06</strong> (compatible with Pale Moon 27.1+, released 2017-02-09)</p>
 
 <p><strong>PENDING</strong></p>
 <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100%">
@@ -85,7 +85,6 @@
                     <li>DuckDuckGo Plus<br /><small>Install using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
                     <li>Element Hiding Helper for Adblock Plus<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/elemhidehelper/versions/?page=2#version-1.3.2.1-signed" target="_blank">1.3.2</a> in combination with <a href="/extensions/adblock-latitude/">Adblock Latitude</a></small></li>
                     <li>Element Inspector<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/element-inspector/versions/?page=1#version-0.0.8.1" target="_blank">0.0.8.1</a></small></li>
-                    <li>Enhanced Steam<br /><small>Install <a href="https://addons.mozilla.org/firefox/addon/supersteam/" target="_blank">SuperSteam</a> using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
                     <li>External Application<br />Buttons 2<br /><small>Use version <a href="https://addons.mozilla.org/firefox/addon/external-application-button/versions/?page=1#version-0.11.1-signed" target="_blank">0.11.1</a></small></li>
                     <li>Feedly Notifier<br /><small>Install using <a href="/extensions/moon-tester-tool/">Moon Tester Tool</a></small></li>
                 </ul>
